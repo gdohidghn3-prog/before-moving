@@ -4097,7 +4097,7 @@ export const neighborhoods: Neighborhood[] = [
   { id: "osan-nuri", name: "누읍동", district: "오산시", city: "오산", lat: 37.1635, lng: 127.0500, noiseScore: 80, safetyScore: 76, convenienceScore: 65, overallScore: 74, population: "낮음", subway: [], highlights: ["전원 분위기", "조용한 주거지"] },
 
   // 광주시 (경기)
-  { id: "gg-gwangju-gyeongchung", name: "경충대로", district: "광주시", city: "광주(경기)", lat: 37.4098, lng: 127.2574, noiseScore: 70, safetyScore: 74, convenienceScore: 72, overallScore: 72, population: "보통", subway: [], highlights: ["광주시 중심", "행정타운"] },
+  { id: "gg-gwangju-gyeongan", name: "경안동", district: "광주시", city: "광주(경기)", lat: 37.4098, lng: 127.2574, noiseScore: 70, safetyScore: 74, convenienceScore: 72, overallScore: 72, population: "보통", subway: [], highlights: ["광주시 중심", "행정타운"] },
   { id: "gg-gwangju-opo", name: "오포읍", district: "광주시", city: "광주(경기)", lat: 37.3610, lng: 127.2040, noiseScore: 78, safetyScore: 78, convenienceScore: 68, overallScore: 75, population: "높음", subway: [], highlights: ["택지개발", "판교 출퇴근", "신축 많음"] },
   { id: "gg-gwangju-gonji", name: "곤지암읍", district: "광주시", city: "광주(경기)", lat: 37.3437, lng: 127.3392, noiseScore: 82, safetyScore: 76, convenienceScore: 60, overallScore: 73, population: "낮음", subway: [], highlights: ["곤지암리조트", "전원생활", "자연환경"] },
   { id: "gg-gwangju-taejeon", name: "태전동", district: "광주시", city: "광주(경기)", lat: 37.4212, lng: 127.2678, noiseScore: 75, safetyScore: 75, convenienceScore: 66, overallScore: 72, population: "보통", subway: [], highlights: ["주거 단지", "학교 밀집"] },
