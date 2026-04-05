@@ -33,6 +33,10 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# naver api cache & counter
+/data/local-cache/
+/data/naver-api-counter.json
+
 # vercel
 .vercel
 
