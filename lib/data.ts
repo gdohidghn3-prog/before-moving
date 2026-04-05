@@ -4076,6 +4076,80 @@ export const neighborhoods: Neighborhood[] = [
     subway: [],
     highlights: ["울산대학교", "택지개발", "자연환경"],
   },
+
+  // ── 경기도 추가 (시흥, 군포, 오산, 광주, 이천, 양주, 포천, 여주, 동두천) ──
+
+  // 시흥시
+  { id: "siheung-jangseok", name: "장현동", district: "시흥시", city: "시흥", lat: 37.3850, lng: 126.8021, noiseScore: 78, safetyScore: 80, convenienceScore: 70, overallScore: 76, population: "보통", subway: ["시흥시청역(예정)"], highlights: ["배곧신도시", "서울대캠퍼스", "신축 아파트"] },
+  { id: "siheung-baegot", name: "배곧동", district: "시흥시", city: "시흥", lat: 37.3647, lng: 126.7367, noiseScore: 82, safetyScore: 82, convenienceScore: 75, overallScore: 80, population: "높음", subway: [], highlights: ["배곧신도시", "서해바다", "공원 많음", "학군 좋음"] },
+  { id: "siheung-jeongwang", name: "정왕동", district: "시흥시", city: "시흥", lat: 37.3459, lng: 126.7371, noiseScore: 65, safetyScore: 70, convenienceScore: 72, overallScore: 69, population: "높음", subway: ["정왕역"], highlights: ["시화공단", "오이도", "직장인 밀집"] },
+  { id: "siheung-sindong", name: "신천동", district: "시흥시", city: "시흥", lat: 37.4438, lng: 126.8003, noiseScore: 70, safetyScore: 72, convenienceScore: 68, overallScore: 70, population: "보통", subway: [], highlights: ["구시가지", "재개발 예정", "교통 편리"] },
+
+  // 군포시
+  { id: "gunpo-sanbon", name: "산본동", district: "군포시", city: "군포", lat: 37.3593, lng: 126.9326, noiseScore: 72, safetyScore: 78, convenienceScore: 82, overallScore: 77, population: "높음", subway: ["산본역"], highlights: ["산본신도시", "중심상업지구", "학원가"] },
+  { id: "gunpo-geumjeong", name: "금정동", district: "군포시", city: "군포", lat: 37.3682, lng: 126.9466, noiseScore: 68, safetyScore: 75, convenienceScore: 78, overallScore: 74, population: "보통", subway: ["금정역"], highlights: ["4호선 환승", "교통 요지"] },
+  { id: "gunpo-dangri", name: "당정동", district: "군포시", city: "군포", lat: 37.3497, lng: 126.9355, noiseScore: 74, safetyScore: 76, convenienceScore: 72, overallScore: 74, population: "보통", subway: ["당정역"], highlights: ["주거 위주", "조용한 동네"] },
+  { id: "gunpo-daeya", name: "대야동", district: "군포시", city: "군포", lat: 37.3724, lng: 126.9226, noiseScore: 70, safetyScore: 74, convenienceScore: 68, overallScore: 71, population: "보통", subway: [], highlights: ["수리산 등산", "자연환경"] },
+
+  // 오산시
+  { id: "osan-sema", name: "세마동", district: "오산시", city: "오산", lat: 37.1571, lng: 127.0707, noiseScore: 78, safetyScore: 78, convenienceScore: 70, overallScore: 75, population: "보통", subway: ["세마역(예정)"], highlights: ["세교신도시", "신축 아파트", "쾌적"] },
+  { id: "osan-wonhwa", name: "원동", district: "오산시", city: "오산", lat: 37.1502, lng: 127.0667, noiseScore: 65, safetyScore: 72, convenienceScore: 75, overallScore: 71, population: "보통", subway: ["오산역"], highlights: ["오산 중심가", "전통시장"] },
+  { id: "osan-nuri", name: "누읍동", district: "오산시", city: "오산", lat: 37.1635, lng: 127.0500, noiseScore: 80, safetyScore: 76, convenienceScore: 65, overallScore: 74, population: "낮음", subway: [], highlights: ["전원 분위기", "조용한 주거지"] },
+
+  // 광주시 (경기)
+  { id: "gg-gwangju-gyeongchung", name: "경충대로", district: "광주시", city: "광주(경기)", lat: 37.4098, lng: 127.2574, noiseScore: 70, safetyScore: 74, convenienceScore: 72, overallScore: 72, population: "보통", subway: [], highlights: ["광주시 중심", "행정타운"] },
+  { id: "gg-gwangju-opo", name: "오포읍", district: "광주시", city: "광주(경기)", lat: 37.3610, lng: 127.2040, noiseScore: 78, safetyScore: 78, convenienceScore: 68, overallScore: 75, population: "높음", subway: [], highlights: ["택지개발", "판교 출퇴근", "신축 많음"] },
+  { id: "gg-gwangju-gonji", name: "곤지암읍", district: "광주시", city: "광주(경기)", lat: 37.3437, lng: 127.3392, noiseScore: 82, safetyScore: 76, convenienceScore: 60, overallScore: 73, population: "낮음", subway: [], highlights: ["곤지암리조트", "전원생활", "자연환경"] },
+  { id: "gg-gwangju-taejeon", name: "태전동", district: "광주시", city: "광주(경기)", lat: 37.4212, lng: 127.2678, noiseScore: 75, safetyScore: 75, convenienceScore: 66, overallScore: 72, population: "보통", subway: [], highlights: ["주거 단지", "학교 밀집"] },
+
+  // 이천시
+  { id: "icheon-jungang", name: "중리동", district: "이천시", city: "이천", lat: 37.2797, lng: 127.4428, noiseScore: 68, safetyScore: 72, convenienceScore: 72, overallScore: 71, population: "보통", subway: [], highlights: ["이천 중심가", "이천쌀", "도자기"] },
+  { id: "icheon-bugu", name: "부발읍", district: "이천시", city: "이천", lat: 37.2384, lng: 127.4695, noiseScore: 72, safetyScore: 74, convenienceScore: 65, overallScore: 70, population: "보통", subway: [], highlights: ["SK하이닉스", "산업단지", "직장인 거주"] },
+  { id: "icheon-majang", name: "마장면", district: "이천시", city: "이천", lat: 37.3050, lng: 127.3870, noiseScore: 85, safetyScore: 72, convenienceScore: 55, overallScore: 71, population: "낮음", subway: [], highlights: ["전원생활", "텃밭", "자연환경"] },
+
+  // 양주시
+  { id: "yangju-deokjeong", name: "덕정동", district: "양주시", city: "양주", lat: 37.8253, lng: 127.0695, noiseScore: 72, safetyScore: 74, convenienceScore: 70, overallScore: 72, population: "보통", subway: ["덕정역"], highlights: ["1호선", "양주 중심가"] },
+  { id: "yangju-hoecheon", name: "회천동", district: "양주시", city: "양주", lat: 37.8101, lng: 127.0462, noiseScore: 76, safetyScore: 78, convenienceScore: 72, overallScore: 75, population: "높음", subway: ["회천역(예정)"], highlights: ["옥정신도시", "신축 아파트", "택지개발"] },
+  { id: "yangju-okjeong", name: "옥정동", district: "양주시", city: "양주", lat: 37.8250, lng: 127.0350, noiseScore: 80, safetyScore: 80, convenienceScore: 74, overallScore: 78, population: "높음", subway: [], highlights: ["옥정신도시", "대규모 택지", "학교 신설"] },
+
+  // 포천시
+  { id: "pocheon-sinbuk", name: "신북면", district: "포천시", city: "포천", lat: 37.8857, lng: 127.1650, noiseScore: 85, safetyScore: 70, convenienceScore: 55, overallScore: 70, population: "낮음", subway: [], highlights: ["산정호수", "자연환경", "관광지"] },
+  { id: "pocheon-sohol", name: "소흘읍", district: "포천시", city: "포천", lat: 37.8113, lng: 127.1423, noiseScore: 75, safetyScore: 74, convenienceScore: 68, overallScore: 72, population: "보통", subway: [], highlights: ["포천 중심", "주거 밀집", "교통 편리"] },
+
+  // 여주시
+  { id: "yeoju-yeoju", name: "여주동", district: "여주시", city: "여주", lat: 37.2983, lng: 127.6363, noiseScore: 78, safetyScore: 72, convenienceScore: 65, overallScore: 72, population: "보통", subway: ["여주역"], highlights: ["여주시 중심", "프리미엄아울렛", "남한강"] },
+  { id: "yeoju-sejong", name: "세종대왕면", district: "여주시", city: "여주", lat: 37.3139, lng: 127.5987, noiseScore: 88, safetyScore: 70, convenienceScore: 52, overallScore: 70, population: "낮음", subway: [], highlights: ["세종대왕릉", "전원생활", "역사유적"] },
+
+  // 동두천시
+  { id: "dongducheon-jiwuk", name: "지행동", district: "동두천시", city: "동두천", lat: 37.9014, lng: 127.0574, noiseScore: 68, safetyScore: 68, convenienceScore: 70, overallScore: 69, population: "보통", subway: ["지행역"], highlights: ["동두천 중심가", "1호선", "군부대 인접"] },
+  { id: "dongducheon-songnae", name: "송내동", district: "동두천시", city: "동두천", lat: 37.8960, lng: 127.0471, noiseScore: 72, safetyScore: 70, convenienceScore: 65, overallScore: 69, population: "보통", subway: [], highlights: ["주거 위주", "소요산 접근"] },
+
+  // ── 기존 경기도 시 추가 동 ──
+
+  // 수원 추가
+  { id: "suwon-uman", name: "우만동", district: "팔달구", city: "수원", lat: 37.2860, lng: 127.0150, noiseScore: 65, safetyScore: 72, convenienceScore: 78, overallScore: 72, population: "높음", subway: [], highlights: ["수원역 인근", "전통시장", "구시가지"] },
+  { id: "suwon-hwaseo", name: "화서동", district: "장안구", city: "수원", lat: 37.2937, lng: 126.9888, noiseScore: 70, safetyScore: 74, convenienceScore: 75, overallScore: 73, population: "보통", subway: ["화서역"], highlights: ["수원화성", "관광지", "주거 혼합"] },
+
+  // 성남 추가
+  { id: "seongnam-pangyo", name: "판교동", district: "분당구", city: "성남", lat: 37.3948, lng: 127.1112, noiseScore: 72, safetyScore: 82, convenienceScore: 88, overallScore: 81, population: "높음", subway: ["판교역"], highlights: ["IT기업 밀집", "판교테크노밸리", "고급 주거지", "카카오", "네이버"] },
+
+  // 고양 추가
+  { id: "goyang-wondang", name: "원당동", district: "덕양구", city: "고양", lat: 37.6508, lng: 126.8345, noiseScore: 68, safetyScore: 72, convenienceScore: 72, overallScore: 71, population: "보통", subway: ["원당역"], highlights: ["원당시장", "서삼릉", "교통 편리"] },
+
+  // 용인 추가
+  { id: "yongin-dongbaek", name: "동백동", district: "기흥구", city: "용인", lat: 37.2831, lng: 127.1520, noiseScore: 76, safetyScore: 80, convenienceScore: 78, overallScore: 78, population: "높음", subway: ["동백역"], highlights: ["신도시", "에버라인", "학군 좋음"] },
+
+  // 화성 추가
+  { id: "hwaseong-songsan", name: "송산동", district: "화성시", city: "화성", lat: 37.2010, lng: 126.8080, noiseScore: 80, safetyScore: 76, convenienceScore: 62, overallScore: 73, population: "보통", subway: [], highlights: ["송산그린시티", "개발 진행 중"] },
+
+  // 남양주 추가
+  { id: "namyangju-jingeon", name: "진건읍", district: "남양주시", city: "남양주", lat: 37.6480, lng: 127.1750, noiseScore: 78, safetyScore: 74, convenienceScore: 62, overallScore: 71, population: "보통", subway: [], highlights: ["왕숙신도시 예정", "개발 호재"] },
+
+  // 김포 추가
+  { id: "gimpo-gochon", name: "고촌읍", district: "김포시", city: "김포", lat: 37.6118, lng: 126.7631, noiseScore: 68, safetyScore: 72, convenienceScore: 70, overallScore: 70, population: "보통", subway: ["고촌역(예정)"], highlights: ["김포골드라인", "서울 접근성"] },
+
+  // 파주 추가
+  { id: "paju-tanhyeon", name: "탄현면", district: "파주시", city: "파주", lat: 37.7575, lng: 126.7285, noiseScore: 82, safetyScore: 76, convenienceScore: 60, overallScore: 73, population: "보통", subway: [], highlights: ["헤이리예술마을", "프로방스", "자연환경"] },
 ];
 
 // ─── 민원 데이터 ───────────────────────────────────────────────
