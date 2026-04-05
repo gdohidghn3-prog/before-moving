@@ -4128,7 +4128,7 @@ export const neighborhoods: Neighborhood[] = [
 
   // 수원 추가
   { id: "suwon-uman", name: "우만동", district: "팔달구", city: "수원", lat: 37.2860, lng: 127.0150, noiseScore: 65, safetyScore: 72, convenienceScore: 78, overallScore: 72, population: "높음", subway: [], highlights: ["수원역 인근", "전통시장", "구시가지"] },
-  { id: "suwon-hwaseo", name: "화서동", district: "장안구", city: "수원", lat: 37.2937, lng: 126.9888, noiseScore: 70, safetyScore: 74, convenienceScore: 75, overallScore: 73, population: "보통", subway: ["화서역"], highlights: ["수원화성", "관광지", "주거 혼합"] },
+  { id: "suwon-hwaseo", name: "화서동", district: "팔달구", city: "수원", lat: 37.2937, lng: 126.9888, noiseScore: 70, safetyScore: 74, convenienceScore: 75, overallScore: 73, population: "보통", subway: ["화서역"], highlights: ["수원화성", "관광지", "주거 혼합"] },
 
   // 성남 추가
   { id: "seongnam-pangyo", name: "판교동", district: "분당구", city: "성남", lat: 37.3948, lng: 127.1112, noiseScore: 72, safetyScore: 82, convenienceScore: 88, overallScore: 81, population: "높음", subway: ["판교역"], highlights: ["IT기업 밀집", "판교테크노밸리", "고급 주거지", "카카오", "네이버"] },
