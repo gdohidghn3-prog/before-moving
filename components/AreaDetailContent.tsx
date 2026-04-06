@@ -408,24 +408,17 @@ export default function AreaDetailContent({
           <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3">
             이 동네 매물 보기
           </h2>
-          <div className="grid grid-cols-2 gap-2">
-            <a
-              href={`https://fin.land.naver.com/map?keyword=${encodeURIComponent(area.district + " " + area.name)}&search-expanded=true`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1 py-3 rounded-lg text-white text-sm font-medium bg-green-600 hover:bg-green-700 transition-colors"
-            >
-              네이버 부동산 <ExternalLink size={12} />
-            </a>
-            <a
-              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 전세 월세 매물")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1 py-3 rounded-lg text-white text-sm font-medium bg-blue-600 hover:bg-blue-700 transition-colors"
-            >
-              매물 검색 <ExternalLink size={12} />
-            </a>
-          </div>
+          <a
+            href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 전세 월세 매물")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 w-full py-3 rounded-lg text-white text-sm font-medium bg-green-600 hover:bg-green-700 transition-colors"
+          >
+            {area.district} {area.name} 매물 검색 <ExternalLink size={12} />
+          </a>
+          <p className="text-[10px] text-[#94A3B8] mt-1.5 text-center">
+            네이버 통합검색으로 이동합니다 · 네이버부동산·직방·다방 등에서 확인하세요
+          </p>
         </Section>
 
         {/* ─── 9. 블로그 ─────────────────────────────────── */}
