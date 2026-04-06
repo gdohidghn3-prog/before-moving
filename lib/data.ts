@@ -3325,6 +3325,59 @@ export const neighborhoods: Neighborhood[] = [
   { id: "nonsan-yeonmu", name: "연무읍", district: "논산시", city: "논산", lat: 36.1612, lng: 127.0720, noiseScore: 72, safetyScore: 75, convenienceScore: 70, overallScore: 72, population: "보통", subway: [], highlights: ["육군훈련소", "군 관련 인구 많음"] },
 
   // ══════════════════════════════════════════════════════════════
+  // ── 강원특별자치도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 춘천시 ──
+  { id: "chuncheon-hyoja", name: "효자동", district: "춘천시", city: "춘천", lat: 37.8654, lng: 127.7385, noiseScore: 60, safetyScore: 75, convenienceScore: 88, overallScore: 75, population: "높음", subway: ["춘천역"], highlights: ["춘천 도심 중심", "터미널·기차역 인접", "상권 밀집", "ITX-청춘"] },
+  { id: "chuncheon-toegye", name: "퇴계동", district: "춘천시", city: "춘천", lat: 37.8530, lng: 127.7340, noiseScore: 65, safetyScore: 78, convenienceScore: 85, overallScore: 76, population: "높음", subway: ["남춘천역"], highlights: ["춘천 신도심", "현대백화점 인근", "주거·상업 혼재", "택지지구"] },
+  { id: "chuncheon-seoksa", name: "석사동", district: "춘천시", city: "춘천", lat: 37.8755, lng: 127.7480, noiseScore: 70, safetyScore: 78, convenienceScore: 80, overallScore: 76, population: "높음", subway: [], highlights: ["석사지구", "강원대 인근", "학원가", "주거 밀집"] },
+  { id: "chuncheon-onui", name: "온의동", district: "춘천시", city: "춘천", lat: 37.8590, lng: 127.7190, noiseScore: 72, safetyScore: 78, convenienceScore: 78, overallScore: 76, population: "높음", subway: [], highlights: ["주거 신도심", "공지천 인접", "신축 아파트"] },
+  { id: "chuncheon-jungang", name: "조운동", district: "춘천시", city: "춘천", lat: 37.8810, lng: 127.7290, noiseScore: 62, safetyScore: 73, convenienceScore: 85, overallScore: 73, population: "보통", subway: [], highlights: ["춘천 구도심", "명동 상권", "닭갈비 골목"] },
+  { id: "chuncheon-soyang", name: "소양동", district: "춘천시", city: "춘천", lat: 37.8895, lng: 127.7340, noiseScore: 75, safetyScore: 75, convenienceScore: 70, overallScore: 73, population: "보통", subway: [], highlights: ["소양강 인접", "조용한 주거지", "춘천 시청"] },
+
+  // ── 원주시 ──
+  { id: "wonju-myeongryun", name: "명륜동", district: "원주시", city: "원주", lat: 37.3500, lng: 127.9415, noiseScore: 60, safetyScore: 75, convenienceScore: 90, overallScore: 75, population: "높음", subway: [], highlights: ["원주 도심 중심", "터미널 인근", "상권 밀집", "유동인구 매우 많음"] },
+  { id: "wonju-mujil", name: "무실동", district: "원주시", city: "원주", lat: 37.3340, lng: 127.9215, noiseScore: 70, safetyScore: 80, convenienceScore: 85, overallScore: 78, population: "높음", subway: [], highlights: ["원주 신도심", "택지지구", "신축 아파트", "학원가"] },
+  { id: "wonju-tail", name: "단계동", district: "원주시", city: "원주", lat: 37.3625, lng: 127.9150, noiseScore: 68, safetyScore: 78, convenienceScore: 82, overallScore: 76, population: "높음", subway: [], highlights: ["주거 밀집", "단계택지", "학교 풍부"] },
+  { id: "wonju-iljin", name: "일산동", district: "원주시", city: "원주", lat: 37.3450, lng: 127.9350, noiseScore: 65, safetyScore: 73, convenienceScore: 80, overallScore: 73, population: "보통", subway: [], highlights: ["원주 구도심", "전통 상권", "병원 밀집"] },
+  { id: "wonju-bangok", name: "반곡동", district: "원주시", city: "원주", lat: 37.3160, lng: 127.9520, noiseScore: 75, safetyScore: 80, convenienceScore: 78, overallScore: 78, population: "높음", subway: ["만종역"], highlights: ["원주 혁신도시", "공공기관 이전", "신도시 개발", "건강보험심사평가원"] },
+  { id: "wonju-bunchang", name: "봉산동", district: "원주시", city: "원주", lat: 37.3680, lng: 127.9405, noiseScore: 72, safetyScore: 75, convenienceScore: 75, overallScore: 74, population: "보통", subway: [], highlights: ["주거지", "봉산 인접", "조용한 편"] },
+
+  // ── 강릉시 ──
+  { id: "gangneung-gyo", name: "교동", district: "강릉시", city: "강릉", lat: 37.7610, lng: 128.8830, noiseScore: 65, safetyScore: 75, convenienceScore: 88, overallScore: 76, population: "높음", subway: ["강릉역"], highlights: ["강릉 도심 중심", "강릉역 KTX", "상권 밀집", "주거·상업 혼재"] },
+  { id: "gangneung-okcheon", name: "옥천동", district: "강릉시", city: "강릉", lat: 37.7510, lng: 128.8945, noiseScore: 60, safetyScore: 73, convenienceScore: 85, overallScore: 73, population: "높음", subway: [], highlights: ["강릉 구도심", "전통시장", "유동인구 많음"] },
+  { id: "gangneung-pohang", name: "포남동", district: "강릉시", city: "강릉", lat: 37.7635, lng: 128.9075, noiseScore: 70, safetyScore: 78, convenienceScore: 80, overallScore: 76, population: "높음", subway: [], highlights: ["주거 밀집", "포남택지지구", "학교 풍부"] },
+  { id: "gangneung-gangmun", name: "강문동", district: "강릉시", city: "강릉", lat: 37.7935, lng: 128.9145, noiseScore: 78, safetyScore: 78, convenienceScore: 65, overallScore: 74, population: "낮음", subway: [], highlights: ["경포해변 인접", "관광지", "조용한 편"] },
+  { id: "gangneung-jeodong", name: "저동", district: "강릉시", city: "강릉", lat: 37.7790, lng: 128.9015, noiseScore: 75, safetyScore: 75, convenienceScore: 72, overallScore: 74, population: "보통", subway: [], highlights: ["주거지", "안목해변 인접", "커피거리"] },
+  { id: "gangneung-juge", name: "주문진읍", district: "강릉시", city: "강릉", lat: 37.8930, lng: 128.8265, noiseScore: 75, safetyScore: 73, convenienceScore: 70, overallScore: 73, population: "보통", subway: [], highlights: ["주문진항", "수산물 시장", "어촌 마을"] },
+
+  // ── 속초시 ──
+  { id: "sokcho-jungang", name: "조양동", district: "속초시", city: "속초", lat: 38.2065, lng: 128.5815, noiseScore: 68, safetyScore: 75, convenienceScore: 82, overallScore: 75, population: "높음", subway: [], highlights: ["속초 도심", "신축 아파트", "주거 중심"] },
+  { id: "sokcho-dongmyeong", name: "동명동", district: "속초시", city: "속초", lat: 38.2115, lng: 128.5945, noiseScore: 70, safetyScore: 73, convenienceScore: 78, overallScore: 74, population: "보통", subway: [], highlights: ["속초항 인접", "동명항", "관광지"] },
+  { id: "sokcho-gyo", name: "교동", district: "속초시", city: "속초", lat: 38.2050, lng: 128.5945, noiseScore: 65, safetyScore: 75, convenienceScore: 85, overallScore: 75, population: "높음", subway: [], highlights: ["속초 시청 인근", "상권 밀집", "주거 중심"] },
+  { id: "sokcho-yeongnang", name: "영랑동", district: "속초시", city: "속초", lat: 38.2185, lng: 128.5825, noiseScore: 75, safetyScore: 78, convenienceScore: 70, overallScore: 74, population: "낮음", subway: [], highlights: ["영랑호 인접", "조용한 주거지", "산책로"] },
+
+  // ── 동해시 ──
+  { id: "donghae-cheongokdonghu", name: "천곡동", district: "동해시", city: "동해", lat: 37.5230, lng: 129.1140, noiseScore: 68, safetyScore: 75, convenienceScore: 82, overallScore: 75, population: "높음", subway: [], highlights: ["동해 도심", "주거·상업 중심", "상권 밀집"] },
+  { id: "donghae-bukpyeong", name: "북평동", district: "동해시", city: "동해", lat: 37.4890, lng: 129.1325, noiseScore: 70, safetyScore: 73, convenienceScore: 75, overallScore: 73, population: "보통", subway: [], highlights: ["동해항 인접", "주거 밀집", "전통시장"] },
+  { id: "donghae-mukho", name: "묵호동", district: "동해시", city: "동해", lat: 37.5470, lng: 129.1180, noiseScore: 75, safetyScore: 75, convenienceScore: 72, overallScore: 74, population: "보통", subway: ["묵호역"], highlights: ["묵호항", "어촌 마을", "관광지"] },
+
+  // ── 삼척시 ──
+  { id: "samcheok-jungang", name: "성내동", district: "삼척시", city: "삼척", lat: 37.4495, lng: 129.1655, noiseScore: 70, safetyScore: 75, convenienceScore: 78, overallScore: 74, population: "보통", subway: [], highlights: ["삼척 도심", "터미널 인접", "상권 중심"] },
+  { id: "samcheok-jeongra", name: "정라동", district: "삼척시", city: "삼척", lat: 37.4380, lng: 129.1745, noiseScore: 75, safetyScore: 73, convenienceScore: 70, overallScore: 73, population: "보통", subway: [], highlights: ["삼척항 인접", "어항", "조용한 편"] },
+
+  // ── 태백시 ──
+  { id: "taebaek-hwangji", name: "황지동", district: "태백시", city: "태백", lat: 37.1638, lng: 128.9858, noiseScore: 78, safetyScore: 78, convenienceScore: 72, overallScore: 76, population: "보통", subway: [], highlights: ["태백 도심", "황지연못", "고지대"] },
+  { id: "taebaek-jangseong", name: "장성동", district: "태백시", city: "태백", lat: 37.1245, lng: 128.9905, noiseScore: 82, safetyScore: 78, convenienceScore: 65, overallScore: 75, population: "낮음", subway: [], highlights: ["과거 탄광촌", "조용한 주거지", "산악 지형"] },
+
+  // ── 홍천군 ──
+  { id: "hongcheon-hongcheon", name: "홍천읍", district: "홍천군", city: "홍천", lat: 37.6915, lng: 127.8880, noiseScore: 75, safetyScore: 75, convenienceScore: 75, overallScore: 75, population: "보통", subway: [], highlights: ["홍천 중심지", "터미널", "주거·상업 중심"] },
+
+  // ── 평창군 ──
+  { id: "pyeongchang-pyeongchang", name: "평창읍", district: "평창군", city: "평창", lat: 37.3705, lng: 128.3905, noiseScore: 85, safetyScore: 80, convenienceScore: 60, overallScore: 75, population: "낮음", subway: [], highlights: ["평창 중심지", "산악 지역", "동계올림픽 개최지"] },
+
+  // ══════════════════════════════════════════════════════════════
   // ── 제주시 ──
   // ══════════════════════════════════════════════════════════════
 
