@@ -3254,6 +3254,77 @@ export const neighborhoods: Neighborhood[] = [
   },
 
   // ══════════════════════════════════════════════════════════════
+  // ── 충청북도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 청주시 상당구 ──
+  { id: "cheongju-sangdang-yongam", name: "용암동", district: "상당구", city: "청주", lat: 36.6178, lng: 127.5079, noiseScore: 75, safetyScore: 78, convenienceScore: 80, overallScore: 77, population: "높음", subway: [], highlights: ["청주 동남부 주거 중심", "대형마트", "학원가", "택지지구"] },
+  { id: "cheongju-sangdang-seowon", name: "성안동", district: "상당구", city: "청주", lat: 36.6373, lng: 127.4895, noiseScore: 65, safetyScore: 72, convenienceScore: 85, overallScore: 74, population: "높음", subway: [], highlights: ["청주 구도심", "성안길 상권", "구청", "유동인구 많음"] },
+  { id: "cheongju-sangdang-geumcheon", name: "금천동", district: "상당구", city: "청주", lat: 36.6235, lng: 127.5005, noiseScore: 72, safetyScore: 75, convenienceScore: 78, overallScore: 75, population: "높음", subway: [], highlights: ["주거 밀집", "학교 풍부", "교통 편리"] },
+
+  // ── 청주시 서원구 ──
+  { id: "cheongju-seowon-bokdae", name: "복대동", district: "서원구", city: "청주", lat: 36.6336, lng: 127.4493, noiseScore: 60, safetyScore: 72, convenienceScore: 90, overallScore: 75, population: "높음", subway: [], highlights: ["청주 서남부 중심상권", "현대백화점", "지웰시티", "터미널 인근"] },
+  { id: "cheongju-seowon-sachang", name: "사창동", district: "서원구", city: "청주", lat: 36.6328, lng: 127.4646, noiseScore: 65, safetyScore: 75, convenienceScore: 85, overallScore: 75, population: "높음", subway: [], highlights: ["충북대 인근", "대학가 상권", "원룸 밀집"] },
+  { id: "cheongju-seowon-suam", name: "수암골", district: "서원구", city: "청주", lat: 36.6285, lng: 127.4810, noiseScore: 80, safetyScore: 75, convenienceScore: 65, overallScore: 73, population: "낮음", subway: [], highlights: ["벽화마을", "관광지", "구도심"] },
+
+  // ── 청주시 흥덕구 ──
+  { id: "cheongju-heungdeok-gangseo", name: "강서동", district: "흥덕구", city: "청주", lat: 36.6498, lng: 127.4280, noiseScore: 70, safetyScore: 75, convenienceScore: 78, overallScore: 74, population: "보통", subway: [], highlights: ["강서지구", "택지개발", "주거 신도심"] },
+  { id: "cheongju-heungdeok-bunpyeong", name: "분평동", district: "흥덕구", city: "청주", lat: 36.6155, lng: 127.4530, noiseScore: 73, safetyScore: 78, convenienceScore: 75, overallScore: 75, population: "높음", subway: [], highlights: ["주거지구", "학교 풍부", "분평지구"] },
+  { id: "cheongju-heungdeok-okcheon", name: "옥산동", district: "흥덕구", city: "청주", lat: 36.6620, lng: 127.4015, noiseScore: 78, safetyScore: 75, convenienceScore: 65, overallScore: 73, population: "보통", subway: [], highlights: ["청주공항 인근", "산업단지", "조용한 주거지"] },
+
+  // ── 청주시 청원구 ──
+  { id: "cheongju-cheongwon-ochang", name: "오창읍", district: "청원구", city: "청주", lat: 36.7156, lng: 127.4426, noiseScore: 70, safetyScore: 75, convenienceScore: 80, overallScore: 75, population: "높음", subway: [], highlights: ["오창과학산업단지", "신축 아파트 단지", "교육환경 우수"] },
+  { id: "cheongju-cheongwon-naesu", name: "내수읍", district: "청원구", city: "청주", lat: 36.7000, lng: 127.5345, noiseScore: 82, safetyScore: 78, convenienceScore: 60, overallScore: 73, population: "낮음", subway: [], highlights: ["전원형 주거", "농촌 인근", "조용한 환경"] },
+
+  // ── 충주시 ──
+  { id: "chungju-yeonsu", name: "연수동", district: "충주시", city: "충주", lat: 36.9928, lng: 127.9265, noiseScore: 70, safetyScore: 75, convenienceScore: 80, overallScore: 75, population: "높음", subway: [], highlights: ["충주 신시가지", "주거 중심", "학원가", "마트"] },
+  { id: "chungju-bongbang", name: "봉방동", district: "충주시", city: "충주", lat: 36.9810, lng: 127.9275, noiseScore: 68, safetyScore: 72, convenienceScore: 78, overallScore: 73, population: "높음", subway: [], highlights: ["충주 구도심 인근", "주거·상업 혼재"] },
+  { id: "chungju-yongtan", name: "용탄동", district: "충주시", city: "충주", lat: 36.9540, lng: 127.9210, noiseScore: 75, safetyScore: 75, convenienceScore: 72, overallScore: 74, population: "보통", subway: [], highlights: ["주거지", "남한강 인접"] },
+
+  // ── 제천시 ──
+  { id: "jecheon-jangrak", name: "장락동", district: "제천시", city: "제천", lat: 37.1372, lng: 128.2050, noiseScore: 73, safetyScore: 72, convenienceScore: 78, overallScore: 74, population: "높음", subway: [], highlights: ["제천 주거 중심", "장락택지지구", "학교 풍부"] },
+  { id: "jecheon-cheongjeon", name: "청전동", district: "제천시", city: "제천", lat: 37.1308, lng: 128.1995, noiseScore: 68, safetyScore: 72, convenienceScore: 80, overallScore: 73, population: "높음", subway: [], highlights: ["제천 도심", "상권 밀집", "교통 편리"] },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── 충청남도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 천안시 동남구 ──
+  { id: "cheonan-dongnam-singbu", name: "신부동", district: "동남구", city: "천안", lat: 36.8203, lng: 127.1573, noiseScore: 55, safetyScore: 72, convenienceScore: 92, overallScore: 73, population: "높음", subway: ["천안역"], highlights: ["천안 최고 상권", "터미널 인근", "유동인구 매우 많음", "병원·관공서 밀집"] },
+  { id: "cheonan-dongnam-cheongdang", name: "청당동", district: "동남구", city: "천안", lat: 36.7898, lng: 127.1640, noiseScore: 72, safetyScore: 78, convenienceScore: 75, overallScore: 75, population: "높음", subway: [], highlights: ["청당지구", "신축 아파트", "주거 환경 양호"] },
+  { id: "cheonan-dongnam-mokcheon", name: "목천읍", district: "동남구", city: "천안", lat: 36.7635, lng: 127.2310, noiseScore: 82, safetyScore: 75, convenienceScore: 60, overallScore: 73, population: "낮음", subway: [], highlights: ["독립기념관", "전원형 주거", "교육환경"] },
+
+  // ── 천안시 서북구 ──
+  { id: "cheonan-seobuk-ssangyong", name: "쌍용동", district: "서북구", city: "천안", lat: 36.8095, lng: 127.1265, noiseScore: 68, safetyScore: 78, convenienceScore: 85, overallScore: 77, population: "높음", subway: ["쌍용역"], highlights: ["천안 서남부 주거 중심", "1호선", "마트·학원가"] },
+  { id: "cheonan-seobuk-buldang", name: "불당동", district: "서북구", city: "천안", lat: 36.8235, lng: 127.1090, noiseScore: 72, safetyScore: 82, convenienceScore: 88, overallScore: 80, population: "높음", subway: [], highlights: ["천안 신도심", "고급 주거지", "학원가", "갤러리아백화점"] },
+  { id: "cheonan-seobuk-seonghwan", name: "성환읍", district: "서북구", city: "천안", lat: 36.9152, lng: 127.1280, noiseScore: 78, safetyScore: 73, convenienceScore: 65, overallScore: 72, population: "보통", subway: ["성환역"], highlights: ["1호선", "남서울대 인근", "전원형 주거"] },
+
+  // ── 아산시 ──
+  { id: "asan-baebang", name: "배방읍", district: "아산시", city: "아산", lat: 36.7838, lng: 127.0470, noiseScore: 68, safetyScore: 78, convenienceScore: 82, overallScore: 76, population: "높음", subway: ["배방역"], highlights: ["1호선·SRT", "신축 아파트", "탕정 삼성디스플레이 인근"] },
+  { id: "asan-tangjeong", name: "탕정면", district: "아산시", city: "아산", lat: 36.7785, lng: 127.0800, noiseScore: 72, safetyScore: 80, convenienceScore: 75, overallScore: 76, population: "높음", subway: ["탕정역"], highlights: ["삼성디스플레이", "신도시 개발", "직주근접"] },
+  { id: "asan-onyang", name: "온양동", district: "아산시", city: "아산", lat: 36.7890, lng: 127.0040, noiseScore: 70, safetyScore: 75, convenienceScore: 82, overallScore: 76, population: "높음", subway: ["온양온천역"], highlights: ["온양온천", "아산 구도심", "관광지"] },
+
+  // ── 공주시 ──
+  { id: "gongju-sinkwan", name: "신관동", district: "공주시", city: "공주", lat: 36.4727, lng: 127.1230, noiseScore: 70, safetyScore: 75, convenienceScore: 80, overallScore: 75, population: "높음", subway: [], highlights: ["공주 신도심", "공주대 신관캠퍼스", "주거·상업 혼재"] },
+  { id: "gongju-okryong", name: "옥룡동", district: "공주시", city: "공주", lat: 36.4498, lng: 127.1303, noiseScore: 75, safetyScore: 75, convenienceScore: 70, overallScore: 73, population: "보통", subway: [], highlights: ["공주 구도심", "공산성 인접", "역사 유적지"] },
+
+  // ── 서산시 ──
+  { id: "seosan-eupnae", name: "읍내동", district: "서산시", city: "서산", lat: 36.7846, lng: 126.4505, noiseScore: 65, safetyScore: 72, convenienceScore: 82, overallScore: 73, population: "높음", subway: [], highlights: ["서산 도심", "상권 중심", "터미널 인근"] },
+  { id: "seosan-dongmun", name: "동문동", district: "서산시", city: "서산", lat: 36.7775, lng: 126.4583, noiseScore: 70, safetyScore: 75, convenienceScore: 76, overallScore: 74, population: "보통", subway: [], highlights: ["주거 밀집", "공원 인접", "조용한 편"] },
+
+  // ── 당진시 ──
+  { id: "dangjin-eupnae", name: "읍내동", district: "당진시", city: "당진", lat: 36.8930, lng: 126.6280, noiseScore: 65, safetyScore: 72, convenienceScore: 80, overallScore: 73, population: "높음", subway: [], highlights: ["당진 도심", "터미널 인근", "주거·상업 혼재"] },
+  { id: "dangjin-songak", name: "송악읍", district: "당진시", city: "당진", lat: 36.9090, lng: 126.6920, noiseScore: 75, safetyScore: 73, convenienceScore: 65, overallScore: 71, population: "보통", subway: [], highlights: ["석문국가산단 인근", "공장 지역", "전원형 주거"] },
+
+  // ── 보령시 ──
+  { id: "boryeong-daecheon", name: "대천동", district: "보령시", city: "보령", lat: 36.3338, lng: 126.6068, noiseScore: 68, safetyScore: 73, convenienceScore: 78, overallScore: 73, population: "높음", subway: [], highlights: ["보령 도심", "대천해수욕장 인근", "관광지"] },
+  { id: "boryeong-jugpo", name: "주포면", district: "보령시", city: "보령", lat: 36.3805, lng: 126.6175, noiseScore: 82, safetyScore: 75, convenienceScore: 60, overallScore: 72, population: "낮음", subway: [], highlights: ["전원형 주거", "농촌 환경", "조용함"] },
+
+  // ── 논산시 ──
+  { id: "nonsan-buchang", name: "부창동", district: "논산시", city: "논산", lat: 36.2030, lng: 127.0867, noiseScore: 70, safetyScore: 73, convenienceScore: 78, overallScore: 74, population: "높음", subway: ["논산역"], highlights: ["논산 도심", "상권 중심", "기차역 인근"] },
+  { id: "nonsan-yeonmu", name: "연무읍", district: "논산시", city: "논산", lat: 36.1612, lng: 127.0720, noiseScore: 72, safetyScore: 75, convenienceScore: 70, overallScore: 72, population: "보통", subway: [], highlights: ["육군훈련소", "군 관련 인구 많음"] },
+
+  // ══════════════════════════════════════════════════════════════
   // ── 제주시 ──
   // ══════════════════════════════════════════════════════════════
 
