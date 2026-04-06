@@ -3427,6 +3427,148 @@ export const neighborhoods: Neighborhood[] = [
     highlights: ["제주시청", "제주목관아", "구도심", "탑동 해변", "동문시장 인근"],
   },
 
+  // ── 제주시 추가 ──
+  { id: "jeju-aewol", name: "애월읍", district: "제주시", city: "제주", lat: 33.4655, lng: 126.3300, noiseScore: 80, safetyScore: 78, convenienceScore: 65, overallScore: 74, population: "보통", subway: [], highlights: ["애월해안도로", "카페 거리", "관광지", "한적한 마을"] },
+  { id: "jeju-jocheon", name: "조천읍", district: "제주시", city: "제주", lat: 33.5360, lng: 126.6420, noiseScore: 82, safetyScore: 78, convenienceScore: 60, overallScore: 73, population: "낮음", subway: [], highlights: ["함덕해수욕장", "조용한 어촌", "이주민 많음"] },
+  { id: "jeju-hallim", name: "한림읍", district: "제주시", city: "제주", lat: 33.4115, lng: 126.2685, noiseScore: 80, safetyScore: 75, convenienceScore: 65, overallScore: 73, population: "보통", subway: [], highlights: ["협재해수욕장", "관광 중심지", "한림항"] },
+  { id: "jeju-samdo", name: "삼도동", district: "제주시", city: "제주", lat: 33.5135, lng: 126.5215, noiseScore: 65, safetyScore: 73, convenienceScore: 80, overallScore: 73, population: "높음", subway: [], highlights: ["제주 구도심", "원도심 재생사업", "역사 거리"] },
+
+  // ── 서귀포시 ──
+  { id: "seogwipo-jungang", name: "서홍동", district: "서귀포시", city: "서귀포", lat: 33.2540, lng: 126.5615, noiseScore: 70, safetyScore: 78, convenienceScore: 78, overallScore: 75, population: "높음", subway: [], highlights: ["서귀포 도심", "올레시장", "주거·상업 혼재"] },
+  { id: "seogwipo-cheonji", name: "천지동", district: "서귀포시", city: "서귀포", lat: 33.2475, lng: 126.5605, noiseScore: 73, safetyScore: 76, convenienceScore: 76, overallScore: 75, population: "보통", subway: [], highlights: ["천지연폭포", "서귀포항 인접", "관광지"] },
+  { id: "seogwipo-jungmun", name: "중문동", district: "서귀포시", city: "서귀포", lat: 33.2520, lng: 126.4180, noiseScore: 78, safetyScore: 80, convenienceScore: 70, overallScore: 76, population: "보통", subway: [], highlights: ["중문관광단지", "리조트 밀집", "고급 숙박"] },
+  { id: "seogwipo-seongsan", name: "성산읍", district: "서귀포시", city: "서귀포", lat: 33.4380, lng: 126.9100, noiseScore: 82, safetyScore: 80, convenienceScore: 60, overallScore: 74, population: "낮음", subway: [], highlights: ["성산일출봉", "관광 명소", "어촌 마을"] },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── 전라북도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 전주시 완산구 ──
+  { id: "jeonju-wansan-seosin", name: "서신동", district: "완산구", city: "전주", lat: 35.8245, lng: 127.1188, noiseScore: 65, safetyScore: 75, convenienceScore: 88, overallScore: 76, population: "높음", subway: [], highlights: ["전주 신도심", "롯데백화점 인근", "상권 밀집", "주거·상업 혼재"] },
+  { id: "jeonju-wansan-hyoja", name: "효자동", district: "완산구", city: "전주", lat: 35.8167, lng: 127.0972, noiseScore: 68, safetyScore: 78, convenienceScore: 85, overallScore: 77, population: "높음", subway: [], highlights: ["전주 시청 인근", "신축 아파트", "혁신도시 일부"] },
+  { id: "jeonju-wansan-jungin", name: "중인동", district: "완산구", city: "전주", lat: 35.7805, lng: 127.0855, noiseScore: 80, safetyScore: 75, convenienceScore: 65, overallScore: 73, population: "낮음", subway: [], highlights: ["전주 외곽", "조용한 주거지", "자연환경"] },
+  { id: "jeonju-wansan-pungnam", name: "풍남동", district: "완산구", city: "전주", lat: 35.8155, lng: 127.1465, noiseScore: 70, safetyScore: 73, convenienceScore: 80, overallScore: 74, population: "보통", subway: [], highlights: ["전주한옥마을", "관광지", "역사 지구"] },
+
+  // ── 전주시 덕진구 ──
+  { id: "jeonju-deokjin-songcheon", name: "송천동", district: "덕진구", city: "전주", lat: 35.8597, lng: 127.1248, noiseScore: 70, safetyScore: 78, convenienceScore: 82, overallScore: 77, population: "높음", subway: [], highlights: ["전주 북부 주거 중심", "택지지구", "학원가"] },
+  { id: "jeonju-deokjin-jeonmi", name: "전미동", district: "덕진구", city: "전주", lat: 35.8855, lng: 127.1185, noiseScore: 72, safetyScore: 76, convenienceScore: 75, overallScore: 74, population: "보통", subway: [], highlights: ["주거 신도심", "전북혁신도시 인접"] },
+  { id: "jeonju-deokjin-deokjin", name: "덕진동", district: "덕진구", city: "전주", lat: 35.8455, lng: 127.1318, noiseScore: 68, safetyScore: 73, convenienceScore: 78, overallScore: 73, population: "보통", subway: [], highlights: ["전북대 인근", "대학가", "원룸 밀집"] },
+
+  // ── 군산시 ──
+  { id: "gunsan-suchang", name: "수송동", district: "군산시", city: "군산", lat: 35.9745, lng: 126.7228, noiseScore: 70, safetyScore: 78, convenienceScore: 85, overallScore: 78, population: "높음", subway: [], highlights: ["군산 신도심", "상권 중심", "주거·상업 혼재"] },
+  { id: "gunsan-mirong", name: "미룡동", district: "군산시", city: "군산", lat: 35.9510, lng: 126.6848, noiseScore: 72, safetyScore: 78, convenienceScore: 75, overallScore: 75, population: "보통", subway: [], highlights: ["군산대 인근", "택지지구"] },
+  { id: "gunsan-jungang", name: "월명동", district: "군산시", city: "군산", lat: 35.9740, lng: 126.7060, noiseScore: 65, safetyScore: 73, convenienceScore: 78, overallScore: 72, population: "보통", subway: [], highlights: ["군산 구도심", "근대문화유산 거리", "관광지"] },
+
+  // ── 익산시 ──
+  { id: "iksan-yeongdeung", name: "영등동", district: "익산시", city: "익산", lat: 35.9608, lng: 126.9700, noiseScore: 65, safetyScore: 75, convenienceScore: 88, overallScore: 76, population: "높음", subway: ["익산역"], highlights: ["익산 도심", "KTX 익산역", "상권 밀집", "터미널"] },
+  { id: "iksan-baekgu", name: "어양동", district: "익산시", city: "익산", lat: 35.9755, lng: 126.9555, noiseScore: 70, safetyScore: 78, convenienceScore: 80, overallScore: 76, population: "높음", subway: [], highlights: ["주거 신도심", "택지지구", "학원가"] },
+
+  // ── 정읍시 ──
+  { id: "jeongeup-yeonji", name: "연지동", district: "정읍시", city: "정읍", lat: 35.5705, lng: 126.8540, noiseScore: 70, safetyScore: 75, convenienceScore: 78, overallScore: 74, population: "보통", subway: [], highlights: ["정읍 도심", "주거·상업 중심"] },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── 전라남도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 목포시 ──
+  { id: "mokpo-hadang", name: "하당동", district: "목포시", city: "목포", lat: 34.7990, lng: 126.4115, noiseScore: 65, safetyScore: 78, convenienceScore: 88, overallScore: 77, population: "높음", subway: [], highlights: ["목포 신도심", "상권 밀집", "주거·상업 혼재", "롯데마트"] },
+  { id: "mokpo-bukgyo", name: "북교동", district: "목포시", city: "목포", lat: 34.7945, lng: 126.3920, noiseScore: 68, safetyScore: 73, convenienceScore: 75, overallScore: 72, population: "보통", subway: [], highlights: ["목포 구도심", "근대역사문화공간", "유달산 인접"] },
+  { id: "mokpo-yongdang", name: "용당동", district: "목포시", city: "목포", lat: 34.7830, lng: 126.4070, noiseScore: 72, safetyScore: 75, convenienceScore: 72, overallScore: 73, population: "보통", subway: [], highlights: ["주거지", "목포대 인근", "조용한 편"] },
+
+  // ── 여수시 ──
+  { id: "yeosu-yeocheon", name: "여천동", district: "여수시", city: "여수", lat: 34.7635, lng: 127.6675, noiseScore: 68, safetyScore: 78, convenienceScore: 85, overallScore: 77, population: "높음", subway: [], highlights: ["여수 신도심", "여천역", "상권 밀집", "주거 중심"] },
+  { id: "yeosu-mansung", name: "만성리", district: "여수시", city: "여수", lat: 34.7570, lng: 127.7340, noiseScore: 78, safetyScore: 75, convenienceScore: 65, overallScore: 73, population: "낮음", subway: [], highlights: ["검은모래해변", "조용한 해변마을"] },
+  { id: "yeosu-dolsan", name: "돌산읍", district: "여수시", city: "여수", lat: 34.6745, lng: 127.7665, noiseScore: 80, safetyScore: 78, convenienceScore: 65, overallScore: 74, population: "보통", subway: [], highlights: ["돌산대교", "갓김치", "관광지"] },
+
+  // ── 순천시 ──
+  { id: "suncheon-yeonhyang", name: "연향동", district: "순천시", city: "순천", lat: 34.9510, lng: 127.5125, noiseScore: 70, safetyScore: 80, convenienceScore: 88, overallScore: 79, population: "높음", subway: [], highlights: ["순천 신도심", "롯데마트", "상권 밀집", "주거 중심"] },
+  { id: "suncheon-jungap", name: "중앙동", district: "순천시", city: "순천", lat: 34.9495, lng: 127.4870, noiseScore: 65, safetyScore: 75, convenienceScore: 80, overallScore: 73, population: "보통", subway: [], highlights: ["순천 구도심", "터미널", "전통시장"] },
+  { id: "suncheon-haeryong", name: "해룡면", district: "순천시", city: "순천", lat: 34.9080, lng: 127.5340, noiseScore: 75, safetyScore: 80, convenienceScore: 75, overallScore: 77, population: "높음", subway: [], highlights: ["신대지구", "신축 아파트", "택지개발", "광양 인접"] },
+
+  // ── 광양시 ──
+  { id: "gwangyang-jungma", name: "중마동", district: "광양시", city: "광양", lat: 34.9395, lng: 127.6993, noiseScore: 68, safetyScore: 80, convenienceScore: 85, overallScore: 78, population: "높음", subway: [], highlights: ["광양 신도심", "POSCO 직주근접", "상권 밀집"] },
+  { id: "gwangyang-okgok", name: "옥곡면", district: "광양시", city: "광양", lat: 34.9700, lng: 127.7140, noiseScore: 80, safetyScore: 76, convenienceScore: 65, overallScore: 74, population: "낮음", subway: [], highlights: ["전원형 주거", "조용한 환경"] },
+
+  // ── 나주시 ──
+  { id: "naju-bitgaram", name: "빛가람동", district: "나주시", city: "나주", lat: 35.0185, lng: 126.7900, noiseScore: 75, safetyScore: 82, convenienceScore: 80, overallScore: 79, population: "높음", subway: [], highlights: ["광주전남공동혁신도시", "공공기관 이전", "신도시 개발", "한국전력"] },
+  { id: "naju-songwol", name: "송월동", district: "나주시", city: "나주", lat: 35.0320, lng: 126.7115, noiseScore: 70, safetyScore: 75, convenienceScore: 75, overallScore: 73, population: "보통", subway: [], highlights: ["나주 도심", "터미널 인근"] },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── 경상북도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 포항시 북구 ──
+  { id: "pohang-buk-yangduk", name: "양덕동", district: "북구", city: "포항", lat: 36.0780, lng: 129.3855, noiseScore: 65, safetyScore: 78, convenienceScore: 88, overallScore: 77, population: "높음", subway: [], highlights: ["포항 북부 신도심", "이마트", "상권 밀집", "주거 중심"] },
+  { id: "pohang-buk-jangsung", name: "장성동", district: "북구", city: "포항", lat: 36.0610, lng: 129.3735, noiseScore: 70, safetyScore: 78, convenienceScore: 80, overallScore: 76, population: "높음", subway: [], highlights: ["주거 밀집", "택지지구", "학원가"] },
+  { id: "pohang-buk-uchang", name: "우창동", district: "북구", city: "포항", lat: 36.0398, lng: 129.3632, noiseScore: 65, safetyScore: 75, convenienceScore: 82, overallScore: 74, population: "높음", subway: [], highlights: ["포항 도심", "포항역 인근", "상권 중심"] },
+  { id: "pohang-buk-songra", name: "송라면", district: "북구", city: "포항", lat: 36.1850, lng: 129.4050, noiseScore: 82, safetyScore: 75, convenienceScore: 60, overallScore: 72, population: "낮음", subway: [], highlights: ["내연산", "전원형 주거"] },
+
+  // ── 포항시 남구 ──
+  { id: "pohang-nam-jecheol", name: "제철동", district: "남구", city: "포항", lat: 36.0123, lng: 129.3700, noiseScore: 60, safetyScore: 78, convenienceScore: 80, overallScore: 73, population: "높음", subway: [], highlights: ["POSCO 인접", "철강공단", "직주근접"] },
+  { id: "pohang-nam-ojeon", name: "오천읍", district: "남구", city: "포항", lat: 35.9755, lng: 129.4035, noiseScore: 72, safetyScore: 78, convenienceScore: 78, overallScore: 76, population: "높음", subway: [], highlights: ["오천지구", "신축 아파트", "주거 신도심"] },
+  { id: "pohang-nam-guryongpo", name: "구룡포읍", district: "남구", city: "포항", lat: 35.9870, lng: 129.5535, noiseScore: 80, safetyScore: 75, convenienceScore: 65, overallScore: 73, population: "낮음", subway: [], highlights: ["구룡포항", "과메기", "어촌"] },
+
+  // ── 경주시 ──
+  { id: "gyeongju-yonggang", name: "용강동", district: "경주시", city: "경주", lat: 35.8650, lng: 129.2270, noiseScore: 68, safetyScore: 78, convenienceScore: 82, overallScore: 76, population: "높음", subway: [], highlights: ["경주 도심", "주거 중심", "상권 밀집"] },
+  { id: "gyeongju-hwangnam", name: "황남동", district: "경주시", city: "경주", lat: 35.8345, lng: 129.2155, noiseScore: 78, safetyScore: 76, convenienceScore: 72, overallScore: 75, population: "보통", subway: [], highlights: ["경주 한옥마을", "황리단길", "관광지"] },
+  { id: "gyeongju-bomun", name: "보문동", district: "경주시", city: "경주", lat: 35.8420, lng: 129.2650, noiseScore: 82, safetyScore: 80, convenienceScore: 70, overallScore: 77, population: "낮음", subway: [], highlights: ["보문관광단지", "리조트 밀집", "관광지"] },
+
+  // ── 안동시 ──
+  { id: "andong-okdong", name: "옥동", district: "안동시", city: "안동", lat: 36.5575, lng: 128.7090, noiseScore: 70, safetyScore: 78, convenienceScore: 82, overallScore: 77, population: "높음", subway: [], highlights: ["안동 신도심", "택지지구", "주거 중심"] },
+  { id: "andong-songhyeon", name: "송현동", district: "안동시", city: "안동", lat: 36.5615, lng: 128.7240, noiseScore: 68, safetyScore: 75, convenienceScore: 80, overallScore: 74, population: "보통", subway: [], highlights: ["주거 밀집", "안동 시청 인접"] },
+  { id: "andong-pungcheon", name: "풍천면", district: "안동시", city: "안동", lat: 36.5510, lng: 128.5215, noiseScore: 80, safetyScore: 80, convenienceScore: 75, overallScore: 78, population: "보통", subway: [], highlights: ["경북도청 신도시", "공공기관 이전", "신도시 개발"] },
+
+  // ── 구미시 ──
+  { id: "gumi-songjeong", name: "송정동", district: "구미시", city: "구미", lat: 36.1175, lng: 128.3445, noiseScore: 65, safetyScore: 78, convenienceScore: 88, overallScore: 77, population: "높음", subway: [], highlights: ["구미 도심", "터미널 인근", "상권 중심"] },
+  { id: "gumi-okgye", name: "옥계동", district: "구미시", city: "구미", lat: 36.1495, lng: 128.4290, noiseScore: 68, safetyScore: 78, convenienceScore: 82, overallScore: 76, population: "높음", subway: [], highlights: ["구미 동부", "주거 신도심", "삼성·LG 직주근접"] },
+  { id: "gumi-indong", name: "인동동", district: "구미시", city: "구미", lat: 36.1105, lng: 128.4180, noiseScore: 70, safetyScore: 78, convenienceScore: 80, overallScore: 76, population: "높음", subway: [], highlights: ["구미 동부 주거", "택지지구", "공단 인접"] },
+  { id: "gumi-gongdan", name: "공단동", district: "구미시", city: "구미", lat: 36.1075, lng: 128.3655, noiseScore: 55, safetyScore: 75, convenienceScore: 78, overallScore: 70, population: "보통", subway: [], highlights: ["구미국가산단", "직주근접", "공장 지역"] },
+
+  // ── 경산시 ──
+  { id: "gyeongsan-jungang", name: "중방동", district: "경산시", city: "경산", lat: 35.8270, lng: 128.7415, noiseScore: 65, safetyScore: 78, convenienceScore: 85, overallScore: 76, population: "높음", subway: ["경산역"], highlights: ["경산 도심", "1호선 연장", "주거·상업 중심"] },
+  { id: "gyeongsan-jincheon", name: "진량읍", district: "경산시", city: "경산", lat: 35.8650, lng: 128.8000, noiseScore: 72, safetyScore: 76, convenienceScore: 72, overallScore: 73, population: "보통", subway: [], highlights: ["경산 동부", "산업단지 인접", "주거 신도심"] },
+  { id: "gyeongsan-okgok", name: "옥곡동", district: "경산시", city: "경산", lat: 35.8190, lng: 128.7580, noiseScore: 68, safetyScore: 78, convenienceScore: 80, overallScore: 75, population: "높음", subway: [], highlights: ["대구 인접", "베드타운", "신축 아파트"] },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── 경상남도 ──
+  // ══════════════════════════════════════════════════════════════
+
+  // ── 창원시 의창구 ──
+  { id: "changwon-uichang-yongho", name: "용호동", district: "의창구", city: "창원", lat: 35.2400, lng: 128.6855, noiseScore: 60, safetyScore: 80, convenienceScore: 92, overallScore: 78, population: "높음", subway: [], highlights: ["창원 도심", "정우상가", "상권 밀집", "행정·상업 중심"] },
+  { id: "changwon-uichang-bukmyeon", name: "북면", district: "의창구", city: "창원", lat: 35.3200, lng: 128.6450, noiseScore: 80, safetyScore: 78, convenienceScore: 70, overallScore: 76, population: "보통", subway: [], highlights: ["북면온천", "전원형 주거", "신도시 개발"] },
+
+  // ── 창원시 성산구 ──
+  { id: "changwon-seongsan-sangnam", name: "상남동", district: "성산구", city: "창원", lat: 35.2275, lng: 128.6810, noiseScore: 50, safetyScore: 78, convenienceScore: 95, overallScore: 75, population: "높음", subway: [], highlights: ["창원 최대 상권", "유흥가", "직장인 밀집", "야간 유동인구 많음"] },
+  { id: "changwon-seongsan-banglim", name: "반림동", district: "성산구", city: "창원", lat: 35.2410, lng: 128.6963, noiseScore: 70, safetyScore: 80, convenienceScore: 85, overallScore: 78, population: "높음", subway: [], highlights: ["주거 신도심", "트리비앙", "신축 아파트"] },
+
+  // ── 창원시 마산회원구 ──
+  { id: "changwon-masan-haeun", name: "내서읍", district: "마산회원구", city: "창원", lat: 35.2510, lng: 128.5345, noiseScore: 70, safetyScore: 78, convenienceScore: 80, overallScore: 76, population: "높음", subway: [], highlights: ["내서지구", "택지개발", "주거 신도심"] },
+  { id: "changwon-masan-yangdeok", name: "양덕동", district: "마산회원구", city: "창원", lat: 35.2300, lng: 128.5805, noiseScore: 65, safetyScore: 75, convenienceScore: 82, overallScore: 74, population: "높음", subway: [], highlights: ["마산 신도심", "롯데마트", "주거·상업 혼재"] },
+
+  // ── 진주시 ──
+  { id: "jinju-pyeonggeo", name: "평거동", district: "진주시", city: "진주", lat: 35.1925, lng: 128.0790, noiseScore: 68, safetyScore: 80, convenienceScore: 88, overallScore: 79, population: "높음", subway: [], highlights: ["진주 신도심", "이마트", "주거·상업 중심", "택지지구"] },
+  { id: "jinju-cheongam", name: "초전동", district: "진주시", city: "진주", lat: 35.2095, lng: 128.0995, noiseScore: 72, safetyScore: 80, convenienceScore: 80, overallScore: 77, population: "높음", subway: [], highlights: ["혁신도시", "공공기관", "신도시 개발"] },
+  { id: "jinju-sangbong", name: "상봉동", district: "진주시", city: "진주", lat: 35.1865, lng: 128.0925, noiseScore: 65, safetyScore: 75, convenienceScore: 80, overallScore: 73, population: "보통", subway: [], highlights: ["진주 구도심", "전통 상권", "진주성 인근"] },
+
+  // ── 김해시 ──
+  { id: "gimhae-naeoe", name: "내외동", district: "김해시", city: "김해", lat: 35.2310, lng: 128.8750, noiseScore: 65, safetyScore: 78, convenienceScore: 88, overallScore: 77, population: "높음", subway: ["수로왕릉역"], highlights: ["김해 도심", "부산김해경전철", "상권 밀집"] },
+  { id: "gimhae-jangyu", name: "장유동", district: "김해시", city: "김해", lat: 35.1985, lng: 128.8055, noiseScore: 68, safetyScore: 80, convenienceScore: 82, overallScore: 77, population: "높음", subway: [], highlights: ["장유 신도심", "신축 아파트", "주거 중심", "대형마트"] },
+  { id: "gimhae-juchon", name: "주촌면", district: "김해시", city: "김해", lat: 35.2440, lng: 128.8390, noiseScore: 72, safetyScore: 78, convenienceScore: 75, overallScore: 75, population: "보통", subway: [], highlights: ["주촌선천지구", "신축 아파트", "신도시 개발"] },
+
+  // ── 양산시 ──
+  { id: "yangsan-mulgeum", name: "물금읍", district: "양산시", city: "양산", lat: 35.2980, lng: 128.9890, noiseScore: 68, safetyScore: 80, convenienceScore: 85, overallScore: 78, population: "높음", subway: ["양산역", "남양산역"], highlights: ["양산 신도시", "2호선", "주거 중심", "상권 밀집"] },
+  { id: "yangsan-dong", name: "동면", district: "양산시", city: "양산", lat: 35.3540, lng: 129.0185, noiseScore: 75, safetyScore: 80, convenienceScore: 75, overallScore: 77, population: "높음", subway: [], highlights: ["사송신도시", "신축 아파트", "택지개발"] },
+  { id: "yangsan-jungang", name: "중앙동", district: "양산시", city: "양산", lat: 35.3330, lng: 129.0388, noiseScore: 65, safetyScore: 75, convenienceScore: 80, overallScore: 73, population: "보통", subway: ["양산역"], highlights: ["양산 구도심", "터미널 인근"] },
+
+  // ── 거제시 ──
+  { id: "geoje-okpo", name: "옥포동", district: "거제시", city: "거제", lat: 34.8830, lng: 128.6940, noiseScore: 60, safetyScore: 75, convenienceScore: 82, overallScore: 73, population: "높음", subway: [], highlights: ["대우조선해양", "조선소 직주근접", "상권 밀집"] },
+  { id: "geoje-gohyeon", name: "고현동", district: "거제시", city: "거제", lat: 34.8845, lng: 128.6258, noiseScore: 65, safetyScore: 78, convenienceScore: 88, overallScore: 77, population: "높음", subway: [], highlights: ["거제 도심", "터미널", "상권 중심"] },
+  { id: "geoje-sinhyeon", name: "상문동", district: "거제시", city: "거제", lat: 34.8760, lng: 128.6360, noiseScore: 72, safetyScore: 80, convenienceScore: 82, overallScore: 78, population: "높음", subway: [], highlights: ["주거 신도심", "신축 아파트"] },
+
+  // ── 통영시 ──
+  { id: "tongyeong-mubun", name: "무전동", district: "통영시", city: "통영", lat: 34.8645, lng: 128.4060, noiseScore: 68, safetyScore: 78, convenienceScore: 82, overallScore: 76, population: "높음", subway: [], highlights: ["통영 도심", "주거·상업 중심"] },
+  { id: "tongyeong-bongpyeong", name: "봉평동", district: "통영시", city: "통영", lat: 34.8488, lng: 128.4160, noiseScore: 70, safetyScore: 75, convenienceScore: 75, overallScore: 73, population: "보통", subway: [], highlights: ["통영케이블카 인근", "관광지", "조용한 편"] },
+
   // ══════════════════════════════════════════════════════════════
   // ── 서울 추가 (중랑구·성북구·강북구·도봉구·금천구) ──
   // ══════════════════════════════════════════════════════════════
