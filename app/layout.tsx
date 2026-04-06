@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import Disclaimer from "@/components/Disclaimer";
 import Header from "@/components/Header";
 
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header />
         {children}
+        <Disclaimer />
         <Analytics />
       </body>
     </html>
