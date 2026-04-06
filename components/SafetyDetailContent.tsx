@@ -45,7 +45,6 @@ interface SafetyDetailContentProps {
     cctvCount: number;
     cctvTraffic: number;
     policeStation: string;
-    policeDistance: string;
     convenienceStores24h: number;
     emergencyBells: number;
     safetyScore: number;
@@ -95,14 +94,19 @@ export default function SafetyDetailContent({
               </p>
             </div>
 
-            <div className="bg-white border border-[#E2E8F0] rounded-xl p-4">
+            <a
+              href={`https://map.kakao.com/?q=${encodeURIComponent(safety.policeStation)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white border border-[#E2E8F0] rounded-xl p-4 hover:border-[#7C3AED] transition-colors block"
+            >
               <div className="text-2xl mb-2">👮</div>
               <h3 className="text-sm font-semibold text-[#0F172A] mb-1">경찰서</h3>
               <p className="text-base font-bold text-[#7C3AED]">
                 {safety.policeStation}
               </p>
-              <p className="text-xs text-[#64748B] mt-1">{safety.policeDistance}</p>
-            </div>
+              <p className="text-xs text-[#6366F1] mt-1">지도 보기 →</p>
+            </a>
 
             <div className="bg-white border border-[#E2E8F0] rounded-xl p-4">
               <div className="text-2xl mb-2">🏪</div>

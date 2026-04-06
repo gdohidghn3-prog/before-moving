@@ -6056,7 +6056,7 @@ export interface SafetyInfo {
   cctvCount: number;          // 방범 CCTV 수
   cctvTraffic: number;        // 교통 CCTV 수
   policeStation: string;      // 가까운 경찰서/지구대
-  policeDistance: string;     // "도보 5분"
+  policeDistance?: string;
   convenienceStores24h: number; // 24시 편의점 수
   emergencyBells: number;     // 비상벨 수
   safetyScore: number;        // 0~100
