@@ -410,28 +410,28 @@ export default function AreaDetailContent({
           </h2>
           <div className="grid grid-cols-3 gap-2">
             <a
-              href={`https://new.land.naver.com/search?keyword=${encodeURIComponent(area.district + " " + area.name)}`}
+              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 부동산 매물")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1 py-2.5 rounded-lg text-white text-sm font-medium bg-green-600 hover:bg-green-700 transition-colors"
             >
-              네이버 부동산 <ExternalLink size={12} />
+              매물 검색 <ExternalLink size={12} />
             </a>
             <a
-              href={`https://www.zigbang.com/home/search?keyword=${encodeURIComponent(area.district + " " + area.name)}`}
+              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 전세 월세")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1 py-2.5 rounded-lg text-white text-sm font-medium bg-blue-600 hover:bg-blue-700 transition-colors"
             >
-              직방 <ExternalLink size={12} />
+              전세·월세 <ExternalLink size={12} />
             </a>
             <a
-              href={`https://www.dabangapp.com/search?keyword=${encodeURIComponent(area.district + " " + area.name)}`}
+              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 아파트 시세")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1 py-2.5 rounded-lg text-white text-sm font-medium bg-purple-600 hover:bg-purple-700 transition-colors"
             >
-              다방 <ExternalLink size={12} />
+              아파트 시세 <ExternalLink size={12} />
             </a>
           </div>
         </Section>
