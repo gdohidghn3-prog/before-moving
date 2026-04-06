@@ -4,8 +4,7 @@
 // ============================================================
 
 export const BLOG_CONFIG = {
-  // 블로그 메인 URL (네이버 블로그, 티스토리 등)
-  url: "", // 예: "https://blog.naver.com/your-id"
+  url: "https://blog.naver.com/gdohidghn3",
   name: "오니오니 블로그",
   description: "이사·생활 꿀팁 모음",
 };
