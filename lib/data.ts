@@ -3569,6 +3569,18 @@ export const neighborhoods: Neighborhood[] = [
   { id: "tongyeong-mubun", name: "무전동", district: "통영시", city: "통영", lat: 34.8645, lng: 128.4060, noiseScore: 68, safetyScore: 78, convenienceScore: 82, overallScore: 76, population: "높음", subway: [], highlights: ["통영 도심", "주거·상업 중심"] },
   { id: "tongyeong-bongpyeong", name: "봉평동", district: "통영시", city: "통영", lat: 34.8488, lng: 128.4160, noiseScore: 70, safetyScore: 75, convenienceScore: 75, overallScore: 73, population: "보통", subway: [], highlights: ["통영케이블카 인근", "관광지", "조용한 편"] },
 
+  // ── 부산 중구 (누락 보강) ──
+  { id: "busan-jung-nampo", name: "남포동", district: "중구", city: "부산", lat: 35.0989, lng: 129.0344, noiseScore: 50, safetyScore: 72, convenienceScore: 95, overallScore: 72, population: "높음", subway: ["남포역"], highlights: ["부산 최대 상권", "BIFF광장", "국제시장", "유동인구 매우 많음", "야간 활기"] },
+  { id: "busan-jung-gwangbok", name: "광복동", district: "중구", city: "부산", lat: 35.1011, lng: 129.0327, noiseScore: 55, safetyScore: 73, convenienceScore: 92, overallScore: 73, population: "높음", subway: ["남포역"], highlights: ["광복로 패션거리", "용두산공원", "부산 원도심", "관광지"] },
+
+  // ── 인천 강화군 (누락 보강) ──
+  { id: "incheon-ganghwa-eupnae", name: "강화읍", district: "강화군", city: "인천", lat: 37.7474, lng: 126.4889, noiseScore: 78, safetyScore: 80, convenienceScore: 70, overallScore: 76, population: "보통", subway: [], highlights: ["강화도 중심지", "역사 유적지", "터미널", "전원 환경"] },
+  { id: "incheon-ganghwa-gilsang", name: "길상면", district: "강화군", city: "인천", lat: 37.6585, lng: 126.4920, noiseScore: 85, safetyScore: 82, convenienceScore: 55, overallScore: 74, population: "낮음", subway: [], highlights: ["전등사", "마니산", "전원 마을"] },
+
+  // ── 인천 옹진군 (누락 보강) ──
+  { id: "incheon-ongjin-yeongheung", name: "영흥면", district: "옹진군", city: "인천", lat: 37.2580, lng: 126.4910, noiseScore: 88, safetyScore: 80, convenienceScore: 50, overallScore: 73, population: "낮음", subway: [], highlights: ["영흥도", "선재도", "관광지", "어촌 마을"] },
+  { id: "incheon-ongjin-baengnyeong", name: "백령면", district: "옹진군", city: "인천", lat: 37.9695, lng: 124.6850, noiseScore: 90, safetyScore: 78, convenienceScore: 40, overallScore: 70, population: "낮음", subway: [], highlights: ["백령도", "서해 최북단", "조용한 섬마을"] },
+
   // ══════════════════════════════════════════════════════════════
   // ── 서울 추가 (중랑구·성북구·강북구·도봉구·금천구) ──
   // ══════════════════════════════════════════════════════════════
