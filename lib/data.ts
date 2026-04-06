@@ -3542,6 +3542,78 @@ export const neighborhoods: Neighborhood[] = [
     highlights: ["관악산 인근", "주거지", "조용한 편"],
   },
 
+  // ── 강남구 추가 ──
+  { id: "gangnam-sinsa", name: "신사동", district: "강남구", city: "서울", lat: 37.5238, lng: 127.0236, noiseScore: 50, safetyScore: 78, convenienceScore: 95, overallScore: 76, population: "높음", subway: ["신사역", "압구정역"], highlights: ["가로수길", "카페·맛집", "유동인구 많음", "고급 상권"] },
+  { id: "gangnam-apgujeong", name: "압구정동", district: "강남구", city: "서울", lat: 37.5273, lng: 127.0285, noiseScore: 60, safetyScore: 85, convenienceScore: 90, overallScore: 80, population: "보통", subway: ["압구정역", "압구정로데오역"], highlights: ["고급 주거지", "로데오거리", "성형외과 밀집", "한강공원 인접"] },
+  { id: "gangnam-cheongdam", name: "청담동", district: "강남구", city: "서울", lat: 37.5244, lng: 127.0475, noiseScore: 62, safetyScore: 88, convenienceScore: 88, overallScore: 82, population: "보통", subway: ["청담역"], highlights: ["명품 거리", "고급 주거지", "갤러리·카페", "연예기획사 밀집"] },
+  { id: "gangnam-dogok", name: "도곡동", district: "강남구", city: "서울", lat: 37.4884, lng: 127.0463, noiseScore: 72, safetyScore: 82, convenienceScore: 80, overallScore: 78, population: "보통", subway: ["매봉역", "도곡역"], highlights: ["타워팰리스", "조용한 주거지", "학군 우수", "양재천 인접"] },
+  { id: "gangnam-gaepo", name: "개포동", district: "강남구", city: "서울", lat: 37.4789, lng: 127.0504, noiseScore: 75, safetyScore: 80, convenienceScore: 75, overallScore: 77, population: "보통", subway: ["개포디지털단지역", "대모산입구역"], highlights: ["재건축 활발", "학군 우수", "대모산 인접", "주거환경 양호"] },
+  { id: "gangnam-suseo", name: "수서동", district: "강남구", city: "서울", lat: 37.4875, lng: 127.1013, noiseScore: 68, safetyScore: 78, convenienceScore: 78, overallScore: 75, population: "보통", subway: ["수서역"], highlights: ["SRT 수서역", "대모산 인접", "수서역세권 개발", "교통 편리"] },
+  { id: "gangnam-ilwon", name: "일원동", district: "강남구", city: "서울", lat: 37.4870, lng: 127.0860, noiseScore: 73, safetyScore: 80, convenienceScore: 72, overallScore: 75, population: "보통", subway: ["일원역"], highlights: ["삼성서울병원", "조용한 주거지", "학군 양호", "대모산 인접"] },
+  { id: "gangnam-segok", name: "세곡동", district: "강남구", city: "서울", lat: 37.4680, lng: 127.0795, noiseScore: 80, safetyScore: 78, convenienceScore: 60, overallScore: 72, population: "낮음", subway: [], highlights: ["신규 택지지구", "자연환경 우수", "대모산·구룡산", "개발 진행중"] },
+
+  // ── 서초구 추가 ──
+  { id: "seocho-jamwon", name: "잠원동", district: "서초구", city: "서울", lat: 37.5165, lng: 127.0117, noiseScore: 65, safetyScore: 82, convenienceScore: 85, overallScore: 78, population: "보통", subway: ["잠원역", "신사역"], highlights: ["한강공원 인접", "고속터미널 인근", "고급 주거지", "반포대교 인접"] },
+  { id: "seocho-yangjae", name: "양재동", district: "서초구", city: "서울", lat: 37.4843, lng: 127.0345, noiseScore: 60, safetyScore: 80, convenienceScore: 82, overallScore: 75, population: "높음", subway: ["양재역", "양재시민의숲역"], highlights: ["양재천", "교육시설 밀집", "AT센터", "화훼단지", "IC 교통 편리"] },
+  { id: "seocho-naegok", name: "내곡동", district: "서초구", city: "서울", lat: 37.4600, lng: 127.0700, noiseScore: 82, safetyScore: 78, convenienceScore: 55, overallScore: 70, population: "낮음", subway: [], highlights: ["국정원 인근", "조용한 주거지", "청계산 인접", "자연환경 우수"] },
+
+  // ── 송파구 추가 ──
+  { id: "songpa-pungnap", name: "풍납동", district: "송파구", city: "서울", lat: 37.5277, lng: 127.1177, noiseScore: 65, safetyScore: 75, convenienceScore: 78, overallScore: 73, population: "높음", subway: ["풍납역", "천호역"], highlights: ["올림픽공원 인접", "풍납토성", "재건축 진행", "한강 인접"] },
+  { id: "songpa-bangi", name: "방이동", district: "송파구", city: "서울", lat: 37.5134, lng: 127.1210, noiseScore: 65, safetyScore: 78, convenienceScore: 80, overallScore: 75, population: "높음", subway: ["올림픽공원역", "방이역"], highlights: ["올림픽공원", "먹자골목", "체육시설 풍부", "주거환경 양호"] },
+  { id: "songpa-ogeum", name: "오금동", district: "송파구", city: "서울", lat: 37.5022, lng: 127.1280, noiseScore: 68, safetyScore: 75, convenienceScore: 72, overallScore: 72, population: "보통", subway: ["오금역"], highlights: ["5호선·3호선 환승", "주거 밀집", "조용한 편", "송파공원 인접"] },
+  { id: "songpa-geoyeo", name: "거여동", district: "송파구", city: "서울", lat: 37.4965, lng: 127.1420, noiseScore: 70, safetyScore: 73, convenienceScore: 68, overallScore: 70, population: "보통", subway: ["거여역", "마천역"], highlights: ["5호선", "주거 밀집", "성내천 인접", "조용한 주거지"] },
+  { id: "songpa-seokchon", name: "석촌동", district: "송파구", city: "서울", lat: 37.5050, lng: 127.1080, noiseScore: 58, safetyScore: 78, convenienceScore: 88, overallScore: 76, population: "높음", subway: ["석촌역", "잠실역"], highlights: ["석촌호수", "롯데월드·롯데타워", "카페거리", "교통 편리"] },
+  { id: "songpa-songpa", name: "송파동", district: "송파구", city: "서울", lat: 37.5045, lng: 127.1150, noiseScore: 62, safetyScore: 76, convenienceScore: 78, overallScore: 73, population: "높음", subway: ["석촌역", "송파역"], highlights: ["송파대로", "주거·상업 혼재", "학원가", "교통 편리"] },
+
+  // ── 마포구 추가 ──
+  { id: "mapo-gongdeok", name: "공덕동", district: "마포구", city: "서울", lat: 37.5448, lng: 126.9516, noiseScore: 52, safetyScore: 75, convenienceScore: 92, overallScore: 75, population: "높음", subway: ["공덕역"], highlights: ["5호선·6호선·공항철도 환승", "마포래미안", "교통 요충지", "오피스 밀집"] },
+  { id: "mapo-dohwa", name: "도화동", district: "마포구", city: "서울", lat: 37.5398, lng: 126.9474, noiseScore: 58, safetyScore: 73, convenienceScore: 78, overallScore: 70, population: "보통", subway: ["마포역", "공덕역"], highlights: ["마포역 인근", "주거 밀집", "한강 가까움", "재개발 진행"] },
+  { id: "mapo-seongsan", name: "성산동", district: "마포구", city: "서울", lat: 37.5667, lng: 126.9113, noiseScore: 65, safetyScore: 72, convenienceScore: 70, overallScore: 69, population: "보통", subway: ["월드컵경기장역"], highlights: ["월드컵경기장", "성산대교", "하늘공원·평화공원 인접", "주거지"] },
+  { id: "mapo-ahyeon", name: "아현동", district: "마포구", city: "서울", lat: 37.5560, lng: 126.9562, noiseScore: 55, safetyScore: 72, convenienceScore: 80, overallScore: 70, population: "높음", subway: ["아현역", "이대역"], highlights: ["이대 인근", "재개발 완료", "마포래미안", "도심 접근성"] },
+
+  // ── 강서구 추가 ──
+  { id: "gangseo-balsan", name: "발산동", district: "강서구", city: "서울", lat: 37.5502, lng: 126.8378, noiseScore: 62, safetyScore: 75, convenienceScore: 82, overallScore: 74, population: "높음", subway: ["발산역", "우장산역"], highlights: ["9호선", "마곡 인접", "주거 밀집", "공항 접근성"] },
+  { id: "gangseo-banghwa", name: "방화동", district: "강서구", city: "서울", lat: 37.5747, lng: 126.8131, noiseScore: 55, safetyScore: 70, convenienceScore: 68, overallScore: 65, population: "보통", subway: ["방화역", "개화산역"], highlights: ["김포공항 인접", "비행기 소음", "허준박물관", "방화대교 인접"] },
+  { id: "gangseo-yeomchang", name: "염창동", district: "강서구", city: "서울", lat: 37.5457, lng: 126.8741, noiseScore: 63, safetyScore: 73, convenienceScore: 76, overallScore: 71, population: "보통", subway: ["염창역"], highlights: ["9호선", "한강 인접", "주거 밀집", "등촌역 인근"] },
+
+  // ── 관악구 추가 ──
+  { id: "gwanak-naksungdae", name: "낙성대동", district: "관악구", city: "서울", lat: 37.4765, lng: 126.9613, noiseScore: 65, safetyScore: 70, convenienceScore: 75, overallScore: 70, population: "보통", subway: ["낙성대역"], highlights: ["서울대 인근", "대학가", "젊은 상권", "관악산 입구"] },
+  { id: "gwanak-cheongnyong", name: "청룡동", district: "관악구", city: "서울", lat: 37.4710, lng: 126.9390, noiseScore: 72, safetyScore: 68, convenienceScore: 60, overallScore: 66, population: "보통", subway: [], highlights: ["관악산 인접", "조용한 주거지", "자연환경 우수", "언덕 지형"] },
+  { id: "gwanak-boramae", name: "보라매동", district: "관악구", city: "서울", lat: 37.4930, lng: 126.9225, noiseScore: 60, safetyScore: 72, convenienceScore: 80, overallScore: 72, population: "높음", subway: ["보라매역", "신대방역"], highlights: ["보라매공원", "보라매병원", "7호선", "신림선 개통"] },
+
+  // ── 노원구 추가 ──
+  { id: "nowon-wolgye", name: "월계동", district: "노원구", city: "서울", lat: 37.6195, lng: 127.0585, noiseScore: 65, safetyScore: 72, convenienceScore: 72, overallScore: 70, population: "높음", subway: ["월계역", "광운대역"], highlights: ["광운대 인근", "1호선", "초안산 인접", "주거 밀집"] },
+  { id: "nowon-gongneung", name: "공릉동", district: "노원구", city: "서울", lat: 37.6252, lng: 127.0735, noiseScore: 68, safetyScore: 73, convenienceScore: 70, overallScore: 70, population: "보통", subway: ["공릉역"], highlights: ["서울과기대 인근", "7호선", "태릉 인접", "학생 상권"] },
+
+  // ── 양천구 추가 ──
+  { id: "yangcheon-sinwol", name: "신월동", district: "양천구", city: "서울", lat: 37.5275, lng: 126.8355, noiseScore: 65, safetyScore: 70, convenienceScore: 68, overallScore: 68, population: "높음", subway: ["신월역"], highlights: ["신월동 주거지", "서울식물원 인근", "가족형 주거", "양천공원"] },
+
+  // ── 광진구 추가 ──
+  { id: "gwangjin-neungdong", name: "능동", district: "광진구", city: "서울", lat: 37.5522, lng: 127.0806, noiseScore: 63, safetyScore: 75, convenienceScore: 78, overallScore: 73, population: "보통", subway: ["건대입구역", "어린이대공원역"], highlights: ["어린이대공원", "세종대 인근", "건대 상권 인접", "공원 환경"] },
+  { id: "gwangjin-gwangjang", name: "광장동", district: "광진구", city: "서울", lat: 37.5456, lng: 127.1046, noiseScore: 70, safetyScore: 78, convenienceScore: 70, overallScore: 73, population: "보통", subway: ["광나루역"], highlights: ["워커힐 인근", "한강 인접", "아차산", "조용한 주거지"] },
+
+  // ── 동대문구 추가 ──
+  { id: "dongdaemun-dapsimni", name: "답십리동", district: "동대문구", city: "서울", lat: 37.5673, lng: 127.0526, noiseScore: 58, safetyScore: 70, convenienceScore: 75, overallScore: 68, population: "높음", subway: ["답십리역"], highlights: ["5호선", "청계천 인근", "먹자골목", "주거·상업 혼재"] },
+
+  // ── 용산구 추가 ──
+  { id: "yongsan-huam", name: "후암동", district: "용산구", city: "서울", lat: 37.5508, lng: 126.9796, noiseScore: 65, safetyScore: 75, convenienceScore: 72, overallScore: 71, population: "보통", subway: ["숙대입구역", "남영역"], highlights: ["남산 인접", "숙대·남영역 인근", "해방촌", "도심 접근성"] },
+  { id: "yongsan-bogwang", name: "보광동", district: "용산구", city: "서울", lat: 37.5324, lng: 127.0010, noiseScore: 62, safetyScore: 72, convenienceScore: 70, overallScore: 68, population: "보통", subway: ["녹사평역"], highlights: ["이태원 인근", "한강진역 도보", "다문화 상권", "언덕 지형"] },
+
+  // ── 성동구 추가 ──
+  { id: "seongdong-geumho", name: "금호동", district: "성동구", city: "서울", lat: 37.5564, lng: 127.0186, noiseScore: 60, safetyScore: 72, convenienceScore: 72, overallScore: 68, population: "보통", subway: ["금호역"], highlights: ["약수역 인근", "응봉산", "한양대 인접", "도심 접근성"] },
+  { id: "seongdong-haengdang", name: "행당동", district: "성동구", city: "서울", lat: 37.5580, lng: 127.0336, noiseScore: 58, safetyScore: 72, convenienceScore: 78, overallScore: 70, population: "높음", subway: ["왕십리역", "행당역"], highlights: ["왕십리역세권", "비트플렉스", "재개발 활발", "교통 편리"] },
+
+  // ── 영등포구 추가 ──
+  { id: "yeongdeungpo-singil", name: "신길동", district: "영등포구", city: "서울", lat: 37.5082, lng: 126.9145, noiseScore: 58, safetyScore: 68, convenienceScore: 75, overallScore: 67, population: "높음", subway: ["신길역"], highlights: ["1호선·5호선 환승", "보라매공원 인접", "재개발 진행", "학교 밀집"] },
+
+  // ── 중구 추가 ──
+  { id: "junggu-sindang", name: "신당동", district: "중구", city: "서울", lat: 37.5651, lng: 127.0099, noiseScore: 50, safetyScore: 70, convenienceScore: 85, overallScore: 70, population: "높음", subway: ["신당역"], highlights: ["2호선·6호선 환승", "중앙시장", "떡볶이 골목", "도심 접근성"] },
+  { id: "junggu-jangchung", name: "장충동", district: "중구", city: "서울", lat: 37.5591, lng: 127.0049, noiseScore: 62, safetyScore: 75, convenienceScore: 72, overallScore: 70, population: "보통", subway: ["동대입구역"], highlights: ["남산 인접", "장충단공원", "족발 골목", "한옥 마을"] },
+
+  // ── 종로구 추가 ──
+  { id: "jongno-buam", name: "부암동", district: "종로구", city: "서울", lat: 37.5933, lng: 126.9665, noiseScore: 82, safetyScore: 80, convenienceScore: 50, overallScore: 70, population: "낮음", subway: [], highlights: ["북한산 인접", "고급 주거지", "카페 마을", "자하문터널 인근"] },
+  { id: "jongno-pyeongchang", name: "평창동", district: "종로구", city: "서울", lat: 37.6117, lng: 126.9753, noiseScore: 85, safetyScore: 85, convenienceScore: 45, overallScore: 72, population: "낮음", subway: [], highlights: ["고급 단독주택", "북한산 자락", "조용한 주거", "자연환경 최고"] },
+
   // ══════════════════════════════════════════════════════════════
   // ── 부산 추가 (북구·동구·서구·영도구·강서구·기장군) ──
   // ══════════════════════════════════════════════════════════════
