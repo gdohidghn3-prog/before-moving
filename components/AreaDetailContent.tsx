@@ -408,30 +408,22 @@ export default function AreaDetailContent({
           <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3">
             이 동네 매물 보기
           </h2>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 gap-2">
             <a
-              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 부동산 매물")}`}
+              href={`https://fin.land.naver.com/map?keyword=${encodeURIComponent(area.district + " " + area.name)}&search-expanded=true`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1 py-2.5 rounded-lg text-white text-sm font-medium bg-green-600 hover:bg-green-700 transition-colors"
+              className="flex items-center justify-center gap-1 py-3 rounded-lg text-white text-sm font-medium bg-green-600 hover:bg-green-700 transition-colors"
+            >
+              네이버 부동산 <ExternalLink size={12} />
+            </a>
+            <a
+              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 전세 월세 매물")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1 py-3 rounded-lg text-white text-sm font-medium bg-blue-600 hover:bg-blue-700 transition-colors"
             >
               매물 검색 <ExternalLink size={12} />
-            </a>
-            <a
-              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 전세 월세")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1 py-2.5 rounded-lg text-white text-sm font-medium bg-blue-600 hover:bg-blue-700 transition-colors"
-            >
-              전세·월세 <ExternalLink size={12} />
-            </a>
-            <a
-              href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 아파트 시세")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1 py-2.5 rounded-lg text-white text-sm font-medium bg-purple-600 hover:bg-purple-700 transition-colors"
-            >
-              아파트 시세 <ExternalLink size={12} />
             </a>
           </div>
         </Section>
