@@ -130,10 +130,9 @@ export default function AboutPage() {
               서비스 관련 문의, 데이터 오류 제보, 제휴 문의는 아래로
               연락해주세요.
             </p>
-            <p className="text-sm text-[#6366F1] font-medium mt-2">
-              {/* 이메일 주소를 입력하세요 */}
-              이메일: (준비 중)
-            </p>
+            <a href="mailto:gdohidghn7@gmail.com" className="text-sm text-[#6366F1] font-medium mt-2 block hover:underline">
+              gdohidghn7@gmail.com
+            </a>
           </div>
         </section>
 
