@@ -4770,6 +4770,16 @@ const complaintProfiles: Record<string, Record<string, [number, number]>> = {
   "jeju-yeondong":         { noise: [20, 38], parking: [18, 34], trash: [8, 18], road: [4, 10], construction: [5, 12], other: [5, 10] },
   "jeju-nohyeong":         { noise: [14, 26], parking: [12, 24], trash: [6, 14], road: [4, 8], construction: [5, 12], other: [3, 6] },
   "jeju-ido":              { noise: [18, 34], parking: [15, 28], trash: [8, 16], road: [4, 10], construction: [5, 12], other: [4, 8] },
+  "jeju-samdo":            { noise: [16, 30], parking: [14, 26], trash: [7, 15], road: [4, 9], construction: [5, 12], other: [3, 7] },
+  "jeju-aewol":            { noise: [10, 20], parking: [8, 18], trash: [5, 12], road: [3, 8], construction: [4, 10], other: [3, 6] },
+  "jeju-jocheon":          { noise: [8, 16], parking: [7, 15], trash: [4, 10], road: [3, 7], construction: [3, 8], other: [2, 5] },
+  "jeju-hallim":           { noise: [10, 20], parking: [8, 18], trash: [5, 12], road: [3, 8], construction: [4, 10], other: [3, 6] },
+
+  // ── 서귀포시 ──
+  "seogwipo-jungang":      { noise: [14, 26], parking: [12, 24], trash: [6, 14], road: [4, 9], construction: [5, 12], other: [3, 7] },
+  "seogwipo-cheonji":      { noise: [12, 24], parking: [10, 20], trash: [5, 12], road: [3, 8], construction: [4, 10], other: [3, 6] },
+  "seogwipo-jungmun":      { noise: [10, 20], parking: [8, 18], trash: [5, 12], road: [3, 8], construction: [5, 12], other: [3, 6] },
+  "seogwipo-seongsan":     { noise: [8, 18], parking: [7, 15], trash: [4, 10], road: [3, 7], construction: [3, 8], other: [2, 5] },
 
   // ── 서울 추가 (중랑구·성북구·강북구·도봉구·금천구) ──
   "seoul-myeonmok":        { noise: [14, 26], parking: [12, 24], trash: [6, 14], road: [4, 9], construction: [5, 12], other: [3, 7] },
@@ -5176,6 +5186,16 @@ export const noisePoints: NoisePoint[] = [
   { id: "np-yeondong-2", lat: 33.4886, lng: 126.4924, level: 3, type: "traffic", description: "연동 중심가 교통 혼잡" },
   { id: "np-nohyeong-1", lat: 33.4833, lng: 126.4771, level: 2, type: "traffic", description: "노형동 주간 교통량" },
   { id: "np-ido-1", lat: 33.5060, lng: 126.5293, level: 2, type: "traffic", description: "이도동 시청 주변 교통 소음" },
+  { id: "np-samdo-1", lat: 33.5135, lng: 126.5215, level: 2, type: "traffic", description: "삼도동 원도심 교통 소음" },
+  { id: "np-aewol-1", lat: 33.4655, lng: 126.3300, level: 2, type: "traffic", description: "애월 해안도로 관광 차량" },
+  { id: "np-jocheon-1", lat: 33.5360, lng: 126.6420, level: 1, type: "other", description: "조천 어촌 마을 (매우 조용)" },
+  { id: "np-hallim-1", lat: 33.4115, lng: 126.2685, level: 2, type: "other", description: "한림항 주변 어업 활동 소음" },
+
+  // ── 서귀포 ──
+  { id: "np-seogwipo-jungang-1", lat: 33.2540, lng: 126.5615, level: 2, type: "traffic", description: "서귀포 도심 올레시장 주변 혼잡" },
+  { id: "np-seogwipo-cheonji-1", lat: 33.2475, lng: 126.5605, level: 2, type: "traffic", description: "서귀포항 인근 교통 소음" },
+  { id: "np-seogwipo-jungmun-1", lat: 33.2520, lng: 126.4180, level: 2, type: "nightlife", description: "중문관광단지 야간 관광객" },
+  { id: "np-seogwipo-seongsan-1", lat: 33.4380, lng: 126.9100, level: 1, type: "other", description: "성산 어촌 (조용한 편, 일출 시간대 관광객)" },
 
   // ── 서울 중랑구 ──
   { id: "np-myeonmok-1", lat: 37.5842, lng: 127.0850, level: 2, type: "traffic", description: "면목역 주변 교통 소음" },
@@ -6027,6 +6047,31 @@ export const reviews: AreaReview[] = [
   { id: "rv-ido-1", neighborhoodId: "jeju-ido", rating: 3, pros: "제주시청과 동문시장이 가까워요", cons: "구도심이라 건물이 좀 오래됐어요", livedYears: "1~3년", createdAt: "2025-02-05" },
   { id: "rv-ido-2", neighborhoodId: "jeju-ido", rating: 3, pros: "탑동 해변이 가까워 바다를 즐길 수 있어요", cons: "관광 시즌에 차가 많이 막혀요", livedYears: "3~5년", createdAt: "2024-12-22" },
 
+  { id: "rv-samdo-1", neighborhoodId: "jeju-samdo", rating: 3, pros: "원도심 재생사업으로 분위기가 살아나고 있어요", cons: "노후 건물이 많고 주차가 어려워요", livedYears: "3~5년", createdAt: "2025-01-30" },
+  { id: "rv-samdo-2", neighborhoodId: "jeju-samdo", rating: 3, pros: "관덕정·동문시장이 가까워 생활이 편해요", cons: "젊은 층 상권이 부족해요", livedYears: "1~3년", createdAt: "2024-12-08" },
+
+  { id: "rv-aewol-1", neighborhoodId: "jeju-aewol", rating: 4, pros: "바다 뷰가 정말 좋고 카페가 많아요", cons: "제주시 시내 나가기가 멀고 자차가 필수에요", livedYears: "1~3년", createdAt: "2025-02-18" },
+  { id: "rv-aewol-2", neighborhoodId: "jeju-aewol", rating: 4, pros: "이주민 커뮤니티가 활발해요", cons: "관광객 때문에 주말엔 동네가 붐벼요", livedYears: "3~5년", createdAt: "2024-11-22" },
+
+  { id: "rv-jocheon-1", neighborhoodId: "jeju-jocheon", rating: 4, pros: "함덕해수욕장이 동네에 있어 산책하기 좋아요", cons: "병원·마트가 멀어서 불편해요", livedYears: "1~3년", createdAt: "2025-01-15" },
+  { id: "rv-jocheon-2", neighborhoodId: "jeju-jocheon", rating: 3, pros: "조용하고 공기가 정말 맑아요", cons: "겨울에 바람이 강해요", livedYears: "1년 미만", createdAt: "2024-12-30" },
+
+  { id: "rv-hallim-1", neighborhoodId: "jeju-hallim", rating: 3, pros: "협재해수욕장이 가깝고 풍경이 아름다워요", cons: "관광 성수기엔 도로가 막혀요", livedYears: "1~3년", createdAt: "2025-02-01" },
+  { id: "rv-hallim-2", neighborhoodId: "jeju-hallim", rating: 3, pros: "한림항 수산물이 신선해요", cons: "야간에 가게가 일찍 닫아요", livedYears: "3~5년", createdAt: "2024-10-25" },
+
+  // ── 서귀포 리뷰 ──
+  { id: "rv-seogwipo-jungang-1", neighborhoodId: "seogwipo-jungang", rating: 4, pros: "올레시장과 병원·관공서가 모두 가까워요", cons: "겨울 비가 많고 바람이 강해요", livedYears: "3~5년", createdAt: "2025-02-10" },
+  { id: "rv-seogwipo-jungang-2", neighborhoodId: "seogwipo-jungang", rating: 3, pros: "기후가 따뜻하고 한라산 뷰가 좋아요", cons: "제주공항 가는 길이 멀어요", livedYears: "5년 이상", createdAt: "2024-11-08" },
+
+  { id: "rv-seogwipo-cheonji-1", neighborhoodId: "seogwipo-cheonji", rating: 3, pros: "천지연폭포와 항구가 산책 코스로 좋아요", cons: "관광객이 많아 주말에 시끄러워요", livedYears: "1~3년", createdAt: "2025-01-22" },
+  { id: "rv-seogwipo-cheonji-2", neighborhoodId: "seogwipo-cheonji", rating: 3, pros: "수산시장이 가까워 회를 자주 먹어요", cons: "구도심이라 건물이 노후화됐어요", livedYears: "3~5년", createdAt: "2024-12-05" },
+
+  { id: "rv-seogwipo-jungmun-1", neighborhoodId: "seogwipo-jungmun", rating: 4, pros: "리조트와 골프장이 가까워 여가 환경이 좋아요", cons: "물가가 비싸고 임대료가 높아요", livedYears: "1~3년", createdAt: "2025-02-14" },
+  { id: "rv-seogwipo-jungmun-2", neighborhoodId: "seogwipo-jungmun", rating: 3, pros: "관광 일자리가 많아요", cons: "동네 자체 상권은 부족해요", livedYears: "3~5년", createdAt: "2024-11-18" },
+
+  { id: "rv-seogwipo-seongsan-1", neighborhoodId: "seogwipo-seongsan", rating: 4, pros: "성산일출봉 일출이 매일 장관이에요", cons: "제주시 나가는 데 1시간 넘게 걸려요", livedYears: "1~3년", createdAt: "2025-01-28" },
+  { id: "rv-seogwipo-seongsan-2", neighborhoodId: "seogwipo-seongsan", rating: 3, pros: "조용하고 자연 환경이 좋아요", cons: "병원·학교 인프라가 부족해요", livedYears: "1년 미만", createdAt: "2024-12-15" },
+
   // ══════════════════════════════════════════════════════════════
   // ── 서울 추가 리뷰 (중랑구·성북구·강북구·도봉구·금천구) ──
   // ══════════════════════════════════════════════════════════════
@@ -6693,6 +6738,14 @@ export const safetyData: SafetyInfo[] = [
   { neighborhoodId: "jeju-yeondong", cctvCount: 34, cctvTraffic: 15, policeStation: "연동파출소", policeDistance: "도보 4분", convenienceStores24h: 10, emergencyBells: 6, safetyScore: 76 },
   { neighborhoodId: "jeju-nohyeong", cctvCount: 32, cctvTraffic: 14, policeStation: "노형지구대", policeDistance: "도보 5분", convenienceStores24h: 8, emergencyBells: 6, safetyScore: 74 },
   { neighborhoodId: "jeju-ido", cctvCount: 30, cctvTraffic: 12, policeStation: "제주경찰서", policeDistance: "도보 5분", convenienceStores24h: 7, emergencyBells: 5, safetyScore: 72 },
+  { neighborhoodId: "jeju-samdo", cctvCount: 28, cctvTraffic: 11, policeStation: "삼도파출소", policeDistance: "도보 6분", convenienceStores24h: 6, emergencyBells: 4, safetyScore: 70 },
+  { neighborhoodId: "jeju-aewol", cctvCount: 18, cctvTraffic: 7, policeStation: "애월파출소", policeDistance: "도보 9분", convenienceStores24h: 4, emergencyBells: 3, safetyScore: 66 },
+  { neighborhoodId: "jeju-jocheon", cctvCount: 16, cctvTraffic: 6, policeStation: "조천파출소", policeDistance: "도보 10분", convenienceStores24h: 3, emergencyBells: 2, safetyScore: 64 },
+  { neighborhoodId: "jeju-hallim", cctvCount: 18, cctvTraffic: 7, policeStation: "한림파출소", policeDistance: "도보 8분", convenienceStores24h: 4, emergencyBells: 3, safetyScore: 66 },
+  { neighborhoodId: "seogwipo-jungang", cctvCount: 26, cctvTraffic: 10, policeStation: "서귀포경찰서", policeDistance: "도보 5분", convenienceStores24h: 7, emergencyBells: 5, safetyScore: 72 },
+  { neighborhoodId: "seogwipo-cheonji", cctvCount: 24, cctvTraffic: 10, policeStation: "천지파출소", policeDistance: "도보 6분", convenienceStores24h: 6, emergencyBells: 4, safetyScore: 70 },
+  { neighborhoodId: "seogwipo-jungmun", cctvCount: 24, cctvTraffic: 9, policeStation: "중문파출소", policeDistance: "도보 7분", convenienceStores24h: 5, emergencyBells: 4, safetyScore: 70 },
+  { neighborhoodId: "seogwipo-seongsan", cctvCount: 16, cctvTraffic: 6, policeStation: "성산파출소", policeDistance: "도보 10분", convenienceStores24h: 3, emergencyBells: 2, safetyScore: 64 },
 
   // ── 서울 추가 (중랑구·성북구·강북구·도봉구·금천구) ──
   { neighborhoodId: "seoul-myeonmok", cctvCount: 26, cctvTraffic: 10, policeStation: "면목파출소", policeDistance: "도보 6분", convenienceStores24h: 6, emergencyBells: 4, safetyScore: 66 },
