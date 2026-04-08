@@ -13,6 +13,7 @@ import {
   CircleAlert,
   Users,
   ExternalLink,
+  Crown,
 } from "lucide-react";
 import {
   BarChart,
@@ -428,7 +429,40 @@ export default function AreaDetailContent({
           </div>
         </Section>
 
-        {/* ─── 9. 블로그 ─────────────────────────────────── */}
+        {/* ─── 9. PRO 리포트 CTA ─────────────────────────── */}
+        <Section delay={0.32}>
+          <Link
+            href={`/area/${id}/pro`}
+            className="block bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-5 hover:shadow-md transition-shadow"
+          >
+            <div className="flex items-center gap-2 mb-2">
+              <Crown size={18} className="text-amber-600" />
+              <span className="text-xs font-semibold text-amber-700 uppercase tracking-wider">
+                이사전에 PRO
+              </span>
+            </div>
+            <h3 className="font-bold text-[var(--text)] mb-1">
+              {area.name} 심층 리포트 보기
+            </h3>
+            <p className="text-xs text-[var(--text-secondary)] mb-3">
+              인근 동 비교 · 강점/약점 분석 · 안전 인프라 상세 · 입주 체크포인트
+              · PDF 저장
+            </p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-baseline gap-2">
+                <span className="text-lg font-bold text-amber-700">2,900원</span>
+                <span className="text-xs text-[var(--text-secondary)] line-through">
+                  4,900원
+                </span>
+              </div>
+              <span className="text-xs text-amber-700 font-medium">
+                자세히 보기 →
+              </span>
+            </div>
+          </Link>
+        </Section>
+
+        {/* ─── 10. 블로그 ─────────────────────────────────── */}
         <BlogWidget category="동네" />
       </div>
     </div>

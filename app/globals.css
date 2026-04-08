@@ -26,3 +26,29 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ─── PRO 리포트 인쇄(=PDF 저장) 스타일 ─────────────────── */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .pro-report {
+    background: white !important;
+  }
+  .pro-report section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .pro-report h1,
+  .pro-report h2 {
+    page-break-after: avoid;
+  }
+  /* 색상 보존 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
