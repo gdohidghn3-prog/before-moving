@@ -188,7 +188,11 @@ export default function ProReportContent({
     if (typeof window === "undefined") return;
     setDownloading(true);
     try {
-      const html2pdf = (await import("html2pdf.js")).default;
+      // html2pdf.js는 CJS — default export가 없으므로 모듈 자체를 사용
+      const mod = await import("html2pdf.js");
+      const html2pdf = (mod.default ?? mod) as unknown as () => {
+        set: (o: Record<string, unknown>) => { from: (el: HTMLElement) => { save: () => Promise<void> } };
+      };
       const el = document.getElementById("pro-report-content");
       if (!el) return;
       const opt = {
@@ -200,6 +204,10 @@ export default function ProReportContent({
         pagebreak: { mode: ["avoid-all", "css", "legacy"] },
       };
       await html2pdf().set(opt).from(el).save();
+    } catch (err) {
+      console.error("PDF 생성 실패:", err);
+      // fallback: 브라우저 인쇄 다이얼로그
+      window.print();
     } finally {
       setDownloading(false);
     }

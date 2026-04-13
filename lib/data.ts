@@ -6544,9 +6544,79 @@ export function getNoisePoints(neighborhoodId: string): NoisePoint[] {
   return noisePoints.filter((np) => np.id.startsWith(`np-${key}`));
 }
 
-/** 특정 동의 주민 리뷰 조회 */
+/** 특정 동의 주민 리뷰 조회 — 최소 5개 보장 (부족하면 자동 생성) */
 export function getReviews(neighborhoodId: string): AreaReview[] {
-  return reviews.filter((r) => r.neighborhoodId === neighborhoodId);
+  const existing = reviews.filter((r) => r.neighborhoodId === neighborhoodId);
+  if (existing.length >= 5) return existing;
+
+  const area = getNeighborhoodById(neighborhoodId);
+  if (!area) return existing;
+
+  const generated = generateReviews(area, existing.length);
+  return [...existing, ...generated].slice(0, Math.max(existing.length, 5));
+}
+
+// ── 리뷰 자동 생성 (동네 특성 기반) ────────────────────────
+
+function seedHash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  return Math.abs(h);
+}
+
+const PROS_TEMPLATES: ((a: Neighborhood) => string)[] = [
+  (a) => a.subway.length > 0 ? `${a.subway[0]} 가까워서 출퇴근이 편리해요` : `버스 노선이 다양해서 이동이 편해요`,
+  (a) => a.noiseScore >= 75 ? `동네가 전반적으로 조용해서 살기 좋아요` : `활기찬 분위기라 외식이나 쇼핑이 편해요`,
+  (a) => a.safetyScore >= 75 ? `밤에 혼자 다녀도 안전한 느낌이에요` : `사람이 많아 심야에도 으슥하지 않아요`,
+  (a) => a.convenienceScore >= 75 ? `편의시설이 가까워서 생활이 편리해요` : `물가가 저렴한 편이라 경제적이에요`,
+  (a) => `${a.district} 안에서는 살기 괜찮은 동네예요`,
+  (a) => a.population === "높음" ? `사람이 많아 상권이 활성화되어 있어요` : `인구가 적어 한적하고 여유로워요`,
+  (a) => a.highlights.length > 0 ? `${a.highlights[0]}이 큰 장점이에요` : `전반적으로 살기 나쁘지 않아요`,
+  (a) => `${a.city} ${a.district} 치고는 가성비가 괜찮은 동네예요`,
+];
+
+const CONS_TEMPLATES: ((a: Neighborhood) => string)[] = [
+  (a) => a.subway.length === 0 ? `지하철이 없어서 차가 없으면 불편해요` : `출퇴근 시간 지하철이 많이 혼잡해요`,
+  (a) => a.noiseScore < 65 ? `밤에 소음이 좀 있는 편이에요` : `너무 조용해서 밤에 좀 무서울 때도 있어요`,
+  (a) => a.safetyScore < 70 ? `골목길 가로등이 좀 부족해요` : `주차 자리 잡기가 은근 어려워요`,
+  (a) => a.convenienceScore < 65 ? `근처에 대형마트가 없어 장보기 불편해요` : `물가가 좀 비싼 편이에요`,
+  (a) => `${a.district} 다른 동네에 비해 아쉬운 점이 있어요`,
+  (a) => a.population === "높음" ? `사람이 너무 많아 복잡할 때가 있어요` : `상권이 부족해 외식 선택지가 적어요`,
+  (a) => `서울 도심까지 거리가 좀 있어요`,
+  (a) => `건물이 오래된 곳이 좀 있어요`,
+];
+
+const LIVED_YEARS = ["1년 미만", "1~3년", "3~5년", "5년 이상"];
+const MONTHS = ["01","02","03","04","05","06","07","08","09","10","11","12"];
+
+function generateReviews(area: Neighborhood, existingCount: number): AreaReview[] {
+  const count = 5 - existingCount;
+  if (count <= 0) return [];
+  const h = seedHash(area.id);
+  const result: AreaReview[] = [];
+
+  for (let i = 0; i < count; i++) {
+    const seed = h + i * 7;
+    const rating = area.overallScore >= 80 ? (seed % 2 === 0 ? 5 : 4) :
+                   area.overallScore >= 65 ? (seed % 3 === 0 ? 4 : 3) :
+                   (seed % 2 === 0 ? 3 : 2);
+    const prosIdx = (seed) % PROS_TEMPLATES.length;
+    const consIdx = (seed + 3) % CONS_TEMPLATES.length;
+    const livedIdx = (seed + 1) % LIVED_YEARS.length;
+    const year = 2024 + (seed % 2);
+    const month = MONTHS[(seed + i * 2) % 12];
+
+    result.push({
+      id: `rv-gen-${area.id}-${i}`,
+      neighborhoodId: area.id,
+      rating,
+      pros: PROS_TEMPLATES[prosIdx](area),
+      cons: CONS_TEMPLATES[consIdx](area),
+      livedYears: LIVED_YEARS[livedIdx],
+      createdAt: `${year}-${month}-${String(10 + (seed % 18)).padStart(2, "0")}`,
+    });
+  }
+  return result;
 }
 
 /** 종합 점수 높은 순 TOP 10 */

@@ -12,5 +12,7 @@ declare module "html2pdf.js" {
     from(el: HTMLElement): Html2PdfInstance;
     save(): Promise<void>;
   }
-  export default function html2pdf(): Html2PdfInstance;
+  function html2pdf(): Html2PdfInstance;
+  export default html2pdf;
+  export = html2pdf;
 }
