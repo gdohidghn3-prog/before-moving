@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useEffect, useState, useSyncExternalStore, useCallback } from "react";
+import { useMemo, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -15,16 +15,9 @@ import {
   ExternalLink,
   Crown,
   Heart,
-  Building2,
-  GraduationCap,
-  Clock,
-  Hospital,
-  TreePine,
-  Landmark,
-  TrendingUp,
 } from "lucide-react";
 import { addHistory, isFavorite, toggleFavorite, getFavorites } from "@/lib/history";
-import { getDeepInfo, hasDeepInfo, calcDistance, type DeepInfo, type ApartmentComplex } from "@/lib/deep-info";
+import DeepAnalysisSection from "@/components/DeepAnalysisSection";
 import {
   BarChart,
   Bar,
@@ -193,14 +186,6 @@ export default function AreaDetailContent({
 
   const favIds = useSyncExternalStore(subscribeFav, getFavorites, () => emptyFavs);
   const isFav = favIds.includes(area.id);
-
-  const deepInfo = useMemo(() => getDeepInfo(area.id), [area.id]);
-  const hasDeep = useMemo(() => hasDeepInfo(area.id), [area.id]);
-  const [selectedApt, setSelectedApt] = useState<ApartmentComplex | null>(null);
-
-  // 선택된 아파트 기준 or 동 중심 기준 좌표
-  const refLat = selectedApt?.lat ?? area.lat;
-  const refLng = selectedApt?.lng ?? area.lng;
 
   // ── derived data ───────────────────────────────────────────
 
@@ -466,246 +451,18 @@ export default function AreaDetailContent({
           <PublicBenefitsSection district={area.district} city={area.city} />
         </Section>
 
-        {/* ─── 9. 아파트 TOP 10 + 부동산 시세 ────────────── */}
+        {/* ─── 9. 심층분석 (아파트·교육·인프라 — 네이버 API 실데이터) ── */}
         <Section delay={0.3}>
-          <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
-            <Building2 size={16} className="text-emerald-600" /> 아파트 랭킹 · 부동산 시세
-          </h2>
-
-          {/* 아파트 선택 안내 */}
-          {selectedApt && (
-            <div className="bg-indigo-50 border border-indigo-200 rounded-lg px-3 py-2 mb-3 flex items-center justify-between">
-              <span className="text-xs text-indigo-700">
-                <strong>{selectedApt.name}</strong> 기준으로 거리가 표시됩니다
-              </span>
-              <button onClick={() => setSelectedApt(null)} className="text-xs text-indigo-500 hover:text-indigo-700 cursor-pointer">해제</button>
-            </div>
-          )}
-
-          {/* 아파트 TOP 10 */}
-          {deepInfo.realEstate.apartments.length > 0 && (
-            <div className="bg-white border border-[var(--border)] rounded-xl overflow-hidden mb-3">
-              <div className="px-4 py-2.5 bg-[var(--background)] border-b border-[var(--border)]">
-                <span className="text-xs font-medium text-[var(--text-secondary)]">아파트 TOP 10 · 탭하여 기준 위치 설정</span>
-              </div>
-              <div className="divide-y divide-[var(--border)]">
-                {deepInfo.realEstate.apartments.map((apt, i) => {
-                  const isSelected = selectedApt?.name === apt.name;
-                  return (
-                    <button
-                      key={apt.name}
-                      onClick={() => setSelectedApt(isSelected ? null : apt)}
-                      className={`w-full text-left px-4 py-3 hover:bg-[var(--background)] transition-colors cursor-pointer ${isSelected ? "bg-indigo-50" : ""}`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className={`text-sm font-bold w-6 shrink-0 ${i < 3 ? "text-[#6366F1]" : "text-[var(--text-secondary)]"}`}>{i + 1}</span>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-0.5">
-                            <span className="text-sm font-medium text-[var(--text)] truncate">{apt.name}</span>
-                            <span className={`text-xs font-bold px-1.5 py-0.5 rounded ${apt.score >= 80 ? "bg-emerald-100 text-emerald-700" : apt.score >= 60 ? "bg-amber-100 text-amber-700" : "bg-rose-100 text-rose-700"}`}>{apt.score}점</span>
-                          </div>
-                          <div className="flex gap-3 text-[11px] text-[var(--text-secondary)]">
-                            <span>{apt.builtYear}년 · {apt.avgPyeong}평 · {apt.units}세대</span>
-                          </div>
-                        </div>
-                        <div className="text-right shrink-0">
-                          <div className="text-xs text-[var(--text-secondary)]">매매</div>
-                          <div className="text-sm font-semibold text-[var(--text)]">{apt.avgSale >= 10000 ? `${(apt.avgSale / 10000).toFixed(1)}억` : `${apt.avgSale.toLocaleString()}만`}</div>
-                        </div>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* 평균 시세 요약 */}
-          {deepInfo.realEstate.aptJeonse && (
-            <div className="bg-white border border-[var(--border)] rounded-xl p-4 mb-3">
-              <div className="text-[10px] text-[var(--text-secondary)] mb-3">동 평균 시세 · {deepInfo.realEstate.basePyeong}평 기준 · {deepInfo.realEstate.dataDate}</div>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
-                {deepInfo.realEstate.aptSale && <div className="flex justify-between"><span className="text-[var(--text-secondary)]">아파트 매매</span><span className="font-semibold">{(deepInfo.realEstate.aptSale / 10000).toFixed(1)}억</span></div>}
-                {deepInfo.realEstate.aptJeonse && <div className="flex justify-between"><span className="text-[var(--text-secondary)]">아파트 전세</span><span className="font-semibold">{(deepInfo.realEstate.aptJeonse / 10000).toFixed(1)}억</span></div>}
-                {deepInfo.realEstate.villaJeonse && <div className="flex justify-between"><span className="text-[var(--text-secondary)]">빌라 전세</span><span className="font-semibold">{deepInfo.realEstate.villaJeonse.toLocaleString()}만</span></div>}
-                {deepInfo.realEstate.oneRoomWolse && <div className="flex justify-between"><span className="text-[var(--text-secondary)]">원룸 월세</span><span className="font-semibold">{deepInfo.realEstate.oneRoomWolse.deposit}/{deepInfo.realEstate.oneRoomWolse.monthly}만</span></div>}
-              </div>
-            </div>
-          )}
-
-          <div className="grid grid-cols-2 gap-2">
-            <a href={`https://new.land.naver.com/complexes?ms=${area.lat},${area.lng},16&a=APT:PRE:ABYG:JGC&e=RETAIL&ad=true`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 py-3 rounded-lg text-white text-sm font-medium bg-green-600 hover:bg-green-700 transition-colors">네이버 부동산 <ExternalLink size={12} /></a>
-            <a href={`https://search.naver.com/search.naver?query=${encodeURIComponent(area.district + " " + area.name + " 전세 월세 매물")}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-1 py-3 rounded-lg text-white text-sm font-medium bg-blue-600 hover:bg-blue-700 transition-colors">매물 통합검색 <ExternalLink size={12} /></a>
-          </div>
+          <DeepAnalysisSection
+            neighborhoodId={id}
+            district={area.district}
+            name={area.name}
+            city={area.city}
+            areaLat={area.lat}
+            areaLng={area.lng}
+          />
         </Section>
 
-        {/* ─── 9-2. 교육 환경 (아파트 선택 시 거리 실시간 연동) ── */}
-        {hasDeep && (
-          <Section delay={0.32}>
-            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
-              <GraduationCap size={16} className="text-blue-600" /> 교육 환경
-              {selectedApt && <span className="text-[10px] text-indigo-500 ml-1">({selectedApt.name} 기준)</span>}
-            </h2>
-            <div className="bg-white border border-[var(--border)] rounded-xl p-4">
-              <div className="space-y-3">
-                {deepInfo.education.elementary.length > 0 && (
-                  <div>
-                    <div className="text-xs font-medium text-[var(--text)] mb-1">초등학교</div>
-                    {deepInfo.education.elementary.map((s) => {
-                      const d = calcDistance(refLat, refLng, s.lat, s.lng);
-                      return (
-                        <div key={s.name} className="flex items-center justify-between text-sm text-[var(--text-secondary)] py-0.5">
-                          <span>{s.name} {s.extra && <span className="text-[10px]">({s.extra})</span>}</span>
-                          <span className="text-xs">{d.walk} · {d.drive}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-                {deepInfo.education.middle.length > 0 && (
-                  <div>
-                    <div className="text-xs font-medium text-[var(--text)] mb-1">중학교</div>
-                    {deepInfo.education.middle.map((s) => {
-                      const d = calcDistance(refLat, refLng, s.lat, s.lng);
-                      return (
-                        <div key={s.name} className="flex items-center justify-between text-sm text-[var(--text-secondary)] py-0.5">
-                          <span>{s.name}</span>
-                          <span className="text-xs">{d.walk} · {d.drive}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-                {deepInfo.education.high.length > 0 && (
-                  <div>
-                    <div className="text-xs font-medium text-[var(--text)] mb-1">고등학교</div>
-                    {deepInfo.education.high.map((s) => {
-                      const d = calcDistance(refLat, refLng, s.lat, s.lng);
-                      return (
-                        <div key={s.name} className="flex items-center justify-between text-sm text-[var(--text-secondary)] py-0.5">
-                          <span>{s.name} {s.type && <span className="text-[10px] text-blue-500">({s.type})</span>}</span>
-                          <span className="text-xs">{d.walk} · {d.drive}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-                <div className="pt-2 border-t border-[var(--border)]">
-                  <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="text-[var(--text-secondary)]">학원 밀집도</span>
-                    <span className={`font-medium ${deepInfo.education.academyDensity === "상" ? "text-emerald-600" : deepInfo.education.academyDensity === "중" ? "text-amber-600" : "text-rose-600"}`}>{deepInfo.education.academyDensity}</span>
-                  </div>
-                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{deepInfo.education.summary}</p>
-                </div>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ─── 9-3. 교통 분석 ──────────────────────────── */}
-        {hasDeep && deepInfo.commute.destinations.length > 0 && (
-          <Section delay={0.34}>
-            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
-              <Clock size={16} className="text-indigo-600" /> 출퇴근 교통
-            </h2>
-            <div className="bg-white border border-[var(--border)] rounded-xl p-4">
-              <div className="space-y-2">
-                {deepInfo.commute.destinations.map((d) => (
-                  <div key={d.name} className="flex items-center justify-between text-sm">
-                    <span className="text-[var(--text)] font-medium">{d.name}</span>
-                    <div className="flex gap-3 text-xs text-[var(--text-secondary)]">
-                      <span>대중교통 {d.byTransit}</span>
-                      <span className="text-[var(--border)]">|</span>
-                      <span>자차 {d.byCar}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center justify-between">
-                <div>
-                  <div className="text-xs text-[var(--text-secondary)] mb-1">주요 교통</div>
-                  <div className="flex flex-wrap gap-1">
-                    {deepInfo.commute.mainTransport.map((t) => (
-                      <span key={t} className="text-[11px] px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded-full">{t}</span>
-                    ))}
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-[var(--text-secondary)]">혼잡도</div>
-                  <span className={`text-sm font-medium ${deepInfo.commute.congestion === "상" ? "text-rose-600" : deepInfo.commute.congestion === "중" ? "text-amber-600" : "text-emerald-600"}`}>{deepInfo.commute.congestion}</span>
-                </div>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ─── 9-4. 생활 인프라 (아파트 선택 시 거리 연동) ── */}
-        {hasDeep && (
-          <Section delay={0.36}>
-            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
-              <Hospital size={16} className="text-rose-500" /> 생활 인프라
-              {selectedApt && <span className="text-[10px] text-indigo-500 ml-1">({selectedApt.name} 기준)</span>}
-            </h2>
-            <div className="bg-white border border-[var(--border)] rounded-xl p-4">
-              <div className="grid grid-cols-2 gap-3 text-sm">
-                {deepInfo.infra.hospital && (
-                  <div>
-                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">종합병원</div>
-                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.hospital.name}</div>
-                    <div className="text-xs text-[var(--text-secondary)]">{calcDistance(refLat, refLng, deepInfo.infra.hospital.lat, deepInfo.infra.hospital.lng).drive}</div>
-                  </div>
-                )}
-                {deepInfo.infra.clinicCount > 0 && (
-                  <div>
-                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">동네 의원 / 약국</div>
-                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.clinicCount}곳 / {deepInfo.infra.pharmacyCount}곳</div>
-                  </div>
-                )}
-                {deepInfo.infra.mart && (
-                  <div>
-                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">대형마트</div>
-                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.mart.name}</div>
-                    <div className="text-xs text-[var(--text-secondary)]">{calcDistance(refLat, refLng, deepInfo.infra.mart.lat, deepInfo.infra.mart.lng).walk}</div>
-                  </div>
-                )}
-                {deepInfo.infra.park && (
-                  <div>
-                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">공원</div>
-                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.park.name}</div>
-                    <div className="text-xs text-[var(--text-secondary)]">{calcDistance(refLat, refLng, deepInfo.infra.park.lat, deepInfo.infra.park.lng).walk}</div>
-                  </div>
-                )}
-                {deepInfo.infra.library && (
-                  <div>
-                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">도서관</div>
-                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.library.name}</div>
-                    <div className="text-xs text-[var(--text-secondary)]">{calcDistance(refLat, refLng, deepInfo.infra.library.lat, deepInfo.infra.library.lng).walk}</div>
-                  </div>
-                )}
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* ─── 9-5. 개발 계획 ──────────────────────────── */}
-        {hasDeep && deepInfo.developments.length > 0 && (
-          <Section delay={0.38}>
-            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
-              <TrendingUp size={16} className="text-amber-600" /> 개발 계획
-            </h2>
-            <div className="space-y-2">
-              {deepInfo.developments.map((d) => (
-                <div key={d.title} className="bg-white border border-[var(--border)] rounded-xl p-4">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm font-medium text-[var(--text)]">{d.title}</span>
-                    <span className={`text-[11px] px-2 py-0.5 rounded-full font-medium ${d.status === "진행중" ? "bg-blue-50 text-blue-600" : d.status === "예정" ? "bg-amber-50 text-amber-600" : "bg-emerald-50 text-emerald-600"}`}>{d.status}</span>
-                  </div>
-                  <div className="text-xs text-[var(--text-secondary)]">{d.expectedYear}년 · {d.impact}</div>
-                </div>
-              ))}
-            </div>
-          </Section>
-        )}
 
         {/* ─── 10. PRO 리포트 CTA ────────────────────────── */}
         <Section delay={0.32}>
