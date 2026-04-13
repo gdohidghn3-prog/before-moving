@@ -1,0 +1,1454 @@
+{
+  "national": [
+    {
+      "id": "nat-lh-rental",
+      "title": "LH 공공임대주택",
+      "category": "housing",
+      "personas": ["youth", "newlywed", "general"],
+      "description": "한국토지주택공사(LH)에서 시세 대비 60~80% 수준의 저렴한 임대료로 공공주택을 공급합니다.",
+      "eligibility": "무주택 세대구성원, 소득기준 충족자",
+      "amount": "시세 대비 60~80%",
+      "howToApply": "LH 청약센터(apply.lh.or.kr) 또는 마이홈포털",
+      "url": "https://apply.lh.or.kr",
+      "source": "한국토지주택공사"
+    },
+    {
+      "id": "nat-didimstone",
+      "title": "디딤돌 대출",
+      "category": "housing",
+      "personas": ["newlywed", "general"],
+      "description": "실수요 무주택 서민을 위한 주택구입자금 대출. 연 2.15~3.00% 고정금리.",
+      "eligibility": "부부합산 연소득 6천만원 이하, 무주택자, 5억원 이하 주택",
+      "amount": "최대 2억 5천만원",
+      "period": "10/15/20/30년",
+      "howToApply": "기금e든든(enhuf.molit.go.kr) 또는 시중은행 방문",
+      "source": "주택도시기금"
+    },
+    {
+      "id": "nat-buttimok",
+      "title": "버팀목 전세자금 대출",
+      "category": "housing",
+      "personas": ["youth", "newlywed", "general"],
+      "description": "저금리 전세자금 대출. 청년(만 19~34세)은 금리 우대 적용.",
+      "eligibility": "무주택 세대주, 부부합산 연소득 5천만원 이하",
+      "amount": "수도권 최대 1억 2천만원",
+      "period": "2년(4회 연장, 최장 10년)",
+      "howToApply": "기금e든든 또는 시중은행 방문",
+      "source": "주택도시기금"
+    },
+    {
+      "id": "nat-housing-voucher",
+      "title": "주거급여",
+      "category": "housing",
+      "personas": ["general"],
+      "description": "기준 중위소득 48% 이하 가구에 임차료 또는 수선유지비를 지원합니다.",
+      "eligibility": "기준 중위소득 48% 이하, 임차가구 또는 자가가구",
+      "amount": "지역·가구원수별 차등 (1인 서울 기준 약 34만원)",
+      "howToApply": "주민센터 방문 또는 복지로(bokjiro.go.kr) 온라인 신청",
+      "source": "국토교통부"
+    },
+    {
+      "id": "nat-newlywed-hope",
+      "title": "신혼희망타운",
+      "category": "housing",
+      "personas": ["newlywed"],
+      "description": "신혼부부 특화 공공분양·임대주택. 시세 대비 70~85% 수준으로 공급.",
+      "eligibility": "혼인 7년 이내 또는 예비신혼부부, 무주택, 소득기준 충족",
+      "amount": "분양가 시세 70~85%",
+      "howToApply": "LH 청약센터",
+      "source": "한국토지주택공사"
+    },
+    {
+      "id": "nat-youth-job-support",
+      "title": "국민취업지원제도",
+      "category": "youth",
+      "personas": ["youth", "general"],
+      "description": "구직촉진수당 월 50만원(6개월) + 취업지원 서비스를 함께 제공합니다.",
+      "eligibility": "만 15~69세, 구직자, 소득·재산 기준 충족",
+      "amount": "월 50만원 x 6개월 (최대 300만원)",
+      "period": "6개월",
+      "howToApply": "워크넷(work.go.kr) 또는 고용센터 방문",
+      "source": "고용노동부"
+    },
+    {
+      "id": "nat-youth-jump-account",
+      "title": "청년도약계좌",
+      "category": "youth",
+      "personas": ["youth"],
+      "description": "월 최대 70만원 납입 시 정부가 매칭 지원. 5년 만기 시 최대 5,000만원.",
+      "eligibility": "만 19~34세, 개인소득 7,500만원 이하, 가구소득 중위 250% 이하",
+      "amount": "정부 매칭 월 최대 3.3만~4만원 + 비과세 이자",
+      "period": "5년",
+      "howToApply": "11개 취급은행 앱에서 신청",
+      "source": "금융위원회"
+    },
+    {
+      "id": "nat-youth-tomorrow",
+      "title": "청년내일채움공제",
+      "category": "youth",
+      "personas": ["youth"],
+      "description": "중소기업 취업 청년이 2년간 300만원 적립 시 정부·기업이 매칭하여 1,200만원 수령.",
+      "eligibility": "만 15~34세, 중소기업 정규직 취업자",
+      "amount": "2년 만기 1,200만원 (본인 300 + 기업 400 + 정부 500)",
+      "period": "2년",
+      "howToApply": "워크넷 청년공제 신청",
+      "source": "고용노동부"
+    },
+    {
+      "id": "nat-infant-allowance",
+      "title": "부모급여 (영아수당)",
+      "category": "childcare",
+      "personas": ["childcare"],
+      "description": "만 0세 월 100만원, 만 1세 월 50만원을 지급합니다.",
+      "eligibility": "만 0~1세 아동의 부모",
+      "amount": "만 0세 월 100만원 / 만 1세 월 50만원",
+      "period": "만 2세 생일 전월까지",
+      "howToApply": "주민센터 또는 복지로·정부24 온라인 신청",
+      "source": "보건복지부"
+    },
+    {
+      "id": "nat-child-allowance",
+      "title": "아동수당",
+      "category": "childcare",
+      "personas": ["childcare"],
+      "description": "만 8세 미만 모든 아동에게 월 10만원을 지급합니다.",
+      "eligibility": "만 8세 미만 아동 (소득 무관)",
+      "amount": "월 10만원",
+      "period": "만 8세 생일 전월까지",
+      "howToApply": "주민센터 또는 복지로 온라인 신청",
+      "source": "보건복지부"
+    },
+    {
+      "id": "nat-first-meeting",
+      "title": "첫만남이용권",
+      "category": "childcare",
+      "personas": ["childcare"],
+      "description": "출생아 1인당 200만원 바우처를 지급합니다 (쌍둥이 400만원).",
+      "eligibility": "출생신고된 모든 신생아",
+      "amount": "200만원 (국민행복카드 바우처)",
+      "howToApply": "출생신고 시 자동 안내, 복지로 신청",
+      "source": "보건복지부"
+    },
+    {
+      "id": "nat-basic-pension",
+      "title": "기초연금",
+      "category": "senior",
+      "personas": ["senior"],
+      "description": "만 65세 이상 소득 하위 70%에게 매월 최대 33만원을 지급합니다.",
+      "eligibility": "만 65세 이상, 소득인정액 선정기준 이하",
+      "amount": "월 최대 33만 4,810원 (2026년 기준)",
+      "period": "65세부터 평생",
+      "howToApply": "주민센터, 국민연금공단 지사, 복지로",
+      "source": "보건복지부"
+    },
+    {
+      "id": "nat-senior-job",
+      "title": "노인일자리 및 사회활동 지원",
+      "category": "senior",
+      "personas": ["senior"],
+      "description": "어르신 맞춤형 일자리(공익활동, 시장형 등)를 제공합니다.",
+      "eligibility": "만 60세 이상 (사업유형별 상이)",
+      "amount": "공익활동형 월 29만원, 사회서비스형 월 73만원 등",
+      "period": "연 10~12개월",
+      "howToApply": "한국노인인력개발원 또는 시군구 노인일자리 수행기관",
+      "source": "보건복지부"
+    },
+    {
+      "id": "nat-culture-voucher",
+      "title": "문화누리카드",
+      "category": "culture",
+      "personas": ["general"],
+      "description": "기초생활수급자 및 차상위계층에게 연 13만원 문화비를 지원합니다.",
+      "eligibility": "기초생활수급자, 차상위계층 (만 6세 이상)",
+      "amount": "연 13만원 (1인당)",
+      "period": "매년 1~11월 사용",
+      "howToApply": "주민센터 또는 문화누리카드 홈페이지",
+      "source": "문화체육관광부"
+    },
+    {
+      "id": "nat-energy-voucher",
+      "title": "에너지바우처",
+      "category": "culture",
+      "personas": ["senior", "general"],
+      "description": "취약계층 냉·난방비 지원. 여름/겨울 전기·가스·등유 등에 사용.",
+      "eligibility": "기초생활수급자 중 노인·영유아·장애인·임산부·중증질환자 포함 가구",
+      "amount": "하절기 최대 2만~3.2만, 동절기 최대 7.28만~19.96만원",
+      "howToApply": "주민센터 방문 신청",
+      "source": "산업통상자원부"
+    },
+    {
+      "id": "nat-sports-voucher",
+      "title": "스포츠강좌 이용권",
+      "category": "culture",
+      "personas": ["childcare", "general"],
+      "description": "저소득층 유소년(만 5~18세)에게 월 8만원 스포츠 수강료를 지원합니다.",
+      "eligibility": "기초수급·차상위·한부모 가구의 만 5~18세",
+      "amount": "월 8만원",
+      "period": "연중",
+      "howToApply": "국민체육진흥공단 체육바우처",
+      "source": "문화체육관광부"
+    }
+  ],
+  "cities": {
+    "서울": [
+      {
+        "id": "seoul-youth-allowance",
+        "title": "서울 청년수당",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "활동중인 미취업 청년에게 월 50만원(6개월)을 지원합니다.",
+        "eligibility": "만 19~34세, 서울 거주 6개월 이상, 미취업자",
+        "amount": "월 50만원 x 6개월 (최대 300만원)",
+        "period": "6개월",
+        "howToApply": "서울청년포털(youth.seoul.go.kr) 온라인 신청",
+        "source": "서울특별시"
+      },
+      {
+        "id": "seoul-youth-rent",
+        "title": "서울 청년 월세지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "서울 거주 청년에게 월 최대 20만원 월세를 지원합니다.",
+        "eligibility": "만 19~39세, 서울 거주, 연소득 3,477만원 이하",
+        "amount": "월 최대 20만원",
+        "period": "최대 12개월",
+        "howToApply": "서울주거포털 온라인 신청",
+        "source": "서울특별시"
+      },
+      {
+        "id": "seoul-love-coupon",
+        "title": "서울사랑상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "서울 지역 소상공인에서 사용 가능한 모바일 상품권. 구매 시 최대 10% 할인.",
+        "eligibility": "누구나 (1인 월 70만원 한도)",
+        "amount": "구매 시 최대 10% 할인",
+        "howToApply": "서울Pay+ 앱에서 구매",
+        "source": "서울특별시"
+      },
+      {
+        "id": "seoul-birth-bonus",
+        "title": "서울 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "서울 출생 신생아에게 출산축하금을 지급합니다.",
+        "eligibility": "서울 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 150만원, 셋째 이상 200만원",
+        "howToApply": "주민센터 출생신고 시 신청",
+        "source": "서울특별시"
+      },
+      {
+        "id": "seoul-senior-transport",
+        "title": "서울 어르신 교통비 지원",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "만 65세 이상 어르신 대중교통 이용 시 무료.",
+        "eligibility": "만 65세 이상 (우대용 교통카드 소지자)",
+        "amount": "지하철 무료, 버스 무료환승",
+        "howToApply": "우대용 교통카드 발급 (주민센터·은행)",
+        "source": "서울특별시"
+      }
+    ],
+    "부산": [
+      {
+        "id": "busan-dongbaek",
+        "title": "동백전",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "부산 지역화폐. 소상공인 매장에서 결제 시 6~10% 캐시백.",
+        "eligibility": "부산 거주민 (1인 월 50만원 한도)",
+        "amount": "6~10% 캐시백",
+        "howToApply": "동백전 앱 다운로드 후 가입",
+        "source": "부산광역시"
+      },
+      {
+        "id": "busan-birth-bonus",
+        "title": "부산 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "출산 시 자녀 순서에 따라 장려금을 차등 지급합니다.",
+        "eligibility": "부산 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 이상 300만원",
+        "howToApply": "주민센터 출생신고 시 신청",
+        "source": "부산광역시"
+      },
+      {
+        "id": "busan-youth-rent",
+        "title": "부산 청년 월세 지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "부산 거주 청년에게 월 최대 10만원 월세를 지원합니다.",
+        "eligibility": "만 19~39세, 부산 거주, 소득기준 충족",
+        "amount": "월 최대 10만원",
+        "period": "최대 12개월",
+        "source": "부산광역시"
+      },
+      {
+        "id": "busan-senior-transport",
+        "title": "부산 어르신 교통비",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "만 65세 이상 어르신 시내버스·도시철도 무료 이용.",
+        "eligibility": "만 65세 이상",
+        "amount": "대중교통 무료",
+        "source": "부산광역시"
+      }
+    ],
+    "인천": [
+      {
+        "id": "incheon-eum",
+        "title": "인천e음카드",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "인천 지역화폐. 소상공인 매장 결제 시 6~10% 캐시백.",
+        "eligibility": "인천 거주민",
+        "amount": "6~10% 캐시백",
+        "howToApply": "인천e음 앱 가입",
+        "source": "인천광역시"
+      },
+      {
+        "id": "incheon-birth-bonus",
+        "title": "인천 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "인천 출산가정에 출산축하금을 지급합니다.",
+        "eligibility": "인천 거주 출산가정",
+        "amount": "첫째 120만원, 둘째 200만원, 셋째 이상 300만원",
+        "source": "인천광역시"
+      },
+      {
+        "id": "incheon-youth-housing",
+        "title": "인천 청년 주거지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "청년 주거비 월 최대 10만원 지원.",
+        "eligibility": "만 19~39세, 인천 거주",
+        "amount": "월 최대 10만원",
+        "period": "최대 10개월",
+        "source": "인천광역시"
+      }
+    ],
+    "대구": [
+      {
+        "id": "daegu-happy-pay",
+        "title": "대구행복페이",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "대구 지역화폐. 소상공인 매장 결제 시 캐시백.",
+        "eligibility": "대구 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "대구광역시"
+      },
+      {
+        "id": "daegu-youth-hope",
+        "title": "대구 청년희망카드",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "미취업 청년에게 역량개발비 월 15만원 지원.",
+        "eligibility": "만 18~34세, 대구 거주, 미취업",
+        "amount": "월 15만원 x 6개월",
+        "period": "6개월",
+        "source": "대구광역시"
+      },
+      {
+        "id": "daegu-birth-bonus",
+        "title": "대구 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "출산 시 장려금 지급.",
+        "eligibility": "대구 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 이상 300만원",
+        "source": "대구광역시"
+      }
+    ],
+    "대전": [
+      {
+        "id": "daejeon-zero-market",
+        "title": "대전0원마켓",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "대전 지역화폐. 소상공인 매장 10% 할인.",
+        "eligibility": "대전 거주민",
+        "amount": "10% 할인",
+        "source": "대전광역시"
+      },
+      {
+        "id": "daejeon-youth-dream",
+        "title": "대전 청년드림카드",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "대전 거주 청년에게 월 20만원 활동비 지원.",
+        "eligibility": "만 19~34세, 대전 거주 6개월 이상, 미취업",
+        "amount": "월 20만원 x 6개월",
+        "period": "6개월",
+        "source": "대전광역시"
+      },
+      {
+        "id": "daejeon-birth-bonus",
+        "title": "대전 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "대전 출산가정에 출산축하금 지급.",
+        "eligibility": "대전 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 300만원",
+        "source": "대전광역시"
+      }
+    ],
+    "광주": [
+      {
+        "id": "gwangju-sangsaeng",
+        "title": "광주상생카드",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "광주 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "광주 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "광주광역시"
+      },
+      {
+        "id": "gwangju-youth-rent",
+        "title": "광주 청년 월세지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "청년 월세 월 최대 10만원 지원.",
+        "eligibility": "만 19~34세, 광주 거주",
+        "amount": "월 최대 10만원",
+        "period": "최대 12개월",
+        "source": "광주광역시"
+      },
+      {
+        "id": "gwangju-birth-bonus",
+        "title": "광주 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "출산 가정에 장려금 차등 지급.",
+        "eligibility": "광주 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 이상 300만원",
+        "source": "광주광역시"
+      }
+    ],
+    "울산": [
+      {
+        "id": "ulsan-pay",
+        "title": "울산페이",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "울산 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "울산 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "울산광역시"
+      },
+      {
+        "id": "ulsan-youth-employ",
+        "title": "울산 청년 고용장려금",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "울산 중소기업 취업 청년에게 근속장려금 지급.",
+        "eligibility": "만 18~34세, 울산 소재 중소기업 취업",
+        "amount": "1년 근속 시 200만원",
+        "source": "울산광역시"
+      },
+      {
+        "id": "ulsan-birth-bonus",
+        "title": "울산 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "울산 출산가정에 장려금 지급. 셋째 이상 파격 지원.",
+        "eligibility": "울산 거주 출산가정",
+        "amount": "첫째 200만원, 둘째 300만원, 셋째 이상 1,000만원",
+        "source": "울산광역시"
+      }
+    ],
+    "세종": [
+      {
+        "id": "sejong-love-card",
+        "title": "세종사랑카드",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "세종 지역화폐. 소상공인 매장 10% 할인.",
+        "eligibility": "세종 거주민",
+        "amount": "10% 할인",
+        "source": "세종특별자치시"
+      },
+      {
+        "id": "sejong-youth-rent",
+        "title": "세종 청년 월세지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "세종 거주 청년 월세 지원.",
+        "eligibility": "만 19~39세, 세종 거주",
+        "amount": "월 최대 15만원",
+        "period": "최대 12개월",
+        "source": "세종특별자치시"
+      },
+      {
+        "id": "sejong-birth-bonus",
+        "title": "세종 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "세종 출산가정에 파격 축하금 지급.",
+        "eligibility": "세종 거주 출산가정",
+        "amount": "첫째 200만원, 둘째 400만원, 셋째 이상 600만원",
+        "source": "세종특별자치시"
+      }
+    ],
+    "경기": [
+      {
+        "id": "gg-local-currency",
+        "title": "경기지역화폐",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "경기도 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "경기도 거주민",
+        "amount": "6~10% 캐시백 (시군별 상이)",
+        "howToApply": "경기지역화폐 앱 또는 카드 발급",
+        "source": "경기도"
+      },
+      {
+        "id": "gg-youth-basic-income",
+        "title": "경기도 청년기본소득",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "만 24세 경기도 청년에게 분기별 25만원 지역화폐 지급.",
+        "eligibility": "만 24세, 경기도 3년 이상 거주 또는 합산 10년 이상",
+        "amount": "분기 25만원 (연 100만원)",
+        "period": "만 24세 해당 연도",
+        "howToApply": "경기도 일자리재단 온라인 신청",
+        "source": "경기도"
+      },
+      {
+        "id": "gg-youth-interview",
+        "title": "경기도 청년 면접수당",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "구직활동 청년에게 면접 시 교통비 지원.",
+        "eligibility": "만 18~34세, 경기도 거주, 구직활동 중",
+        "amount": "회당 5만원 (연 3회)",
+        "source": "경기도"
+      },
+      {
+        "id": "gg-birth-bonus",
+        "title": "경기도 출산지원",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "경기도 출산가정에 출산축하금 지급 (시군별 추가 지급).",
+        "eligibility": "경기도 거주 출산가정",
+        "amount": "시군별 상이 (50만~500만원)",
+        "source": "경기도"
+      }
+    ],
+    "강원": [
+      {
+        "id": "gw-love-coupon",
+        "title": "강원상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "강원 지역화폐. 소상공인 매장 할인.",
+        "eligibility": "강원 거주민",
+        "amount": "5~10% 할인",
+        "source": "강원특별자치도"
+      },
+      {
+        "id": "gw-youth-settle",
+        "title": "강원 청년 정착지원금",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "강원도 이주·정착 청년에게 지원금 지급.",
+        "eligibility": "만 18~39세, 강원도 전입 후 6개월 이상 거주",
+        "amount": "최대 200만원",
+        "source": "강원특별자치도"
+      },
+      {
+        "id": "gw-birth-bonus",
+        "title": "강원 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "강원도 출산가정에 장려금 지급 (시군별 추가).",
+        "eligibility": "강원도 거주 출산가정",
+        "amount": "시군별 100만~1,000만원",
+        "source": "강원특별자치도"
+      }
+    ],
+    "충북": [
+      {
+        "id": "cb-love-coupon",
+        "title": "충북사랑상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "충북 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "충북 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "충청북도"
+      },
+      {
+        "id": "cb-youth-startup",
+        "title": "충북 청년 창업지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "충북 청년 창업가에게 사업화 자금 지원.",
+        "eligibility": "만 18~39세, 충북 거주, 창업 예정자",
+        "amount": "최대 3,000만원",
+        "source": "충청북도"
+      },
+      {
+        "id": "cb-birth-bonus",
+        "title": "충북 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "충북 출산가정에 축하금 지급.",
+        "eligibility": "충북 거주 출산가정",
+        "amount": "시군별 50만~300만원",
+        "source": "충청북도"
+      }
+    ],
+    "충남": [
+      {
+        "id": "cn-love-card",
+        "title": "충남사랑카드",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "충남 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "충남 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "충청남도"
+      },
+      {
+        "id": "cn-youth-rent",
+        "title": "충남 청년 월세지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "충남 거주 청년 월세 지원.",
+        "eligibility": "만 19~39세, 충남 거주",
+        "amount": "월 최대 10만원",
+        "period": "최대 12개월",
+        "source": "충청남도"
+      },
+      {
+        "id": "cn-birth-bonus",
+        "title": "충남 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "충남 출산가정에 축하금 차등 지급.",
+        "eligibility": "충남 거주 출산가정",
+        "amount": "시군별 50만~500만원",
+        "source": "충청남도"
+      }
+    ],
+    "전북": [
+      {
+        "id": "jb-love-coupon",
+        "title": "전북사랑상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "전북 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "전북 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "전북특별자치도"
+      },
+      {
+        "id": "jb-youth-allowance",
+        "title": "전북 청년수당",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "전북 미취업 청년에게 활동비 지원.",
+        "eligibility": "만 18~34세, 전북 거주, 미취업",
+        "amount": "월 30만원 x 6개월",
+        "period": "6개월",
+        "source": "전북특별자치도"
+      },
+      {
+        "id": "jb-birth-bonus",
+        "title": "전북 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "전북 출산가정에 장려금 지급. 셋째 이상 파격.",
+        "eligibility": "전북 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 500만원",
+        "source": "전북특별자치도"
+      }
+    ],
+    "전남": [
+      {
+        "id": "jn-love-coupon",
+        "title": "전남사랑상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "전남 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "전남 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "전라남도"
+      },
+      {
+        "id": "jn-youth-rural",
+        "title": "전남 청년 농촌정착 지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "전남 농촌에 정착하는 청년에게 정착지원금 지급.",
+        "eligibility": "만 18~39세, 전남 농촌 전입",
+        "amount": "최대 300만원",
+        "source": "전라남도"
+      },
+      {
+        "id": "jn-birth-bonus",
+        "title": "전남 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "전남 출산가정에 장려금 지급. 일부 군 지역 파격적.",
+        "eligibility": "전남 거주 출산가정",
+        "amount": "시군별 100만~2,000만원 (해남군 등 파격)",
+        "source": "전라남도"
+      }
+    ],
+    "경북": [
+      {
+        "id": "gb-love-coupon",
+        "title": "경북사랑상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "경북 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "경북 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "경상북도"
+      },
+      {
+        "id": "gb-youth-stepping",
+        "title": "경북 청년 디딤돌",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "경북 거주 청년 생활안정자금 지원.",
+        "eligibility": "만 18~34세, 경북 거주",
+        "amount": "최대 200만원",
+        "source": "경상북도"
+      },
+      {
+        "id": "gb-birth-bonus",
+        "title": "경북 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "경북 출산가정에 축하금 지급.",
+        "eligibility": "경북 거주 출산가정",
+        "amount": "시군별 50만~1,000만원",
+        "source": "경상북도"
+      }
+    ],
+    "경남": [
+      {
+        "id": "gn-love-coupon",
+        "title": "경남사랑상품권",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "경남 지역화폐. 소상공인 매장 캐시백.",
+        "eligibility": "경남 거주민",
+        "amount": "6~10% 캐시백",
+        "source": "경상남도"
+      },
+      {
+        "id": "gn-youth-life",
+        "title": "경남 청년 생활안정자금",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "경남 거주 청년에게 생활안정자금 지원.",
+        "eligibility": "만 18~34세, 경남 거주 6개월 이상",
+        "amount": "최대 200만원",
+        "source": "경상남도"
+      },
+      {
+        "id": "gn-birth-bonus",
+        "title": "경남 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "경남 출산가정에 장려금 차등 지급.",
+        "eligibility": "경남 거주 출산가정",
+        "amount": "시군별 100만~500만원",
+        "source": "경상남도"
+      }
+    ],
+    "제주": [
+      {
+        "id": "jeju-love-card",
+        "title": "제주사랑카드",
+        "category": "local_currency",
+        "personas": ["general"],
+        "description": "제주 지역화폐. 소상공인 매장 10% 할인.",
+        "eligibility": "제주 거주민",
+        "amount": "10% 할인",
+        "source": "제주특별자치도"
+      },
+      {
+        "id": "jeju-youth-support",
+        "title": "제주 청년 지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "제주 거주 청년에게 활동비 지원.",
+        "eligibility": "만 18~34세, 제주 거주",
+        "amount": "월 30만원 x 6개월",
+        "period": "6개월",
+        "source": "제주특별자치도"
+      },
+      {
+        "id": "jeju-birth-bonus",
+        "title": "제주 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "제주 출산가정에 축하금 지급.",
+        "eligibility": "제주 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 이상 300만원",
+        "source": "제주특별자치도"
+      }
+    ]
+  },
+  "districts": {
+    "서울 강남구": [
+      {
+        "id": "gangnam-postpartum",
+        "title": "강남구 산후조리비 지원",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "강남구 출산가정에 산후조리 비용을 추가 지원합니다.",
+        "eligibility": "강남구 거주 출산가정",
+        "amount": "100만원",
+        "source": "강남구청"
+      },
+      {
+        "id": "gangnam-youth-space",
+        "title": "강남구 청년공간 '이음'",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "청년 무료 코워킹·스터디 공간 제공.",
+        "eligibility": "만 19~39세",
+        "amount": "무료 이용",
+        "source": "강남구청"
+      }
+    ],
+    "서울 서초구": [
+      {
+        "id": "seocho-birth-extra",
+        "title": "서초구 출산축하금 추가",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "서초구 추가 출산축하금. 서울시 지원과 별도.",
+        "eligibility": "서초구 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 150만원, 셋째 200만원 추가",
+        "source": "서초구청"
+      }
+    ],
+    "서울 송파구": [
+      {
+        "id": "songpa-youth-allowance",
+        "title": "송파구 청년수당 추가",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "송파구 자체 청년 활동지원금.",
+        "eligibility": "만 19~34세, 송파구 거주 1년 이상",
+        "amount": "50만원 (1회)",
+        "source": "송파구청"
+      },
+      {
+        "id": "songpa-senior-care",
+        "title": "송파구 어르신 돌봄",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "독거 어르신 안부확인 및 생활지원 서비스.",
+        "eligibility": "만 65세 이상 송파구 독거 어르신",
+        "amount": "무료",
+        "source": "송파구청"
+      }
+    ],
+    "서울 마포구": [
+      {
+        "id": "mapo-youth-housing",
+        "title": "마포구 청년 주거지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "마포구 거주 청년 전월세 보증금 이자 지원.",
+        "eligibility": "만 19~39세, 마포구 거주",
+        "amount": "보증금 대출이자 연 2% 지원",
+        "source": "마포구청"
+      }
+    ],
+    "서울 영등포구": [
+      {
+        "id": "ydp-youth-job",
+        "title": "영등포구 청년 취업지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "면접정장 대여, 이력서 사진 촬영 무료 지원.",
+        "eligibility": "만 19~34세, 영등포구 거주",
+        "amount": "무료",
+        "source": "영등포구청"
+      }
+    ],
+    "서울 동작구": [
+      {
+        "id": "dongjak-newlywed",
+        "title": "동작구 신혼부부 전세자금",
+        "category": "housing",
+        "personas": ["newlywed"],
+        "description": "동작구 거주 신혼부부 전세자금 이자 지원.",
+        "eligibility": "혼인 5년 이내, 동작구 거주",
+        "amount": "전세대출 이자 연 2% 지원 (최대 3년)",
+        "source": "동작구청"
+      }
+    ],
+    "서울 성동구": [
+      {
+        "id": "seongdong-culture",
+        "title": "성동구 문화바우처",
+        "category": "culture",
+        "personas": ["general"],
+        "description": "성동구 주민 대상 문화체험비 추가 지원.",
+        "eligibility": "성동구 거주 주민",
+        "amount": "연 5만원",
+        "source": "성동구청"
+      }
+    ],
+    "서울 광진구": [
+      {
+        "id": "gwangjin-youth-rent",
+        "title": "광진구 청년 월세 추가지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "서울시 청년월세 외 광진구 추가 월세지원.",
+        "eligibility": "만 19~34세, 광진구 거주",
+        "amount": "월 최대 10만원 추가",
+        "period": "최대 10개월",
+        "source": "광진구청"
+      }
+    ],
+    "서울 노원구": [
+      {
+        "id": "nowon-edu-support",
+        "title": "노원구 교육경비 지원",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "초·중·고 학생 교육경비 지원.",
+        "eligibility": "노원구 거주 저소득 가구 학생",
+        "amount": "학기별 최대 30만원",
+        "source": "노원구청"
+      }
+    ],
+    "서울 중랑구": [
+      {
+        "id": "jungnang-senior-meal",
+        "title": "중랑구 어르신 무료급식",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "만 65세 이상 저소득 어르신 무료 도시락·경로식당.",
+        "eligibility": "만 65세 이상, 중랑구 거주",
+        "amount": "무료 (주 5일)",
+        "source": "중랑구청"
+      }
+    ],
+    "서울 강서구": [
+      {
+        "id": "gangseo-newborn-kit",
+        "title": "강서구 출산용품 지원",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "출산가정에 신생아 용품 꾸러미 지급.",
+        "eligibility": "강서구 거주 출산가정",
+        "amount": "30만원 상당 용품",
+        "source": "강서구청"
+      }
+    ],
+    "서울 구로구": [
+      {
+        "id": "guro-multicultural",
+        "title": "구로구 다문화가족 지원",
+        "category": "culture",
+        "personas": ["general"],
+        "description": "다문화가족 한국어교육, 통번역, 자녀학습 지원.",
+        "eligibility": "구로구 거주 다문화가족",
+        "amount": "무료",
+        "source": "구로구청"
+      }
+    ],
+    "서울 은평구": [
+      {
+        "id": "eunpyeong-senior-health",
+        "title": "은평구 어르신 건강검진",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "만 65세 이상 어르신 무료 건강검진 및 치매검진.",
+        "eligibility": "만 65세 이상, 은평구 거주",
+        "amount": "무료",
+        "source": "은평구청"
+      }
+    ],
+    "서울 종로구": [
+      {
+        "id": "jongno-culture-pass",
+        "title": "종로구 문화패스",
+        "category": "culture",
+        "personas": ["general"],
+        "description": "종로구 내 궁궐·박물관 무료/할인 입장 혜택.",
+        "eligibility": "종로구 거주 주민",
+        "amount": "연간 무료입장권 제공",
+        "source": "종로구청"
+      }
+    ],
+    "서울 용산구": [
+      {
+        "id": "yongsan-youth-culture",
+        "title": "용산구 청년 문화활동비",
+        "category": "culture",
+        "personas": ["youth"],
+        "description": "용산구 청년 문화·체육 활동비 지원.",
+        "eligibility": "만 19~34세, 용산구 거주",
+        "amount": "연 20만원",
+        "source": "용산구청"
+      }
+    ],
+    "경기 수원시": [
+      {
+        "id": "suwon-youth-allowance",
+        "title": "수원시 청년활동 지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "수원시 거주 미취업 청년 활동비 지원.",
+        "eligibility": "만 18~34세, 수원시 거주 1년 이상",
+        "amount": "분기 25만원 x 4분기",
+        "source": "수원시청"
+      },
+      {
+        "id": "suwon-birth-bonus",
+        "title": "수원시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "수원시 출산가정에 축하금 지급.",
+        "eligibility": "수원시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 300만원",
+        "source": "수원시청"
+      }
+    ],
+    "경기 성남시": [
+      {
+        "id": "seongnam-youth-dividend",
+        "title": "성남시 청년배당",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "성남시 만 24세 청년에게 분기별 25만원 지역화폐 지급.",
+        "eligibility": "만 24세, 성남시 3년 이상 거주",
+        "amount": "분기 25만원 (연 100만원)",
+        "source": "성남시청"
+      },
+      {
+        "id": "seongnam-birth-bonus",
+        "title": "성남시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "성남시 출산가정에 축하금 지급.",
+        "eligibility": "성남시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 400만원",
+        "source": "성남시청"
+      }
+    ],
+    "경기 고양시": [
+      {
+        "id": "goyang-youth-housing",
+        "title": "고양시 청년 주거비 지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "고양시 거주 청년 월세 지원.",
+        "eligibility": "만 19~34세, 고양시 거주",
+        "amount": "월 최대 10만원",
+        "period": "최대 10개월",
+        "source": "고양시청"
+      }
+    ],
+    "경기 용인시": [
+      {
+        "id": "yongin-birth-bonus",
+        "title": "용인시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "용인시 출산가정에 축하금 지급.",
+        "eligibility": "용인시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 500만원",
+        "source": "용인시청"
+      }
+    ],
+    "경기 부천시": [
+      {
+        "id": "bucheon-youth-support",
+        "title": "부천시 청년 생활안정",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "부천시 거주 청년 생활안정자금 지원.",
+        "eligibility": "만 18~34세, 부천시 거주 1년 이상",
+        "amount": "최대 200만원",
+        "source": "부천시청"
+      }
+    ],
+    "경기 안산시": [
+      {
+        "id": "ansan-multicultural",
+        "title": "안산시 다문화 특화 지원",
+        "category": "culture",
+        "personas": ["general"],
+        "description": "안산 원곡동 다문화마을특구 주민 지원.",
+        "eligibility": "안산시 거주 외국인·다문화가족",
+        "amount": "한국어교육·취업지원 무료",
+        "source": "안산시청"
+      }
+    ],
+    "경기 화성시": [
+      {
+        "id": "hwaseong-birth-bonus",
+        "title": "화성시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "화성시 출산가정에 파격 축하금.",
+        "eligibility": "화성시 거주 출산가정",
+        "amount": "첫째 200만원, 둘째 300만원, 셋째 500만원",
+        "source": "화성시청"
+      }
+    ],
+    "경기 남양주시": [
+      {
+        "id": "namyangju-birth-bonus",
+        "title": "남양주시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "남양주시 출산가정에 축하금 지급.",
+        "eligibility": "남양주시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 300만원",
+        "source": "남양주시청"
+      }
+    ],
+    "경기 평택시": [
+      {
+        "id": "pyeongtaek-youth-military",
+        "title": "평택시 전역 청년 지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "평택시 거주 전역 장병에게 정착지원금.",
+        "eligibility": "전역 후 평택시 거주 청년",
+        "amount": "100만원",
+        "source": "평택시청"
+      }
+    ],
+    "경기 김포시": [
+      {
+        "id": "gimpo-birth-bonus",
+        "title": "김포시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "김포시 출산가정에 축하금 지급.",
+        "eligibility": "김포시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 이상 500만원",
+        "source": "김포시청"
+      }
+    ],
+    "경기 파주시": [
+      {
+        "id": "paju-youth-settle",
+        "title": "파주시 청년 정착지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "파주시 전입 청년에게 정착지원금.",
+        "eligibility": "만 18~39세, 파주시 전입 후 거주",
+        "amount": "최대 200만원",
+        "source": "파주시청"
+      }
+    ],
+    "경기 광명시": [
+      {
+        "id": "gwangmyeong-senior-ride",
+        "title": "광명시 어르신 교통비",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "만 65세 이상 어르신 교통비 추가 지원.",
+        "eligibility": "만 65세 이상, 광명시 거주",
+        "amount": "월 2만원",
+        "source": "광명시청"
+      }
+    ],
+    "경기 하남시": [
+      {
+        "id": "hanam-newlywed-housing",
+        "title": "하남시 신혼부부 주거지원",
+        "category": "housing",
+        "personas": ["newlywed"],
+        "description": "하남시 거주 신혼부부 전월세 지원.",
+        "eligibility": "혼인 7년 이내, 하남시 거주",
+        "amount": "전세대출 이자 지원 연 2%",
+        "source": "하남시청"
+      }
+    ],
+    "경기 구리시": [
+      {
+        "id": "guri-birth-bonus",
+        "title": "구리시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "구리시 출산가정에 축하금.",
+        "eligibility": "구리시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 300만원",
+        "source": "구리시청"
+      }
+    ],
+    "경기 시흥시": [
+      {
+        "id": "siheung-youth-job",
+        "title": "시흥시 청년 취업지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "시흥시 거주 청년 면접비·교통비 지원.",
+        "eligibility": "만 18~34세, 시흥시 거주",
+        "amount": "면접 시 5만원 (연 3회)",
+        "source": "시흥시청"
+      }
+    ],
+    "경기 의정부시": [
+      {
+        "id": "uijeongbu-birth-bonus",
+        "title": "의정부시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "의정부시 출산가정에 축하금.",
+        "eligibility": "의정부시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 300만원",
+        "source": "의정부시청"
+      }
+    ],
+    "경기 안양시": [
+      {
+        "id": "anyang-youth-space",
+        "title": "안양시 청년 공유공간",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "안양시 청년 무료 코워킹 스페이스 제공.",
+        "eligibility": "만 19~39세",
+        "amount": "무료 이용",
+        "source": "안양시청"
+      }
+    ],
+    "경기 가평군": [
+      {
+        "id": "gapyeong-settle",
+        "title": "가평군 귀농·귀촌 정착지원",
+        "category": "housing",
+        "personas": ["general"],
+        "description": "가평군으로 귀농·귀촌하는 가구에 정착지원금 지급.",
+        "eligibility": "가평군 전입 귀농·귀촌 가구",
+        "amount": "최대 500만원",
+        "source": "가평군청"
+      },
+      {
+        "id": "gapyeong-birth-bonus",
+        "title": "가평군 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "가평군 출산가정에 파격 장려금. 인구 유입 정책.",
+        "eligibility": "가평군 거주 출산가정",
+        "amount": "첫째 200만원, 둘째 400만원, 셋째 이상 800만원",
+        "source": "가평군청"
+      }
+    ],
+    "경기 연천군": [
+      {
+        "id": "yeoncheon-settle",
+        "title": "연천군 이주 정착지원",
+        "category": "housing",
+        "personas": ["general"],
+        "description": "연천군으로 전입하는 가구에 정착지원금 지급.",
+        "eligibility": "연천군 전입 가구",
+        "amount": "최대 300만원",
+        "source": "연천군청"
+      },
+      {
+        "id": "yeoncheon-birth-bonus",
+        "title": "연천군 출산장려금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "연천군 출산가정에 파격 장려금.",
+        "eligibility": "연천군 거주 출산가정",
+        "amount": "첫째 300만원, 둘째 500만원, 셋째 이상 1,000만원",
+        "source": "연천군청"
+      }
+    ],
+    "부산 해운대구": [
+      {
+        "id": "haeundae-youth-space",
+        "title": "해운대구 청년센터",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "해운대구 청년 무료 코워킹·상담 공간.",
+        "eligibility": "만 19~39세",
+        "amount": "무료 이용",
+        "source": "해운대구청"
+      }
+    ],
+    "부산 수영구": [
+      {
+        "id": "suyeong-culture-fest",
+        "title": "수영구 문화행사 지원",
+        "category": "culture",
+        "personas": ["general"],
+        "description": "수영구 주민 대상 문화행사·축제 무료 참여.",
+        "eligibility": "수영구 거주 주민",
+        "amount": "무료",
+        "source": "수영구청"
+      }
+    ],
+    "대구 수성구": [
+      {
+        "id": "suseong-edu-support",
+        "title": "수성구 교육특화 지원",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "수성구 학생 대상 교육비 추가 지원.",
+        "eligibility": "수성구 거주 초·중·고 학생 가구",
+        "amount": "학기별 최대 50만원",
+        "source": "수성구청"
+      }
+    ],
+    "대전 유성구": [
+      {
+        "id": "yuseong-tech-youth",
+        "title": "유성구 과학기술 청년 지원",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "대덕연구단지 인근 청년 과학기술인 정착 지원.",
+        "eligibility": "만 19~39세, 유성구 거주 과학기술 분야 종사자",
+        "amount": "최대 300만원",
+        "source": "유성구청"
+      }
+    ],
+    "인천 연수구": [
+      {
+        "id": "yeonsu-newlywed",
+        "title": "연수구 신혼부부 주거 지원",
+        "category": "housing",
+        "personas": ["newlywed"],
+        "description": "연수구 거주 신혼부부 전세자금 이자 지원.",
+        "eligibility": "혼인 5년 이내, 연수구 거주",
+        "amount": "전세대출 이자 연 2% 지원",
+        "source": "연수구청"
+      }
+    ],
+    "인천 부평구": [
+      {
+        "id": "bupyeong-senior-culture",
+        "title": "부평구 어르신 문화활동",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "만 65세 이상 어르신 문화강좌 무료 제공.",
+        "eligibility": "만 65세 이상, 부평구 거주",
+        "amount": "무료 (월 4회)",
+        "source": "부평구청"
+      }
+    ],
+    "강원 춘천시": [
+      {
+        "id": "chuncheon-youth-settle",
+        "title": "춘천시 청년 정착장려금",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "춘천시로 전입한 청년에게 정착장려금.",
+        "eligibility": "만 18~39세, 춘천시 전입 후 1년 거주",
+        "amount": "200만원",
+        "source": "춘천시청"
+      }
+    ],
+    "강원 강릉시": [
+      {
+        "id": "gangneung-birth-bonus",
+        "title": "강릉시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "강릉시 출산가정에 축하금.",
+        "eligibility": "강릉시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 500만원",
+        "source": "강릉시청"
+      }
+    ],
+    "충북 청주시": [
+      {
+        "id": "cheongju-youth-rent",
+        "title": "청주시 청년 월세 지원",
+        "category": "housing",
+        "personas": ["youth"],
+        "description": "청주시 거주 청년 월세 지원.",
+        "eligibility": "만 19~34세, 청주시 거주",
+        "amount": "월 최대 10만원",
+        "period": "최대 12개월",
+        "source": "청주시청"
+      }
+    ],
+    "충남 천안시": [
+      {
+        "id": "cheonan-birth-bonus",
+        "title": "천안시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "천안시 출산가정에 축하금.",
+        "eligibility": "천안시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 300만원",
+        "source": "천안시청"
+      }
+    ],
+    "전북 전주시": [
+      {
+        "id": "jeonju-youth-culture",
+        "title": "전주시 청년 문화도시 지원",
+        "category": "culture",
+        "personas": ["youth"],
+        "description": "전주 한옥마을 등 문화도시 청년 활동 지원.",
+        "eligibility": "만 19~34세, 전주시 거주",
+        "amount": "연 50만원 문화활동비",
+        "source": "전주시청"
+      }
+    ],
+    "경북 포항시": [
+      {
+        "id": "pohang-youth-job",
+        "title": "포항시 청년 취업장려금",
+        "category": "youth",
+        "personas": ["youth"],
+        "description": "포항시 중소기업 취업 청년에게 장려금.",
+        "eligibility": "만 18~34세, 포항시 소재 중소기업 취업",
+        "amount": "6개월 근속 시 200만원",
+        "source": "포항시청"
+      }
+    ],
+    "경남 창원시": [
+      {
+        "id": "changwon-birth-bonus",
+        "title": "창원시 출산축하금",
+        "category": "childcare",
+        "personas": ["childcare"],
+        "description": "창원시 출산가정에 축하금.",
+        "eligibility": "창원시 거주 출산가정",
+        "amount": "첫째 100만원, 둘째 200만원, 셋째 이상 500만원",
+        "source": "창원시청"
+      }
+    ],
+    "제주 제주시": [
+      {
+        "id": "jejusi-senior-care",
+        "title": "제주시 어르신 돌봄",
+        "category": "senior",
+        "personas": ["senior"],
+        "description": "제주시 독거 어르신 안부확인 및 생활지원.",
+        "eligibility": "만 65세 이상, 제주시 거주 독거 어르신",
+        "amount": "무료",
+        "source": "제주시청"
+      }
+    ],
+    "제주 서귀포시": [
+      {
+        "id": "seogwipo-settle",
+        "title": "서귀포시 이주 정착지원",
+        "category": "housing",
+        "personas": ["general"],
+        "description": "서귀포시로 이주하는 가구에 정착비 지원.",
+        "eligibility": "서귀포시 전입 가구",
+        "amount": "최대 200만원",
+        "source": "서귀포시청"
+      }
+    ]
+  },
+  "updatedAt": "2026-04-10"
+}
