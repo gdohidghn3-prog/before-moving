@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -14,7 +14,17 @@ import {
   Users,
   ExternalLink,
   Crown,
+  Heart,
+  Building2,
+  GraduationCap,
+  Clock,
+  Hospital,
+  TreePine,
+  Landmark,
+  TrendingUp,
 } from "lucide-react";
+import { addHistory, isFavorite, toggleFavorite, getFavorites } from "@/lib/history";
+import { getDeepInfo, hasDeepInfo, type DeepInfo } from "@/lib/deep-info";
 import {
   BarChart,
   Bar,
@@ -26,6 +36,7 @@ import {
 import type { Neighborhood, Complaint, NoisePoint, AreaReview } from "@/lib/data";
 import ScoreBadge from "@/components/ScoreBadge";
 import LocalInfoSection from "@/components/LocalInfoSection";
+import PublicBenefitsSection from "@/components/PublicBenefitsSection";
 import BlogWidget from "@/components/BlogWidget";
 import ReviewSection from "@/components/ReviewSection";
 
@@ -150,6 +161,18 @@ interface AreaDetailContentProps {
 
 // ── main component ──────────────────────────────────────────
 
+// ── 즐겨찾기 구독 ──────────────────────────────────────────
+function subscribeFav(cb: () => void) {
+  if (typeof window === "undefined") return () => {};
+  window.addEventListener("favorites-change", cb);
+  window.addEventListener("storage", cb);
+  return () => {
+    window.removeEventListener("favorites-change", cb);
+    window.removeEventListener("storage", cb);
+  };
+}
+const emptyFavs: string[] = [];
+
 export default function AreaDetailContent({
   area,
   complaints,
@@ -157,6 +180,23 @@ export default function AreaDetailContent({
   reviews,
   id,
 }: AreaDetailContentProps) {
+  // ── 방문 기록 저장 + 즐겨찾기 ────────────────────────────
+  useEffect(() => {
+    addHistory({
+      id: area.id,
+      name: area.name,
+      district: area.district,
+      city: area.city,
+      overallScore: area.overallScore,
+    });
+  }, [area]);
+
+  const favIds = useSyncExternalStore(subscribeFav, getFavorites, () => emptyFavs);
+  const isFav = favIds.includes(area.id);
+
+  const deepInfo = useMemo(() => getDeepInfo(area.id), [area.id]);
+  const hasDeep = useMemo(() => hasDeepInfo(area.id), [area.id]);
+
   // ── derived data ───────────────────────────────────────────
 
   const categorySums = useMemo(() => {
@@ -216,7 +256,19 @@ export default function AreaDetailContent({
                 </span>
               </h1>
             </div>
-            <ScoreBadge score={area.overallScore} size="lg" />
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => toggleFavorite(area.id)}
+                className="p-2 rounded-full border border-[var(--border)] hover:bg-rose-50 hover:border-rose-300 transition-colors cursor-pointer"
+                title={isFav ? "즐겨찾기 해제" : "즐겨찾기 추가"}
+              >
+                <Heart
+                  size={18}
+                  className={isFav ? "text-rose-500 fill-rose-500" : "text-[var(--text-secondary)]"}
+                />
+              </button>
+              <ScoreBadge score={area.overallScore} size="lg" />
+            </div>
           </div>
         </Section>
 
@@ -404,11 +456,89 @@ export default function AreaDetailContent({
           city={area.city}
         />
 
-        {/* ─── 8. 부동산 링크 ────────────────────────────── */}
+        {/* ─── 8. 공공혜택 ──────────────────────────────── */}
+        <Section delay={0.28}>
+          <PublicBenefitsSection district={area.district} city={area.city} />
+        </Section>
+
+        {/* ─── 9. 부동산 시세 ────────────────────────────── */}
         <Section delay={0.3}>
-          <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3">
-            이 동네 매물 보기
+          <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
+            <Building2 size={16} className="text-emerald-600" /> 부동산 시세
           </h2>
+          {hasDeep && deepInfo.realEstate.aptJeonse ? (
+            <div className="bg-white border border-[var(--border)] rounded-xl p-4 mb-3">
+              <div className="text-[10px] text-[var(--text-secondary)] mb-3">
+                기준: {deepInfo.realEstate.basePyeong}평 기준 · {deepInfo.realEstate.dataDate} 실거래
+              </div>
+              <div className="space-y-2.5">
+                {deepInfo.realEstate.aptSale && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text-secondary)]">아파트 매매</span>
+                    <span className="font-semibold text-[var(--text)]">
+                      {(deepInfo.realEstate.aptSale / 10000).toFixed(1)}억원
+                    </span>
+                  </div>
+                )}
+                {deepInfo.realEstate.aptJeonse && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text-secondary)]">아파트 전세</span>
+                    <span className="font-semibold text-[var(--text)]">
+                      {(deepInfo.realEstate.aptJeonse / 10000).toFixed(1)}억원
+                    </span>
+                  </div>
+                )}
+                {deepInfo.realEstate.aptWolse && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text-secondary)]">아파트 월세</span>
+                    <span className="font-semibold text-[var(--text)]">
+                      {deepInfo.realEstate.aptWolse.deposit.toLocaleString()}/{deepInfo.realEstate.aptWolse.monthly}만
+                    </span>
+                  </div>
+                )}
+                {deepInfo.realEstate.villaJeonse && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text-secondary)]">빌라 전세</span>
+                    <span className="font-semibold text-[var(--text)]">
+                      {deepInfo.realEstate.villaJeonse.toLocaleString()}만원
+                    </span>
+                  </div>
+                )}
+                {deepInfo.realEstate.villaWolse && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text-secondary)]">빌라 월세</span>
+                    <span className="font-semibold text-[var(--text)]">
+                      {deepInfo.realEstate.villaWolse.deposit.toLocaleString()}/{deepInfo.realEstate.villaWolse.monthly}만
+                    </span>
+                  </div>
+                )}
+                {deepInfo.realEstate.oneRoomWolse && (
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text-secondary)]">원룸 월세</span>
+                    <span className="font-semibold text-[var(--text)]">
+                      {deepInfo.realEstate.oneRoomWolse.deposit.toLocaleString()}/{deepInfo.realEstate.oneRoomWolse.monthly}만
+                    </span>
+                  </div>
+                )}
+              </div>
+              {deepInfo.realEstate.majorComplexes.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-[var(--border)]">
+                  <div className="text-xs text-[var(--text-secondary)] mb-1">주요 단지</div>
+                  <div className="flex flex-wrap gap-1">
+                    {deepInfo.realEstate.majorComplexes.map((c) => (
+                      <span key={c} className="text-[11px] px-2 py-0.5 bg-emerald-50 text-emerald-700 rounded-full">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="bg-white border border-[var(--border)] rounded-xl p-4 mb-3 text-center text-sm text-[var(--text-secondary)]">
+              시세 정보 준비 중입니다
+            </div>
+          )}
           <div className="grid grid-cols-2 gap-2">
             <a
               href={`https://new.land.naver.com/complexes?ms=${area.lat},${area.lng},16&a=APT:PRE:ABYG:JGC&e=RETAIL&ad=true`}
@@ -429,7 +559,182 @@ export default function AreaDetailContent({
           </div>
         </Section>
 
-        {/* ─── 9. PRO 리포트 CTA ─────────────────────────── */}
+        {/* ─── 9-2. 교육 환경 ──────────────────────────── */}
+        {hasDeep && (
+          <Section delay={0.32}>
+            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
+              <GraduationCap size={16} className="text-blue-600" /> 교육 환경
+            </h2>
+            <div className="bg-white border border-[var(--border)] rounded-xl p-4">
+              {(deepInfo.education.elementary.length > 0 || deepInfo.education.middle.length > 0 || deepInfo.education.high.length > 0) ? (
+                <div className="space-y-3">
+                  {deepInfo.education.elementary.length > 0 && (
+                    <div>
+                      <div className="text-xs font-medium text-[var(--text)] mb-1">초등학교</div>
+                      {deepInfo.education.elementary.map((s) => (
+                        <div key={s.name} className="flex items-center justify-between text-sm text-[var(--text-secondary)]">
+                          <span>{s.name}</span>
+                          <span className="text-xs">{s.distance}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {deepInfo.education.middle.length > 0 && (
+                    <div>
+                      <div className="text-xs font-medium text-[var(--text)] mb-1">중학교</div>
+                      {deepInfo.education.middle.map((s) => (
+                        <div key={s.name} className="flex items-center justify-between text-sm text-[var(--text-secondary)]">
+                          <span>{s.name}</span>
+                          <span className="text-xs">{s.distance}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {deepInfo.education.high.length > 0 && (
+                    <div>
+                      <div className="text-xs font-medium text-[var(--text)] mb-1">고등학교</div>
+                      {deepInfo.education.high.map((s) => (
+                        <div key={s.name} className="flex items-center justify-between text-sm text-[var(--text-secondary)]">
+                          <span>{s.name} {s.type && <span className="text-[10px] text-blue-500">({s.type})</span>}</span>
+                          <span className="text-xs">{s.distance}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="pt-2 border-t border-[var(--border)]">
+                    <div className="flex items-center justify-between text-xs mb-1">
+                      <span className="text-[var(--text-secondary)]">학원 밀집도</span>
+                      <span className={`font-medium ${deepInfo.education.academyDensity === "상" ? "text-emerald-600" : deepInfo.education.academyDensity === "중" ? "text-amber-600" : "text-rose-600"}`}>
+                        {deepInfo.education.academyDensity}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{deepInfo.education.summary}</p>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-sm text-center text-[var(--text-secondary)]">교육 정보 준비 중입니다</p>
+              )}
+            </div>
+          </Section>
+        )}
+
+        {/* ─── 9-3. 교통 분석 ──────────────────────────── */}
+        {hasDeep && deepInfo.commute.destinations.length > 0 && (
+          <Section delay={0.34}>
+            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
+              <Clock size={16} className="text-indigo-600" /> 출퇴근 교통
+            </h2>
+            <div className="bg-white border border-[var(--border)] rounded-xl p-4">
+              <div className="space-y-2">
+                {deepInfo.commute.destinations.map((d) => (
+                  <div key={d.name} className="flex items-center justify-between text-sm">
+                    <span className="text-[var(--text)] font-medium">{d.name}</span>
+                    <div className="flex gap-3 text-xs text-[var(--text-secondary)]">
+                      <span>대중교통 {d.byTransit}</span>
+                      <span className="text-[var(--border)]">|</span>
+                      <span>자차 {d.byCar}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-3 pt-3 border-t border-[var(--border)] flex items-center justify-between">
+                <div>
+                  <div className="text-xs text-[var(--text-secondary)] mb-1">주요 교통</div>
+                  <div className="flex flex-wrap gap-1">
+                    {deepInfo.commute.mainTransport.map((t) => (
+                      <span key={t} className="text-[11px] px-2 py-0.5 bg-indigo-50 text-indigo-600 rounded-full">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-[var(--text-secondary)]">혼잡도</div>
+                  <span className={`text-sm font-medium ${deepInfo.commute.congestion === "상" ? "text-rose-600" : deepInfo.commute.congestion === "중" ? "text-amber-600" : "text-emerald-600"}`}>
+                    {deepInfo.commute.congestion}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </Section>
+        )}
+
+        {/* ─── 9-4. 생활 인프라 ─────────────────────────── */}
+        {hasDeep && (deepInfo.infra.hospital || deepInfo.infra.clinicCount > 0) && (
+          <Section delay={0.36}>
+            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
+              <Hospital size={16} className="text-rose-500" /> 생활 인프라
+            </h2>
+            <div className="bg-white border border-[var(--border)] rounded-xl p-4">
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                {deepInfo.infra.hospital && (
+                  <div>
+                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">종합병원</div>
+                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.hospital.name}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{deepInfo.infra.hospital.distance}</div>
+                  </div>
+                )}
+                {deepInfo.infra.clinicCount > 0 && (
+                  <div>
+                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">동네 의원 / 약국</div>
+                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.clinicCount}곳 / {deepInfo.infra.pharmacyCount}곳</div>
+                  </div>
+                )}
+                {deepInfo.infra.mart && (
+                  <div>
+                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">대형마트</div>
+                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.mart.name}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{deepInfo.infra.mart.distance}</div>
+                  </div>
+                )}
+                {deepInfo.infra.park && (
+                  <div>
+                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">공원</div>
+                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.park.name}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{deepInfo.infra.park.distance}</div>
+                  </div>
+                )}
+                {deepInfo.infra.library && (
+                  <div>
+                    <div className="text-xs text-[var(--text-secondary)] mb-0.5">도서관</div>
+                    <div className="font-medium text-[var(--text)]">{deepInfo.infra.library.name}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{deepInfo.infra.library.distance}</div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </Section>
+        )}
+
+        {/* ─── 9-5. 개발 계획 ──────────────────────────── */}
+        {hasDeep && deepInfo.developments.length > 0 && (
+          <Section delay={0.38}>
+            <h2 className="text-sm font-semibold text-[var(--text-secondary)] mb-3 flex items-center gap-1.5">
+              <TrendingUp size={16} className="text-amber-600" /> 개발 계획
+            </h2>
+            <div className="space-y-2">
+              {deepInfo.developments.map((d) => (
+                <div key={d.title} className="bg-white border border-[var(--border)] rounded-xl p-4">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm font-medium text-[var(--text)]">{d.title}</span>
+                    <span className={`text-[11px] px-2 py-0.5 rounded-full font-medium ${
+                      d.status === "진행중" ? "bg-blue-50 text-blue-600" :
+                      d.status === "예정" ? "bg-amber-50 text-amber-600" :
+                      "bg-emerald-50 text-emerald-600"
+                    }`}>
+                      {d.status}
+                    </span>
+                  </div>
+                  <div className="text-xs text-[var(--text-secondary)]">
+                    {d.expectedYear}년 · {d.impact}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Section>
+        )}
+
+        {/* ─── 10. PRO 리포트 CTA ────────────────────────── */}
         <Section delay={0.32}>
           <Link
             href={`/area/${id}/pro`}
@@ -462,7 +767,7 @@ export default function AreaDetailContent({
           </Link>
         </Section>
 
-        {/* ─── 10. 블로그 ─────────────────────────────────── */}
+        {/* ─── 11. 블로그 ─────────────────────────────────── */}
         <BlogWidget category="동네" />
       </div>
     </div>

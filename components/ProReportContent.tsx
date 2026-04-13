@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   ArrowLeft,
   Lock,
-  Printer,
+  Download,
   Crown,
   CheckCircle2,
   AlertTriangle,
@@ -13,6 +13,7 @@ import {
   TrendingDown,
   Trophy,
   ShieldCheck,
+  Loader2,
 } from "lucide-react";
 import type {
   Neighborhood,
@@ -104,6 +105,7 @@ export default function ProReportContent({
     getServerSnapshot,
   );
   const [purchasing, setPurchasing] = useState(false);
+  const [downloading, setDownloading] = useState(false);
 
   // ─── derived analytics ─────────────────────────────────
   const categorySums = useMemo(() => {
@@ -182,8 +184,25 @@ export default function ProReportContent({
     }, 600);
   };
 
-  const handlePrint = () => {
-    if (typeof window !== "undefined") window.print();
+  const handleDownloadPdf = async () => {
+    if (typeof window === "undefined") return;
+    setDownloading(true);
+    try {
+      const html2pdf = (await import("html2pdf.js")).default;
+      const el = document.getElementById("pro-report-content");
+      if (!el) return;
+      const opt = {
+        margin: [10, 10, 10, 10],
+        filename: `이사전에_PRO_${area.name}_${new Date().toISOString().slice(0, 10)}.pdf`,
+        image: { type: "jpeg", quality: 0.95 },
+        html2canvas: { scale: 2, useCORS: true, logging: false },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" as const },
+        pagebreak: { mode: ["avoid-all", "css", "legacy"] },
+      };
+      await html2pdf().set(opt).from(el).save();
+    } finally {
+      setDownloading(false);
+    }
   };
 
   // ─── unlock gate ───────────────────────────────────────
@@ -249,7 +268,7 @@ export default function ProReportContent({
               <li className="flex items-start gap-2">
                 <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
                 <span>
-                  <strong>PDF 저장</strong> — 브라우저 인쇄로 PDF 다운로드 가능
+                  <strong>PDF 저장</strong> — 버튼 1클릭으로 PDF 파일 다운로드
                 </span>
               </li>
             </ul>
@@ -303,7 +322,7 @@ export default function ProReportContent({
   return (
     <div className="min-h-screen bg-[var(--background)] pro-report">
       <div className="max-w-3xl mx-auto px-4 py-6">
-        {/* 상단 액션 */}
+        {/* 상단 액션 (PDF에서 제외) */}
         <div className="flex items-center justify-between mb-6 no-print">
           <Link
             href={`/area/${area.id}`}
@@ -312,12 +331,20 @@ export default function ProReportContent({
             <ArrowLeft size={16} /> 돌아가기
           </Link>
           <button
-            onClick={handlePrint}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--text)] text-white text-sm font-medium hover:opacity-90"
+            onClick={handleDownloadPdf}
+            disabled={downloading}
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[var(--text)] text-white text-sm font-medium hover:opacity-90 disabled:opacity-50"
           >
-            <Printer size={14} /> PDF로 저장
+            {downloading ? (
+              <><Loader2 size={14} className="animate-spin" /> PDF 생성 중...</>
+            ) : (
+              <><Download size={14} /> PDF 다운로드</>
+            )}
           </button>
         </div>
+
+        {/* ── PDF 캡처 대상 시작 ── */}
+        <div id="pro-report-content">
 
         {/* 리포트 헤더 */}
         <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6 mb-6">
@@ -686,6 +713,8 @@ export default function ProReportContent({
             근거가 아닙니다.
           </p>
         </div>
+
+        </div>{/* ── PDF 캡처 대상 끝 ── */}
       </div>
     </div>
   );

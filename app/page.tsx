@@ -1,20 +1,50 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, MapPin, ChevronRight } from "lucide-react";
+import { Search, MapPin, ChevronRight, Clock, Heart, X, Trash2 } from "lucide-react";
 import {
   searchNeighborhoods,
   getCityList,
   getDistrictsByCity,
   getNeighborhoodsByDistrict,
   getPopularByCity,
+  getNeighborhoodById,
   type Neighborhood,
 } from "@/lib/data";
+import {
+  getHistory,
+  clearHistory,
+  getFavorites,
+  toggleFavorite,
+  type HistoryEntry,
+} from "@/lib/history";
 import NeighborhoodCard from "@/components/NeighborhoodCard";
 import ScoreBadge from "@/components/ScoreBadge";
 import BlogWidget from "@/components/BlogWidget";
+
+// ── localStorage 구독 (useSyncExternalStore) ───────────
+function subscribeHistory(cb: () => void) {
+  if (typeof window === "undefined") return () => {};
+  window.addEventListener("history-change", cb);
+  window.addEventListener("storage", cb);
+  return () => {
+    window.removeEventListener("history-change", cb);
+    window.removeEventListener("storage", cb);
+  };
+}
+function subscribeFavorites(cb: () => void) {
+  if (typeof window === "undefined") return () => {};
+  window.addEventListener("favorites-change", cb);
+  window.addEventListener("storage", cb);
+  return () => {
+    window.removeEventListener("favorites-change", cb);
+    window.removeEventListener("storage", cb);
+  };
+}
+const emptyHistory: HistoryEntry[] = [];
+const emptyFavorites: string[] = [];
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -23,6 +53,14 @@ export default function Home() {
   const [isFocused, setIsFocused] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const tabScrollRef = useRef<HTMLDivElement>(null);
+
+  // 최근 본 동네 + 즐겨찾기 (SSR-safe)
+  const history = useSyncExternalStore(subscribeHistory, getHistory, () => emptyHistory);
+  const favoriteIds = useSyncExternalStore(subscribeFavorites, getFavorites, () => emptyFavorites);
+  const favoriteAreas = useMemo(
+    () => favoriteIds.map((id) => getNeighborhoodById(id)).filter(Boolean) as Neighborhood[],
+    [favoriteIds],
+  );
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -35,6 +73,16 @@ export default function Home() {
   }, []);
 
   const cities = useMemo(() => getCityList(), []);
+
+  // 검색어로 도시 카드 필터: 동/구/시 이름에 매칭되는 도시만 표시
+  const filteredCities = useMemo(() => {
+    const q = query.trim();
+    if (!q) return cities;
+    const results = searchNeighborhoods(q);
+    if (results.length === 0) return cities;
+    const matchedCities = new Set(results.map((n) => n.city));
+    return cities.filter((c) => matchedCities.has(c));
+  }, [cities, query]);
 
   const districts = useMemo(() => {
     if (!selectedCity) return [];
@@ -130,6 +178,67 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── 즐겨찾기 ────────────────────────────────────── */}
+        {!selectedCity && favoriteAreas.length > 0 && (
+          <section className="pb-6">
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-lg font-bold text-[#0F172A] flex items-center gap-1.5">
+                <Heart size={18} className="text-rose-500 fill-rose-500" /> 즐겨찾기
+              </h2>
+              <span className="text-xs text-[#94A3B8]">{favoriteAreas.length}개</span>
+            </div>
+            <div className="space-y-3">
+              {favoriteAreas.map((n, i) => (
+                <div key={n.id} className="relative">
+                  <NeighborhoodCard neighborhood={n} index={i} />
+                  <button
+                    onClick={(e) => { e.preventDefault(); toggleFavorite(n.id); }}
+                    className="absolute top-3 right-14 p-1.5 rounded-full bg-white border border-rose-200 shadow-sm hover:bg-rose-50 transition-colors z-10 cursor-pointer"
+                    title="즐겨찾기 해제"
+                  >
+                    <Heart size={14} className="text-rose-500 fill-rose-500" />
+                  </button>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── 최근 본 동네 ──────────────────────────────── */}
+        {!selectedCity && history.length > 0 && (
+          <section className="pb-6">
+            <div className="flex items-center justify-between mb-3">
+              <h2 className="text-lg font-bold text-[#0F172A] flex items-center gap-1.5">
+                <Clock size={18} className="text-[#6366F1]" /> 최근 본 동네
+              </h2>
+              <button
+                onClick={clearHistory}
+                className="text-xs text-[#94A3B8] hover:text-[#EF4444] flex items-center gap-1 transition-colors cursor-pointer"
+              >
+                <Trash2 size={12} /> 전체 삭제
+              </button>
+            </div>
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1" style={{ WebkitOverflowScrolling: "touch" }}>
+              {history.map((h) => (
+                <Link
+                  key={h.id}
+                  href={`/area/${h.id}`}
+                  className="shrink-0 bg-white border border-[#E2E8F0] rounded-xl px-4 py-3 hover:border-[#6366F1] hover:shadow-sm transition-all min-w-[140px]"
+                >
+                  <div className="font-semibold text-sm text-[#0F172A] truncate">{h.name}</div>
+                  <div className="text-[11px] text-[#94A3B8] truncate">{h.city} {h.district}</div>
+                  <div className="flex items-center justify-between mt-1.5">
+                    <ScoreBadge score={h.overallScore} size="sm" />
+                    <span className="text-[10px] text-[#CBD5E1]">
+                      {new Date(h.visitedAt).toLocaleDateString("ko-KR", { month: "short", day: "numeric" })}
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* City Selection */}
         {!selectedCity && (
           <motion.section
@@ -137,9 +246,14 @@ export default function Home() {
             animate={{ opacity: 1 }}
             className="pb-6"
           >
-            <h2 className="text-lg font-bold text-[#0F172A] mb-4">어디로 이사하세요?</h2>
+            <h2 className="text-lg font-bold text-[#0F172A] mb-4">
+              {query.trim() ? `"${query.trim()}" 관련 지역` : "어디로 이사하세요?"}
+            </h2>
+            {filteredCities.length === 0 && (
+              <p className="text-sm text-[#94A3B8] py-8 text-center">검색 결과가 없습니다</p>
+            )}
             <div className="grid grid-cols-2 gap-3">
-              {cities.map((city) => (
+              {filteredCities.map((city) => (
                 <motion.button
                   key={city}
                   whileHover={{ scale: 1.02 }}
