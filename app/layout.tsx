@@ -4,7 +4,10 @@ import Analytics from "@/components/Analytics";
 import Disclaimer from "@/components/Disclaimer";
 import Header from "@/components/Header";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://before-moving.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "이사전에 - 이사 가기 전 동네 정보 한눈에",
     template: "%s | 이사전에",
@@ -26,7 +29,13 @@ export const metadata: Metadata = {
     description:
       "전국 252개 동네의 소음·안전·편의 점수, 민원 현황, 이사 체크리스트, 분리수거 가이드를 한눈에.",
     type: "website",
+    url: BASE_URL,
     locale: "ko_KR",
+  },
+  twitter: {
+    card: "summary",
+    title: "이사전에 - 이사 가기 전 동네 정보 한눈에",
+    description: "전국 252개 동네의 소음·안전·편의 점수, 이사 체크리스트, 분리수거 가이드.",
   },
 };
 
