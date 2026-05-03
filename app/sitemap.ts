@@ -36,7 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // 동네 상세 페이지 (252개)
+  // 동네 상세 페이지 (getAllNeighborhoods() 기준 동적)
   const areaPages: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
     url: `${BASE_URL}/area/${n.id}`,
     lastModified: new Date(),
@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // 안전 상세 페이지 (252개)
+  // 안전 상세 페이지 (getAllNeighborhoods() 기준 동적)
   const safetyPages: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
     url: `${BASE_URL}/safety/${n.id}`,
     lastModified: new Date(),

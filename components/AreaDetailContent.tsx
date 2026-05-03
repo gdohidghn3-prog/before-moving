@@ -15,6 +15,8 @@ import {
   ExternalLink,
   Crown,
   Heart,
+  Sparkles,
+  Target,
 } from "lucide-react";
 import { addHistory, isFavorite, toggleFavorite, getFavorites } from "@/lib/history";
 import DeepAnalysisSection from "@/components/DeepAnalysisSection";
@@ -309,6 +311,37 @@ export default function AreaDetailContent({
             </span>
           </Link>
         </Section>
+
+        {/* ─── 2-b. 한 줄 요약 + 추천 대상 (옵셔널) ─────── */}
+        {(area.summary || (area.recommendedFor && area.recommendedFor.length > 0)) && (
+          <Section delay={0.08}>
+            <div className="bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-2xl p-4">
+              {area.summary && (
+                <div className="flex items-start gap-2 mb-3">
+                  <Sparkles size={16} className="text-indigo-500 mt-0.5 shrink-0" />
+                  <p className="text-sm text-[var(--text)] leading-relaxed">
+                    {area.summary}
+                  </p>
+                </div>
+              )}
+              {area.recommendedFor && area.recommendedFor.length > 0 && (
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-700">
+                    <Target size={12} /> 추천 대상
+                  </span>
+                  {area.recommendedFor.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-0.5 bg-white border border-indigo-200 text-indigo-700 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </Section>
+        )}
 
         {/* ─── 3. 특징 태그 ──────────────────────────────── */}
         <Section delay={0.1}>

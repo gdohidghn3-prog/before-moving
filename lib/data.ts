@@ -19,6 +19,12 @@ export interface Neighborhood {
   population: string;      // "높음" | "보통" | "낮음"
   subway: string[];        // 가까운 지하철역
   highlights: string[];    // 특징 태그
+
+  // ─ 옵셔널: 이사전에 v2 메타 (점진 백필) ──────────────────
+  // 신규 지역부터 채워넣고, 기존 동네는 후속 배치에서 백필.
+  // UI에서는 값이 없을 경우 자연스럽게 숨김 처리한다.
+  summary?: string;             // 동네를 한 문장으로 (60~80자 권장)
+  recommendedFor?: string[];    // 추천 대상 태그 1~3개. 예: "신혼부부", "직장인", "은퇴 후"
 }
 
 export interface Complaint {
@@ -4676,6 +4682,202 @@ export const neighborhoods: Neighborhood[] = [
   // 연천군
   { id: "yeoncheon-yeoncheon", name: "연천읍", district: "연천군", city: "연천", lat: 38.0963, lng: 127.0754, noiseScore: 85, safetyScore: 62, convenienceScore: 42, overallScore: 58, population: "낮음", subway: [], highlights: ["DMZ 인근", "군부대", "저렴한 주거", "자연환경"] },
   { id: "yeoncheon-jeongok", name: "전곡읍", district: "연천군", city: "연천", lat: 37.9754, lng: 127.0651, noiseScore: 78, safetyScore: 65, convenienceScore: 48, overallScore: 60, population: "낮음", subway: ["전곡역"], highlights: ["전곡리 선사유적지", "주거 중심", "1호선", "역사 유적"] },
+
+  // ══════════════════════════════════════════════════════════════
+  // ── 2026-05 추가: 누락 시군 보강 (10개) ──
+  // 시도별 행정 중심지·인구 5만+ 지방시군 위주.
+  // summary / recommendedFor 옵셔널 메타도 함께 기입.
+  // ══════════════════════════════════════════════════════════════
+
+  // 충청북도 음성군
+  {
+    id: "eumseong-eumseong",
+    name: "음성읍",
+    district: "음성군",
+    city: "음성",
+    lat: 36.9395,
+    lng: 127.6905,
+    noiseScore: 78,
+    safetyScore: 76,
+    convenienceScore: 68,
+    overallScore: 73,
+    population: "보통",
+    subway: [],
+    highlights: ["충북혁신도시 인접", "산업단지 풍부", "행정 중심", "전원형 주거"],
+    summary: "충북혁신도시·산업단지 직주근접이 좋은 조용한 군청 소재지.",
+    recommendedFor: ["직장인", "신혼부부"],
+  },
+
+  // 충청남도 홍성군 (충남도청 소재지)
+  {
+    id: "hongseong-hongseong",
+    name: "홍성읍",
+    district: "홍성군",
+    city: "홍성",
+    lat: 36.6018,
+    lng: 126.6610,
+    noiseScore: 72,
+    safetyScore: 78,
+    convenienceScore: 75,
+    overallScore: 75,
+    population: "보통",
+    subway: ["홍성역"],
+    highlights: ["충남도청 소재지", "내포신도시 인접", "장항선 KTX-이음", "행정 중심"],
+    summary: "충남도청과 내포신도시를 끼고 있는 행정·교통 거점 군청 소재지.",
+    recommendedFor: ["공무원", "직장인", "신혼부부"],
+  },
+
+  // 강원특별자치도 양양군
+  {
+    id: "yangyang-yangyang",
+    name: "양양읍",
+    district: "양양군",
+    city: "양양",
+    lat: 38.0758,
+    lng: 128.6190,
+    noiseScore: 80,
+    safetyScore: 80,
+    convenienceScore: 65,
+    overallScore: 75,
+    population: "낮음",
+    subway: [],
+    highlights: ["양양국제공항", "서핑 명소", "낙산해변 인접", "이주민 증가"],
+    summary: "서핑·바다·국제공항을 한 번에 누리는 동해안 한적한 군청 소재지.",
+    recommendedFor: ["은퇴 후", "프리랜서", "이주민"],
+  },
+
+  // 전라북도 남원시
+  {
+    id: "namwon-jugok",
+    name: "죽항동",
+    district: "남원시",
+    city: "남원",
+    lat: 35.4163,
+    lng: 127.3905,
+    noiseScore: 70,
+    safetyScore: 75,
+    convenienceScore: 78,
+    overallScore: 74,
+    population: "보통",
+    subway: ["남원역"],
+    highlights: ["지리산 관광 거점", "광한루원 인접", "전라선 KTX", "춘향골"],
+    summary: "지리산과 광한루를 품은 전북 동부 관광·교통 거점 도시.",
+    recommendedFor: ["은퇴 후", "관광 종사자", "신혼부부"],
+  },
+
+  // 전라남도 무안군 (전남도청 소재지)
+  {
+    id: "muan-muan",
+    name: "무안읍",
+    district: "무안군",
+    city: "무안",
+    lat: 34.9905,
+    lng: 126.4815,
+    noiseScore: 75,
+    safetyScore: 78,
+    convenienceScore: 70,
+    overallScore: 74,
+    population: "보통",
+    subway: [],
+    highlights: ["전남도청 소재지", "남악신도시 인접", "무안국제공항", "행정 중심"],
+    summary: "전남도청·남악신도시·국제공항이 모인 전남 행정 중심권.",
+    recommendedFor: ["공무원", "직장인", "신혼부부"],
+  },
+
+  // 경상북도 영주시
+  {
+    id: "yeongju-hyucheon",
+    name: "휴천동",
+    district: "영주시",
+    city: "영주",
+    lat: 36.8095,
+    lng: 128.6240,
+    noiseScore: 70,
+    safetyScore: 78,
+    convenienceScore: 80,
+    overallScore: 76,
+    population: "보통",
+    subway: ["영주역"],
+    highlights: ["영주 시내 중심", "중앙선 KTX-이음", "주거·상업 혼재", "소수서원·부석사"],
+    summary: "중앙선 KTX와 부석사·소수서원을 낀 영주 도심 주거 지구.",
+    recommendedFor: ["은퇴 후", "직장인"],
+  },
+
+  // 경상북도 김천시
+  {
+    id: "gimcheon-pyeonghwa",
+    name: "평화동",
+    district: "김천시",
+    city: "김천",
+    lat: 36.1235,
+    lng: 128.1135,
+    noiseScore: 72,
+    safetyScore: 80,
+    convenienceScore: 82,
+    overallScore: 78,
+    population: "높음",
+    subway: ["김천(구미)역"],
+    highlights: ["김천혁신도시 인접", "공공기관 이전", "KTX 김천(구미)역", "신축 아파트"],
+    summary: "KTX·혁신도시를 끼고 신축 아파트가 늘어난 경북 서부 거점.",
+    recommendedFor: ["직장인", "공무원", "신혼부부"],
+  },
+
+  // 경상남도 사천시
+  {
+    id: "sacheon-yongsang",
+    name: "용현면",
+    district: "사천시",
+    city: "사천",
+    lat: 35.0418,
+    lng: 128.0485,
+    noiseScore: 70,
+    safetyScore: 78,
+    convenienceScore: 75,
+    overallScore: 74,
+    population: "보통",
+    subway: [],
+    highlights: ["KAI 항공우주", "사천공항 인접", "산업단지", "직주근접"],
+    summary: "KAI·항공우주 산업과 공항을 낀 경남 서부 직주근접 도시.",
+    recommendedFor: ["직장인", "엔지니어", "신혼부부"],
+  },
+
+  // 경상남도 밀양시
+  {
+    id: "miryang-naeil",
+    name: "내일동",
+    district: "밀양시",
+    city: "밀양",
+    lat: 35.4933,
+    lng: 128.7458,
+    noiseScore: 72,
+    safetyScore: 78,
+    convenienceScore: 78,
+    overallScore: 76,
+    population: "보통",
+    subway: ["밀양역"],
+    highlights: ["밀양 도심", "경부선 KTX 정차", "터미널 인근", "가덕도 신공항 호재"],
+    summary: "경부선 KTX와 영남 교통축을 낀 조용한 옛 도시.",
+    recommendedFor: ["은퇴 후", "직장인"],
+  },
+
+  // 경기 안성시
+  {
+    id: "anseong-bongsan",
+    name: "봉산동",
+    district: "안성시",
+    city: "안성",
+    lat: 37.0080,
+    lng: 127.2705,
+    noiseScore: 70,
+    safetyScore: 76,
+    convenienceScore: 78,
+    overallScore: 75,
+    population: "보통",
+    subway: [],
+    highlights: ["안성 도심", "안성맞춤랜드", "평택·천안 출퇴근", "주거·상업 혼재"],
+    summary: "평택·천안과 가까운 경기 남부의 조용한 베드타운.",
+    recommendedFor: ["신혼부부", "직장인", "예비 부모"],
+  },
 ];
 
 // ─── 민원 데이터 ───────────────────────────────────────────────
