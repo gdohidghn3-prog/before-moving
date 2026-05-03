@@ -1,13 +1,11 @@
 "use client";
 
-import { useMemo, useState, useSyncExternalStore } from "react";
+import { useMemo, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
-  Lock,
   Download,
   Crown,
-  CheckCircle2,
   AlertTriangle,
   TrendingUp,
   TrendingDown,
@@ -22,9 +20,6 @@ import type {
   AreaReview,
   SafetyInfo,
 } from "@/lib/data";
-
-// ─── 가격 ──────────────────────────────────────────────
-const PRO_PRICE = 2900;
 
 // ─── helpers ───────────────────────────────────────────
 function scoreColor(v: number) {
@@ -48,38 +43,6 @@ const COMPLAINT_KR: Record<string, string> = {
   other: "기타",
 };
 
-// ─── unlock 로직 (sessionStorage 기반 mock) ───────────
-function unlockKey(id: string) {
-  return `pro:unlocked:${id}`;
-}
-
-function setUnlocked(id: string) {
-  if (typeof window === "undefined") return;
-  window.sessionStorage.setItem(unlockKey(id), "1");
-  // sessionStorage는 storage 이벤트를 같은 탭에 발화하지 않으므로 수동 dispatch
-  window.dispatchEvent(new Event("pro-unlock-change"));
-}
-
-// useSyncExternalStore: 하이드레이션 안전 + 외부 스토어 구독
-function subscribeUnlock(callback: () => void) {
-  if (typeof window === "undefined") return () => {};
-  window.addEventListener("storage", callback);
-  window.addEventListener("pro-unlock-change", callback);
-  return () => {
-    window.removeEventListener("storage", callback);
-    window.removeEventListener("pro-unlock-change", callback);
-  };
-}
-
-function getUnlockSnapshot(id: string): boolean {
-  if (typeof window === "undefined") return false;
-  return window.sessionStorage.getItem(unlockKey(id)) === "1";
-}
-
-function getServerSnapshot(): boolean {
-  return false;
-}
-
 interface Props {
   area: Neighborhood;
   complaints: Complaint[];
@@ -99,12 +62,6 @@ export default function ProReportContent({
   sameDistrict,
   cityTop,
 }: Props) {
-  const unlocked = useSyncExternalStore(
-    subscribeUnlock,
-    () => getUnlockSnapshot(area.id),
-    getServerSnapshot,
-  );
-  const [purchasing, setPurchasing] = useState(false);
   const [downloading, setDownloading] = useState(false);
 
   // ─── derived analytics ─────────────────────────────────
@@ -174,16 +131,6 @@ export default function ProReportContent({
   }, [area.overallScore]);
 
   // ─── handlers ──────────────────────────────────────────
-  const handlePurchase = () => {
-    setPurchasing(true);
-    // TODO: 토스페이먼츠 실제 결제 통합
-    // 현재는 mock — 환경변수 NEXT_PUBLIC_TOSS_CLIENT_KEY 설정 시 교체
-    setTimeout(() => {
-      setUnlocked(area.id);
-      setPurchasing(false);
-    }, 600);
-  };
-
   const handleDownloadPdf = async () => {
     if (typeof window === "undefined") return;
     setDownloading(true);
@@ -213,120 +160,7 @@ export default function ProReportContent({
     }
   };
 
-  // ─── unlock gate ───────────────────────────────────────
-  if (!unlocked) {
-    return (
-      <div className="min-h-screen bg-[var(--background)] no-print">
-        <div className="max-w-2xl mx-auto px-4 py-6">
-          <Link
-            href={`/area/${area.id}`}
-            className="inline-flex items-center gap-1 text-sm text-[var(--text-secondary)] hover:text-[var(--text)] mb-6"
-          >
-            <ArrowLeft size={16} /> 동 상세로 돌아가기
-          </Link>
-
-          {/* 헤더 */}
-          <div className="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-6 mb-6">
-            <div className="flex items-center gap-2 mb-2">
-              <Crown size={20} className="text-amber-600" />
-              <span className="text-sm font-semibold text-amber-700">PRO 리포트</span>
-            </div>
-            <h1 className="text-2xl font-bold text-[var(--text)] mb-1">
-              {area.name} 심층 분석 리포트
-            </h1>
-            <p className="text-sm text-[var(--text-secondary)]">
-              {area.city} {area.district} · 종합 {area.overallScore}점
-            </p>
-          </div>
-
-          {/* 가치 제안 */}
-          <div className="bg-white border border-[var(--border)] rounded-2xl p-6 mb-6">
-            <h2 className="text-lg font-bold mb-4">PRO 리포트에 포함된 내용</h2>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span>
-                  <strong>인근 동네 비교 표</strong> — 같은 구 동네들과 점수 순위 비교
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span>
-                  <strong>강점·약점 분석</strong> — 시 평균 대비 +/- 점수 차이
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span>
-                  <strong>민원 카테고리 분석</strong> — 어떤 민원이 많은 동네인지
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span>
-                  <strong>안전 인프라 상세</strong> — CCTV·경찰서·비상벨·24시 편의점
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span>
-                  <strong>입주 추천 등급</strong> — 5단계 종합 평가 + 체크포인트
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 size={18} className="text-emerald-500 mt-0.5 shrink-0" />
-                <span>
-                  <strong>PDF 저장</strong> — 버튼 1클릭으로 PDF 파일 다운로드
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* 결제 카드 */}
-          <div className="bg-white border-2 border-amber-400 rounded-2xl p-6 shadow-lg">
-            <div className="flex items-baseline justify-between mb-1">
-              <span className="text-sm text-[var(--text-secondary)]">단건 리포트</span>
-              <span className="text-xs text-emerald-600 font-medium">
-                평생 액세스
-              </span>
-            </div>
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-3xl font-bold text-[var(--text)]">
-                {PRO_PRICE.toLocaleString()}원
-              </span>
-              <span className="text-sm text-[var(--text-secondary)] line-through">
-                4,900원
-              </span>
-            </div>
-
-            <button
-              onClick={handlePurchase}
-              disabled={purchasing}
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 flex items-center justify-center gap-2"
-            >
-              {purchasing ? (
-                <>처리 중...</>
-              ) : (
-                <>
-                  <Lock size={16} /> {PRO_PRICE.toLocaleString()}원 결제하고 열람
-                </>
-              )}
-            </button>
-
-            <p className="text-xs text-[var(--text-secondary)] text-center mt-3">
-              ※ 현재 베타 — 결제 시스템 준비 중. 버튼 클릭 시 임시 액세스 부여
-            </p>
-          </div>
-
-          <p className="text-[10px] text-[var(--text-secondary)] text-center mt-4">
-            본 리포트는 공개 데이터 기반 정보 제공 목적이며, 부동산 매매·임대 의사결정의 법적 근거가 아닙니다.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  // ─── unlocked: 본 리포트 ────────────────────────────────
+  // ─── 본 리포트 (무료 공개) ──────────────────────────────
   return (
     <div className="min-h-screen bg-[var(--background)] pro-report">
       <div className="max-w-3xl mx-auto px-4 py-6">

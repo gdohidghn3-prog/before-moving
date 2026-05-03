@@ -517,12 +517,9 @@ export default function AreaDetailContent({
               · PDF 저장
             </p>
             <div className="flex items-center justify-between">
-              <div className="flex items-baseline gap-2">
-                <span className="text-lg font-bold text-amber-700">2,900원</span>
-                <span className="text-xs text-[var(--text-secondary)] line-through">
-                  4,900원
-                </span>
-              </div>
+              <span className="text-sm font-semibold text-emerald-600">
+                무료
+              </span>
               <span className="text-xs text-amber-700 font-medium">
                 자세히 보기 →
               </span>

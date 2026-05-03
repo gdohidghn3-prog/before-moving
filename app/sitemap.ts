@@ -52,6 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // PRO 심층 리포트 (무료 공개)
+  const proPages: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
+    url: `${BASE_URL}/area/${n.id}/pro`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   // 분리수거 상세 페이지
   const recyclePages: MetadataRoute.Sitemap = recycleItems.map((item) => ({
     url: `${BASE_URL}/recycle/${item.id}`,
@@ -60,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...areaPages, ...safetyPages, ...recyclePages];
+  return [...staticPages, ...areaPages, ...safetyPages, ...proPages, ...recyclePages];
 }

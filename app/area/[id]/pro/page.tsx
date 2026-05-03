@@ -11,7 +11,7 @@ import {
 } from "@/lib/data";
 import ProReportContent from "@/components/ProReportContent";
 
-// PRO 페이지는 동적 (결제 unlock 클라이언트 측 처리)
+// PRO 심층 리포트는 무료 공개 — 정적 생성
 export const dynamic = "force-static";
 
 export async function generateMetadata({
@@ -29,7 +29,6 @@ export async function generateMetadata({
   return {
     title,
     description,
-    robots: { index: false, follow: false }, // 결제 컨텐츠는 색인 제외
     openGraph: { title, description, type: "article" },
   };
 }
